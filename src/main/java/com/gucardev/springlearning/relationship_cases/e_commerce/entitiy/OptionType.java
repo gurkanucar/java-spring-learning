@@ -1,4 +1,4 @@
-package com.gucardev.springlearning.relationship_cases.e_commerce;
+package com.gucardev.springlearning.relationship_cases.e_commerce.entitiy;
 
 import jakarta.persistence.*;
 import lombok.Data;

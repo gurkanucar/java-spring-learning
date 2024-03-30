@@ -1,6 +1,7 @@
 package com.gucardev.springlearning.relationship_cases.e_commerce;
 
 import com.github.javafaker.Faker;
+import com.gucardev.springlearning.relationship_cases.e_commerce.entitiy.*;
 import com.gucardev.springlearning.relationship_cases.e_commerce.repo.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
