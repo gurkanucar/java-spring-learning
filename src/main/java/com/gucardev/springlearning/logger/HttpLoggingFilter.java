@@ -6,14 +6,15 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 import org.springframework.web.util.ContentCachingResponseWrapper;
 
 import java.io.IOException;
 import java.util.Enumeration;
-import java.util.UUID;
 
+@Order(2)
 @Slf4j
 @Component
 public class HttpLoggingFilter extends OncePerRequestFilter {
@@ -24,22 +25,7 @@ public class HttpLoggingFilter extends OncePerRequestFilter {
         ContentCachingResponseWrapper responseWrapper = new ContentCachingResponseWrapper(response);
 
         // Get request ID from X-trace-id header or generate a new one
-        String requestId = requestWrapper.getHeader("X-trace-id");
-        if (StringUtils.isBlank(requestId)) {
-            requestId = UUID.randomUUID().toString();
-            // Create a new HttpServletRequest object with the modified header
-            String finalRequestId = requestId;
-            requestWrapper = new RepeatableContentCachingRequestWrapper(request) {
-                @Override
-                public String getHeader(String name) {
-                    if ("X-trace-id".equals(name)) {
-                        return finalRequestId;
-                    }
-                    return super.getHeader(name);
-                }
-            };
-        }
-
+        String requestId = requestWrapper.getHeader("X-Trace-Id");
         logRequest(requestWrapper, requestId);
         filterChain.doFilter(requestWrapper, responseWrapper);
         logResponse(responseWrapper, request, requestId);

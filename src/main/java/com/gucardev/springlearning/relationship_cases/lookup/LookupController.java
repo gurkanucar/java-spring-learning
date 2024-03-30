@@ -1,5 +1,6 @@
 package com.gucardev.springlearning.relationship_cases.lookup;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,6 +9,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/lookups")
+@Slf4j
 public class LookupController {
 
     @Autowired
@@ -24,6 +26,7 @@ public class LookupController {
     public LookupDto createLookup(@RequestBody LookupDto lookupDto) {
         Lookup lookup = LookupMapper.INSTANCE.toEntity(lookupDto);
         lookup = lookupRepository.save(lookup);
+        log.info("created");
         return LookupMapper.INSTANCE.toDto(lookup);
     }
 
