@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -24,4 +25,11 @@ public class Category {
 
     @ManyToMany(mappedBy = "categories", fetch = FetchType.LAZY)
     private Set<Product> products = new HashSet<>();
+
+    @Override
+    public int hashCode() {
+        // Use only fields that are not part of bidirectional relationships
+        return Objects.hash(id, name);
+    }
+
 }

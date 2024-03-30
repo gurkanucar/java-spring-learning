@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Data
@@ -22,5 +23,10 @@ public class OptionValue {
 
     @ManyToMany(mappedBy = "optionValues", fetch = FetchType.LAZY)
     private Set<Product> products = new HashSet<>();
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, value); // Avoid using optionType or products
+    }
 
 }

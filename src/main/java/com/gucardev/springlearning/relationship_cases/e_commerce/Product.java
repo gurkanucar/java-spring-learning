@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -38,6 +39,11 @@ public class Product {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "merchant_id")
     private Merchant merchant;
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, price, stock, sku); // Avoid using categories, optionValues, or merchant
+    }
 }
 
 

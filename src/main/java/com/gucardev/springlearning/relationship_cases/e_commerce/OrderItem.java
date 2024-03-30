@@ -3,6 +3,8 @@ package com.gucardev.springlearning.relationship_cases.e_commerce;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.Objects;
+
 @Entity
 @Data
 public class OrderItem {
@@ -20,4 +22,8 @@ public class OrderItem {
     @JoinColumn(name = "order_id")
     private Order order;
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, quantity); // Avoid using product or order
+    }
 }

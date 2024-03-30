@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Data
@@ -17,5 +18,9 @@ public class Customer {
 
     @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
     private Set<Order> orders = new HashSet<>();
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name); // Avoid using orders
+    }
 }
 
