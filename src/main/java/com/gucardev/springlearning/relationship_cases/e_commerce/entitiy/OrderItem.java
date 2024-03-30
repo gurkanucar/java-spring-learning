@@ -3,7 +3,9 @@ package com.gucardev.springlearning.relationship_cases.e_commerce.entitiy;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Data
@@ -21,6 +23,14 @@ public class OrderItem {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id")
     private Order order;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "order_item_option_value",
+            joinColumns = @JoinColumn(name = "order_item_id"),
+            inverseJoinColumns = @JoinColumn(name = "option_value_id")
+    )
+    private Set<OptionValue> selectedOptionValues = new HashSet<>();
 
     @Override
     public int hashCode() {

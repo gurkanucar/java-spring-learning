@@ -26,16 +26,9 @@ public class DataGeneratorConfig {
                                                OrderItemRepository orderItemRepository,
                                                OptionTypeRepository optionTypeRepository) {
         return args -> {
-//            createInitData(
-//                    productRepository,
-//                    categoryRepository,
-//                    optionValueRepository,
-//                    merchantRepository,
-//                    customerRepository,
-//                    orderRepository,
-//                    orderItemRepository,
-//                    optionTypeRepository
-//            );
+            createInitData(productRepository, categoryRepository, optionValueRepository, merchantRepository,
+                    customerRepository, orderRepository, orderItemRepository, optionTypeRepository
+            );
         };
     }
 
@@ -146,19 +139,37 @@ public class DataGeneratorConfig {
         }
         orderRepository.saveAll(allOrders);
 
-        // Generate order items
+        // Generate order items with selected option values, ensuring distinct option types
         for (Order order : allOrders) {
             Set<OrderItem> orderItems = IntStream.range(0, faker.number().numberBetween(1, 5)) // Generate 1 to 4 order items per order
                     .mapToObj(k -> {
                         OrderItem orderItem = new OrderItem();
                         Collections.shuffle(products);
-                        orderItem.setProduct(products.get(0));
+                        Product selectedProduct = products.get(0);
+                        orderItem.setProduct(selectedProduct);
                         orderItem.setQuantity(faker.number().numberBetween(1, 5));
                         orderItem.setOrder(order);
+
+                        // Group the product's option values by their option type
+                        Map<OptionType, List<OptionValue>> optionValuesByType = selectedProduct.getOptionValues().stream()
+                                .collect(Collectors.groupingBy(OptionValue::getOptionType));
+
+                        // Randomly select one option value from each option type group
+                        Set<OptionValue> selectedOptionValues = optionValuesByType.values().stream()
+                                .map(x -> {
+                                    Collections.shuffle(x);
+                                    return x.get(0);
+                                })
+                                .collect(Collectors.toSet());
+
+                        orderItem.setSelectedOptionValues(selectedOptionValues);
+
                         return orderItem;
                     })
                     .collect(Collectors.toSet());
             orderItemRepository.saveAll(orderItems);
         }
+
+
     }
 }

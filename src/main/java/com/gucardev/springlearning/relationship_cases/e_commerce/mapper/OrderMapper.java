@@ -1,6 +1,7 @@
 package com.gucardev.springlearning.relationship_cases.e_commerce.mapper;
 
 import com.gucardev.springlearning.relationship_cases.e_commerce.dto.OrderDTO;
+import com.gucardev.springlearning.relationship_cases.e_commerce.dto.OrderItemDTO;
 import com.gucardev.springlearning.relationship_cases.e_commerce.entitiy.Customer;
 import com.gucardev.springlearning.relationship_cases.e_commerce.entitiy.Order;
 import com.gucardev.springlearning.relationship_cases.e_commerce.entitiy.OrderItem;
@@ -15,9 +16,9 @@ public interface OrderMapper {
 
     OrderDTO.CustomerDTO toCustomerDto(Customer customer);
 
-    OrderDTO.OrderItemDTO toOrderItemDto(OrderItem orderItem);
+    OrderItemDTO toOrderItemDto(OrderItem orderItem);
 
     // if you dont use `uses` we can convert via this
-//    ProductDTO toProductDto(Product product);
+    // ProductDTO toProductDto(Product product);
 }
 
