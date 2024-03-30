@@ -5,33 +5,94 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 import org.springframework.web.util.ContentCachingResponseWrapper;
 
 import java.io.IOException;
+import java.util.Enumeration;
+import java.util.UUID;
 
 @Slf4j
 @Component
 public class HttpLoggingFilter extends OncePerRequestFilter {
+
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         RepeatableContentCachingRequestWrapper requestWrapper = new RepeatableContentCachingRequestWrapper(request);
         ContentCachingResponseWrapper responseWrapper = new ContentCachingResponseWrapper(response);
 
-        logRequest(requestWrapper);
+        // Get request ID from X-trace-id header or generate a new one
+        String requestId = requestWrapper.getHeader("X-trace-id");
+        if (StringUtils.isBlank(requestId)) {
+            requestId = UUID.randomUUID().toString();
+            // Create a new HttpServletRequest object with the modified header
+            String finalRequestId = requestId;
+            requestWrapper = new RepeatableContentCachingRequestWrapper(request) {
+                @Override
+                public String getHeader(String name) {
+                    if ("X-trace-id".equals(name)) {
+                        return finalRequestId;
+                    }
+                    return super.getHeader(name);
+                }
+            };
+        }
+
+        logRequest(requestWrapper, requestId);
         filterChain.doFilter(requestWrapper, responseWrapper);
-        logResponse(responseWrapper);
+        logResponse(responseWrapper, request, requestId);
     }
 
-    private void logRequest(RepeatableContentCachingRequestWrapper requestWrapper) throws IOException {
+
+    private void logRequest(RepeatableContentCachingRequestWrapper requestWrapper, String requestId) throws IOException {
+        StringBuilder requestLog = new StringBuilder();
         String body = requestWrapper.readInputAndDuplicate().trim().replaceAll("[\n\r]", "");
-        log.info("Request {}", body);
+
+        // Logging method, endpoint, and parameters
+        requestLog.append("Trace ID: ").append(requestId).append(", ");
+        requestLog.append("Method: ").append(requestWrapper.getMethod()).append(", ");
+        requestLog.append("Endpoint: ").append(requestWrapper.getRequestURI());
+        if (requestWrapper.getQueryString() != null) {
+            requestLog.append("?").append(requestWrapper.getQueryString());
+        }
+        // Logging request body
+        if (!body.isEmpty()) {
+            requestLog.append(", Body: ").append(body);
+        }
+        // Logging headers
+        requestLog.append(", Headers: {");
+        Enumeration<String> headerNames = requestWrapper.getHeaderNames();
+        while (headerNames.hasMoreElements()) {
+            String headerName = headerNames.nextElement();
+            String headerValue = requestWrapper.getHeader(headerName);
+            requestLog.append(headerName).append(": ").append(headerValue);
+            if (headerNames.hasMoreElements()) {
+                requestLog.append(", ");
+            }
+        }
+        requestLog.append("}");
+
+        log.info("Request: {}", requestLog);
     }
 
-    private void logResponse(ContentCachingResponseWrapper responseWrapper) throws IOException {
+    private void logResponse(ContentCachingResponseWrapper responseWrapper, HttpServletRequest request, String requestId) throws IOException {
         String responseBody = new String(responseWrapper.getContentAsByteArray()).replaceAll("[\n\r]", "");
-        log.info("Response {}", responseBody);
+        StringBuilder responseLog = new StringBuilder();
+        // Logging method, endpoint, and parameters
+        responseLog.append("Trace ID: ").append(requestId).append(", ");
+        responseLog.append("Method: ").append(request.getMethod()).append(", ");
+        responseLog.append("Endpoint: ").append(request.getRequestURI());
+        if (request.getQueryString() != null) {
+            responseLog.append("?").append(request.getQueryString());
+        }
+        // Logging response body
+        if (StringUtils.isNotBlank(responseBody)) {
+            responseLog.append(", Body: ").append(responseBody);
+            log.info("Response: {}", responseLog);
+        }
+
         responseWrapper.copyBodyToResponse();
     }
 }
