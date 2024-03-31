@@ -1,4 +1,4 @@
-package com.gucardev.springlearning.logger;
+package com.gucardev.springlearning.mdc_log_exception;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
@@ -13,6 +13,6 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public void handleException(Exception e, HttpServletRequest request) {
-        logger.error("Trace ID: {} | An error occurred:", request.getHeader("X-trace-id"), e);
+        logger.error("An error occurred:", e);
     }
 }
