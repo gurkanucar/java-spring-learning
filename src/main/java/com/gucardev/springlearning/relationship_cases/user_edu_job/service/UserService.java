@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -21,5 +23,10 @@ public class UserService {
     public UserDTO createUser(UserDTO userDTO) {
         User user = userMapper.userDTOToUser(userDTO);
         return userMapper.toDTO(userRepository.save(user));
+    }
+
+    public List<UserDTO> getUsers() {
+        return userRepository.findAll().stream().map(x -> userMapper.toDTO(x))
+                .toList();
     }
 }
