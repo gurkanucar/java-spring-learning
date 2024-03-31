@@ -32,6 +32,9 @@ public class OrderItem {
     )
     private Set<OptionValue> selectedOptionValues = new HashSet<>();
 
+    @OneToMany(mappedBy = "orderItem", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<ShippingHistory> shippingHistories = new HashSet<>();
+
     @Override
     public int hashCode() {
         return Objects.hash(id, quantity); // Avoid using product or order

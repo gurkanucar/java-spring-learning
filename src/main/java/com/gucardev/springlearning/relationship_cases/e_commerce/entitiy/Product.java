@@ -27,7 +27,6 @@ public class Product {
     )
     private Set<Category> categories = new HashSet<>();
 
-
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "product_option_value",
@@ -40,9 +39,12 @@ public class Product {
     @JoinColumn(name = "merchant_id")
     private Merchant merchant;
 
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
+    private Set<Review> reviews = new HashSet<>();
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, price, stock, sku); // Avoid using categories, optionValues, or merchant
+        return Objects.hash(id, name, price, stock, sku); // Avoid using categories, optionValues, merchant, or reviews
     }
 }
 
