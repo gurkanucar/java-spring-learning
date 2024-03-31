@@ -22,6 +22,11 @@ public class Customer {
     @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
     private Set<Review> reviews = new HashSet<>();
 
+
+    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
+    private Set<ShippingAddress> shippingAddresses = new HashSet<>();
+
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name); // Avoid using orders or reviews

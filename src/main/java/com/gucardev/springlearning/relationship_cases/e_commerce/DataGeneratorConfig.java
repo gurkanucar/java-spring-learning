@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -24,10 +25,15 @@ public class DataGeneratorConfig {
                                                CustomerRepository customerRepository,
                                                OrderRepository orderRepository,
                                                OrderItemRepository orderItemRepository,
-                                               OptionTypeRepository optionTypeRepository) {
+                                               OptionTypeRepository optionTypeRepository,
+                                               ShippingAddressRepository shippingAddressRepository,
+                                               ShippingHistoryRepository shippingHistoryRepository,
+                                               PaymentRepository paymentRepository,
+                                               ReviewRepository reviewRepository) {
         return args -> {
             createInitData(productRepository, categoryRepository, optionValueRepository, merchantRepository,
-                    customerRepository, orderRepository, orderItemRepository, optionTypeRepository
+                    customerRepository, orderRepository, orderItemRepository, optionTypeRepository,
+                    shippingAddressRepository, shippingHistoryRepository, paymentRepository, reviewRepository
             );
         };
     }
@@ -39,8 +45,13 @@ public class DataGeneratorConfig {
                         CustomerRepository customerRepository,
                         OrderRepository orderRepository,
                         OrderItemRepository orderItemRepository,
-                        OptionTypeRepository optionTypeRepository) {
+                        OptionTypeRepository optionTypeRepository,
+                        ShippingAddressRepository shippingAddressRepository,
+                        ShippingHistoryRepository shippingHistoryRepository,
+                        PaymentRepository paymentRepository,
+                        ReviewRepository reviewRepository) {
         Faker faker = new Faker();
+
 
         // Generate merchants
         List<Merchant> merchants = IntStream.range(0, 5)
@@ -125,6 +136,12 @@ public class DataGeneratorConfig {
                 .collect(Collectors.toList());
         customerRepository.saveAll(customers);
 
+        // Generate shipping addresses for customers
+        List<ShippingAddress> shippingAddresses = customers.stream()
+                .map(customer -> createShippingAddress(faker, customer))
+                .collect(Collectors.toList());
+        shippingAddressRepository.saveAll(shippingAddresses);
+
         // Generate orders
         List<Order> allOrders = new ArrayList<>();
         for (Customer customer : customers) {
@@ -132,12 +149,19 @@ public class DataGeneratorConfig {
                     .mapToObj(j -> {
                         Order order = new Order();
                         order.setCustomer(customer);
+                        // Create a new shipping address for the order
+                        ShippingAddress shippingAddress = createShippingAddress(faker, customer);
+                        shippingAddressRepository.save(shippingAddress);
+                        order.setShippingAddress(shippingAddress);
+                        // Assign a random status
+                        order.setStatus(faker.options().option("Pending", "Processing", "Shipped", "Delivered"));
                         return order;
                     })
                     .collect(Collectors.toSet());
             allOrders.addAll(orders);
         }
         orderRepository.saveAll(allOrders);
+
 
         // Generate order items with selected option values, ensuring distinct option types
         for (Order order : allOrders) {
@@ -170,6 +194,53 @@ public class DataGeneratorConfig {
             orderItemRepository.saveAll(orderItems);
         }
 
+        // Generate payments for orders
+        List<Payment> payments = allOrders.stream()
+                .map(order -> {
+                    Payment payment = new Payment();
+                    payment.setAmount(faker.number().randomDouble(2, 10, 1000));
+                    payment.setTransactionId(faker.finance().creditCard());
+                    payment.setPaymentDate(LocalDateTime.now().minusDays(faker.number().numberBetween(1, 30)));
+                    payment.setPaymentMethod(faker.options().option("Credit Card", "PayPal", "Bank Transfer"));
+                    payment.setOrder(order);
+                    return payment;
+                })
+                .collect(Collectors.toList());
+        paymentRepository.saveAll(payments);
 
+        // Generate shipping history for order items
+        for (OrderItem orderItem : orderItemRepository.findAll()) {
+            ShippingHistory shippingHistory = new ShippingHistory();
+            shippingHistory.setStatus(faker.options().option("Shipped", "In Transit", "Delivered"));
+            shippingHistory.setUpdateDate(LocalDateTime.now().minusDays(faker.number().numberBetween(1, 15)));
+            shippingHistory.setCarrier(faker.options().option("UPS", "FedEx", "DHL"));
+            shippingHistory.setOrderItem(orderItem);
+            shippingHistoryRepository.save(shippingHistory);
+        }
+
+        // Generate reviews for products
+        List<Review> reviews = products.stream()
+                .flatMap(product -> IntStream.range(0, faker.number().numberBetween(1, 5))
+                        .mapToObj(i -> {
+                            Review review = new Review();
+                            review.setContent(faker.lorem().sentence());
+                            review.setRating(faker.number().numberBetween(1, 5));
+                            review.setCustomer(faker.options().nextElement(customers));
+                            review.setProduct(product);
+                            return review;
+                        }))
+                .collect(Collectors.toList());
+        reviewRepository.saveAll(reviews);
+    }
+
+    private ShippingAddress createShippingAddress(Faker faker, Customer customer) {
+        ShippingAddress shippingAddress = new ShippingAddress();
+        shippingAddress.setStreet(faker.address().streetAddress());
+        shippingAddress.setCity(faker.address().city());
+        shippingAddress.setState(faker.address().state());
+        shippingAddress.setCountry(faker.address().country());
+        shippingAddress.setPostalCode(faker.address().zipCode());
+        shippingAddress.setCustomer(customer);
+        return shippingAddress;
     }
 }

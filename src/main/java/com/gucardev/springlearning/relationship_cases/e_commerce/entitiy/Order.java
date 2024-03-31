@@ -25,9 +25,10 @@ public class Order {
     @OneToOne(mappedBy = "order", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Payment payment;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     @JoinColumn(name = "shipping_address_id")
     private ShippingAddress shippingAddress;
+
 
     private String status;
 
