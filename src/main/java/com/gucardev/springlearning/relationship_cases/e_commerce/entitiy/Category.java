@@ -16,7 +16,7 @@ public class Category {
 
     private String name;
 
-    private boolean main;
+    private Boolean isMainCategory;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_id")
