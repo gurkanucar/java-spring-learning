@@ -1,0 +1,51 @@
+<!-- EhCache dependency -->
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-ehcache</artifactId>
+    <version>5.4.32.Final</version>
+</dependency>
+
+<!-- EhCache Core dependency -->
+<dependency>
+    <groupId>org.ehcache</groupId>
+    <artifactId>ehcache</artifactId>
+    <version>3.9.4</version>
+</dependency>
+
+
+
+spring:
+  jpa:
+    properties:
+      hibernate:
+        cache:
+          use_second_level_cache: true
+          region:
+            factory_class: org.hibernate.cache.jcache.JCacheRegionFactory
+        javax:
+          cache:
+            provider: org.ehcache.jsr107.EhcacheCachingProvider
+            uri: classpath:ehcache.xml
+      javax:
+        persistence:
+          sharedCache:
+            mode: ALL
+
+
+<config xmlns="http://www.ehcache.org/v3"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core-3.0.xsd">
+
+    <cache-template name="default">
+        <expiry>
+            <ttl unit="seconds">120</ttl> <!-- Time to live -->
+        </expiry>
+        <heap unit="entries">1000</heap>
+        <offheap unit="MB">100</offheap>
+    </cache-template>
+
+    <cache alias="entityCache" uses-template="default">
+        <key-type>java.lang.Long</key-type>
+        <value-type>com.example.myapp.MyEntity</value-type>
+    </cache>
+</config>
