@@ -1,53 +1,39 @@
-<!-- Spring Boot Starter Cache -->
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-cache</artifactId>
-</dependency>
-
-<!-- Hibernate EhCache -->
+<!-- Hibernate Second Level Cache API -->
 <dependency>
     <groupId>org.hibernate</groupId>
-    <artifactId>hibernate-ehcache</artifactId>
+    <artifactId>hibernate-jcache</artifactId>
+    <version>${hibernate.version}</version>
 </dependency>
 
-<!-- EhCache -->
+<!-- EhCache Implementation -->
 <dependency>
     <groupId>org.ehcache</groupId>
     <artifactId>ehcache</artifactId>
+    <version>3.9.0</version>
 </dependency>
 
 
 spring:
-  cache:
-    type: ehcache
-    ehcache:
-      config: classpath:ehcache.xml
-
   jpa:
     properties:
       hibernate:
         cache:
           use_second_level_cache: true
-          use_query_cache: true
           region:
             factory_class: org.hibernate.cache.jcache.JCacheRegionFactory
-      javax:
-        persistence:
-          sharedCache:
-            mode: ENABLE_SELECTIVE
+          use_query_cache: true
+        javax:
+          cache:
+            provider: org.ehcache.jsr107.EhcacheCachingProvider
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+import javax.persistence.Cacheable;
+import javax.persistence.Entity;
 
-<config xmlns="http://www.ehcache.org/v3"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core-3.0.xsd">
-
-    <cache-template name="default">
-        <expiry>
-            <ttl unit="seconds">120</ttl> <!-- Time to live: 120 seconds -->
-        </expiry>
-        <heap unit="entries">1000</heap>
-        <offheap unit="MB">10</offheap>
-    </cache-template>
-
-    <cache alias="myEntityCache" uses-template="default"/>
-</config>
+@Entity
+@Cacheable
+@Cache(usage = CacheConcurrencyStrategy.READ_ONLY, region = "userTypesCache")
+public class UserType {
+    // fields, constructors, getters, and setters
+}
