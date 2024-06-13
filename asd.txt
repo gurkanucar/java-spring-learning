@@ -1,35 +1,40 @@
-<!-- EhCache dependency -->
+<!-- Spring Boot Starter Cache -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-cache</artifactId>
+</dependency>
+
+<!-- Hibernate EhCache -->
 <dependency>
     <groupId>org.hibernate</groupId>
     <artifactId>hibernate-ehcache</artifactId>
-    <version>5.4.32.Final</version>
 </dependency>
 
-<!-- EhCache Core dependency -->
+<!-- EhCache -->
 <dependency>
     <groupId>org.ehcache</groupId>
     <artifactId>ehcache</artifactId>
-    <version>3.9.4</version>
 </dependency>
 
 
-
 spring:
+  cache:
+    type: ehcache
+    ehcache:
+      config: classpath:ehcache.xml
+
   jpa:
     properties:
       hibernate:
         cache:
           use_second_level_cache: true
+          use_query_cache: true
           region:
             factory_class: org.hibernate.cache.jcache.JCacheRegionFactory
-        javax:
-          cache:
-            provider: org.ehcache.jsr107.EhcacheCachingProvider
-            uri: classpath:ehcache.xml
       javax:
         persistence:
           sharedCache:
-            mode: ALL
+            mode: ENABLE_SELECTIVE
 
 
 <config xmlns="http://www.ehcache.org/v3"
@@ -38,14 +43,11 @@ spring:
 
     <cache-template name="default">
         <expiry>
-            <ttl unit="seconds">120</ttl> <!-- Time to live -->
+            <ttl unit="seconds">120</ttl> <!-- Time to live: 120 seconds -->
         </expiry>
         <heap unit="entries">1000</heap>
-        <offheap unit="MB">100</offheap>
+        <offheap unit="MB">10</offheap>
     </cache-template>
 
-    <cache alias="entityCache" uses-template="default">
-        <key-type>java.lang.Long</key-type>
-        <value-type>com.example.myapp.MyEntity</value-type>
-    </cache>
+    <cache alias="myEntityCache" uses-template="default"/>
 </config>
