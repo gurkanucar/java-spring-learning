@@ -1,6 +1,9 @@
-package com.gucardev.springlearning.parent_child_caching;
+package com.gucardev.springlearning.parent_child_caching.service;
 
-import com.gucardev.springlearning.relationship_cases.e_commerce.repo.CustomerRepository;
+import com.gucardev.springlearning.parent_child_caching.dto.CustomerDto;
+import com.gucardev.springlearning.parent_child_caching.mapper.CustomerMapperr;
+import com.gucardev.springlearning.parent_child_caching.dao.repo.CustomerRepositoryy;
+import com.gucardev.springlearning.parent_child_caching.dao.entity.Customerr;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

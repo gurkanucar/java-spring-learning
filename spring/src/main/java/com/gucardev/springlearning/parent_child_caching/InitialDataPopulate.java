@@ -1,5 +1,9 @@
 package com.gucardev.springlearning.parent_child_caching;
 
+import com.gucardev.springlearning.parent_child_caching.dao.repo.CustomerRepositoryy;
+import com.gucardev.springlearning.parent_child_caching.dao.entity.Customerr;
+import com.gucardev.springlearning.parent_child_caching.dao.repo.UserRepositoryy;
+import com.gucardev.springlearning.parent_child_caching.dao.entity.Userr;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

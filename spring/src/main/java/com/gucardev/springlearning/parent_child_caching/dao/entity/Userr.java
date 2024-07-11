@@ -1,4 +1,4 @@
-package com.gucardev.springlearning.parent_child_caching;
+package com.gucardev.springlearning.parent_child_caching.dao.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
