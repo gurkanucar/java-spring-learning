@@ -1,4 +1,4 @@
-package org.gucardev.mixed.relationship_cases.feign_transaction.aspect;
+package org.gucardev.mixed.feign_transaction.aspect;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.annotation.AfterThrowing;

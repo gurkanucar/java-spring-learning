@@ -1,7 +1,7 @@
-package org.gucardev.mixed.relationship_cases.feign_transaction;
+package org.gucardev.mixed.feign_transaction;
 
-import com.gucardev.springlearning.feign_transaction.client.ExampleClient;
-import com.gucardev.springlearning.feign_transaction.client.MyFeignClient;
+import org.gucardev.mixed.feign_transaction.client.ExampleClient;
+import org.gucardev.mixed.feign_transaction.client.MyFeignClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,6 +1,6 @@
-package org.gucardev.mixed.relationship_cases.feign_transaction;
+package org.gucardev.mixed.feign_transaction;
 
-import com.gucardev.springlearning.feign_transaction.aspect.FeignRequestInterceptor;
+import org.gucardev.mixed.feign_transaction.aspect.FeignRequestInterceptor;
 import feign.RequestInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

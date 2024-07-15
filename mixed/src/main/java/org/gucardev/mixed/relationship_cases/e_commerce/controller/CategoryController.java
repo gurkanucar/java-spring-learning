@@ -1,13 +1,13 @@
 package org.gucardev.mixed.relationship_cases.e_commerce.controller;
 
-import com.gucardev.springlearning.relationship_cases.e_commerce.dto.CategoryDTO;
-import com.gucardev.springlearning.relationship_cases.e_commerce.dto.ProductDTO;
-import com.gucardev.springlearning.relationship_cases.e_commerce.entitiy.Category;
-import com.gucardev.springlearning.relationship_cases.e_commerce.entitiy.Product;
-import com.gucardev.springlearning.relationship_cases.e_commerce.mapper.CategoryMapper;
-import com.gucardev.springlearning.relationship_cases.e_commerce.mapper.ProductMapper;
-import com.gucardev.springlearning.relationship_cases.e_commerce.repo.CategoryRepository;
-import com.gucardev.springlearning.relationship_cases.e_commerce.repo.ProductRepository;
+import org.gucardev.mixed.relationship_cases.e_commerce.dto.CategoryDTO;
+import org.gucardev.mixed.relationship_cases.e_commerce.dto.ProductDTO;
+import org.gucardev.mixed.relationship_cases.e_commerce.entitiy.Category;
+import org.gucardev.mixed.relationship_cases.e_commerce.entitiy.Product;
+import org.gucardev.mixed.relationship_cases.e_commerce.mapper.CategoryMapper;
+import org.gucardev.mixed.relationship_cases.e_commerce.mapper.ProductMapper;
+import org.gucardev.mixed.relationship_cases.e_commerce.repo.CategoryRepository;
+import org.gucardev.mixed.relationship_cases.e_commerce.repo.ProductRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -1,9 +1,9 @@
 package org.gucardev.mixed.relationship_cases.e_commerce.controller;
 
-import com.gucardev.springlearning.relationship_cases.e_commerce.dto.OrderDTO;
-import com.gucardev.springlearning.relationship_cases.e_commerce.entitiy.Order;
-import com.gucardev.springlearning.relationship_cases.e_commerce.mapper.OrderMapper;
-import com.gucardev.springlearning.relationship_cases.e_commerce.repo.OrderRepository;
+import org.gucardev.mixed.relationship_cases.e_commerce.dto.OrderDTO;
+import org.gucardev.mixed.relationship_cases.e_commerce.entitiy.Order;
+import org.gucardev.mixed.relationship_cases.e_commerce.mapper.OrderMapper;
+import org.gucardev.mixed.relationship_cases.e_commerce.repo.OrderRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

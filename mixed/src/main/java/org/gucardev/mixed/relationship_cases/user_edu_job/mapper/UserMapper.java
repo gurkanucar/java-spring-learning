@@ -1,7 +1,7 @@
 package org.gucardev.mixed.relationship_cases.user_edu_job.mapper;
 
-import com.gucardev.springlearning.relationship_cases.user_edu_job.dto.UserDTO;
-import com.gucardev.springlearning.relationship_cases.user_edu_job.entity.User;
+import org.gucardev.mixed.relationship_cases.user_edu_job.dto.UserDTO;
+import org.gucardev.mixed.relationship_cases.user_edu_job.entity.User;
 import org.mapstruct.AfterMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

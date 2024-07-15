@@ -1,4 +1,4 @@
-package org.gucardev.mixed.relationship_cases.feign_transaction;
+package org.gucardev.mixed.feign_transaction;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

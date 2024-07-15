@@ -1,7 +1,7 @@
 package org.gucardev.mixed.relationship_cases.user_edu_job.controller;
 
-import com.gucardev.springlearning.relationship_cases.user_edu_job.dto.UserDTO;
-import com.gucardev.springlearning.relationship_cases.user_edu_job.service.UserService;
+import org.gucardev.mixed.relationship_cases.user_edu_job.dto.UserDTO;
+import org.gucardev.mixed.relationship_cases.user_edu_job.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

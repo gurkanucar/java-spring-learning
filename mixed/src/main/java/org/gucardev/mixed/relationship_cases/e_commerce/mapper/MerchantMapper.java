@@ -1,7 +1,7 @@
 package org.gucardev.mixed.relationship_cases.e_commerce.mapper;
 
-import com.gucardev.springlearning.relationship_cases.e_commerce.dto.MerchantDTO;
-import com.gucardev.springlearning.relationship_cases.e_commerce.entitiy.Merchant;
+import org.gucardev.mixed.relationship_cases.e_commerce.dto.MerchantDTO;
+import org.gucardev.mixed.relationship_cases.e_commerce.entitiy.Merchant;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

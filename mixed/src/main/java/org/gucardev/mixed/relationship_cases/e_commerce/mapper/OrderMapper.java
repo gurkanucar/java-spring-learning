@@ -1,12 +1,12 @@
 package org.gucardev.mixed.relationship_cases.e_commerce.mapper;
 
-import com.gucardev.springlearning.relationship_cases.e_commerce.dto.OrderDTO;
-import com.gucardev.springlearning.relationship_cases.e_commerce.dto.OrderItemDTO;
-import com.gucardev.springlearning.relationship_cases.e_commerce.dto.ProductDTO;
-import com.gucardev.springlearning.relationship_cases.e_commerce.entitiy.Customer;
-import com.gucardev.springlearning.relationship_cases.e_commerce.entitiy.Order;
-import com.gucardev.springlearning.relationship_cases.e_commerce.entitiy.OrderItem;
-import com.gucardev.springlearning.relationship_cases.e_commerce.entitiy.Product;
+import org.gucardev.mixed.relationship_cases.e_commerce.dto.OrderDTO;
+import org.gucardev.mixed.relationship_cases.e_commerce.dto.OrderItemDTO;
+import org.gucardev.mixed.relationship_cases.e_commerce.dto.ProductDTO;
+import org.gucardev.mixed.relationship_cases.e_commerce.entitiy.Customer;
+import org.gucardev.mixed.relationship_cases.e_commerce.entitiy.Order;
+import org.gucardev.mixed.relationship_cases.e_commerce.entitiy.OrderItem;
+import org.gucardev.mixed.relationship_cases.e_commerce.entitiy.Product;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
