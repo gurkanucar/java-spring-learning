@@ -16,6 +16,7 @@
         <option value="$PROJECT_DIR$/file-uploading-with-io/pom.xml" />
         <option value="$PROJECT_DIR$/entity-encryption/pom.xml" />
         <option value="$PROJECT_DIR$/entity-auditing/pom.xml" />
+        <option value="$PROJECT_DIR$/dto-field-masker/pom.xml" />
       </list>
     </option>
   </component>
