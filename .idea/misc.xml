@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/utilities/pom.xml" />
         <option value="$PROJECT_DIR$/redis-storage-example/pom.xml" />
         <option value="$PROJECT_DIR$/redis-caching-example/pom.xml" />
+        <option value="$PROJECT_DIR$/pure-websocket/pom.xml" />
       </list>
     </option>
   </component>
