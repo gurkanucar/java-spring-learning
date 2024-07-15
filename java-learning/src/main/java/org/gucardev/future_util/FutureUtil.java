@@ -1,4 +1,4 @@
-package org.gucardev.futures2;
+package org.gucardev.future_util;
 
 import java.util.ArrayList;
 import java.util.List;

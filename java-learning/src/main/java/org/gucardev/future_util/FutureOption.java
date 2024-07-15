@@ -1,5 +1,8 @@
-package org.gucardev.futures2;
+package org.gucardev.future_util;
 
+import lombok.Getter;
+
+@Getter
 public class FutureOption<T, U> {
 
   private final T method;
@@ -10,11 +13,4 @@ public class FutureOption<T, U> {
     this.exception = exception;
   }
 
-  public T getMethod() {
-    return method;
-  }
-
-  public U getException() {
-    return exception;
-  }
 }

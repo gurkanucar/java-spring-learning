@@ -1,4 +1,4 @@
-package org.gucardev.futures2;
+package org.gucardev.future_util;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-import static org.gucardev.futures2.FutureUtil.createFutureOption;
+import static org.gucardev.future_util.FutureUtil.createFutureOption;
 
 public class Main {
 
@@ -19,7 +19,7 @@ public class Main {
     return "hello " + name;
   }
 
-  public static String sayHello2(String name) {
+  public static String throwException() {
     throw new RuntimeException("error");
   }
 
@@ -42,7 +42,7 @@ public class Main {
     features.put(
         "sayHello2",
         new FutureOption<>(
-            () -> sayHello2("Ahmet"),
+            () -> throwException(),
             e -> {
               System.out.println(e.getMessage());
               return "EMPTY";
