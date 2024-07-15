@@ -1,4 +1,4 @@
-package org.gucardev.example1;
+package org.gucardev.chain_of_resp_validation_example;
 
 import lombok.Data;
 

@@ -1,10 +1,10 @@
-package org.gucardev.example1;
+package org.gucardev.chain_of_resp_validation_example;
 
 public abstract class Handler<T> {
 
-  private Handler next;
+  private Handler<T> next;
 
-  public Handler setNextHandler(Handler next) {
+  public Handler<T> setNextHandler(Handler<T> next) {
     if (this.next == null) {
       this.next = next;
     } else {
