@@ -15,9 +15,9 @@ spring:
       ddl-auto: create
 
 server:
-  port: 0
+  port: 8083
   servlet:
-    context-path: /auth-service
+    context-path: /auth-micro
 
 eureka:
   client:
@@ -31,6 +31,5 @@ logging:
     org.springframework.web.servlet.DispatcherServlet: TRACE
 
 jwt-variables:
-  EXPIRES_ACCESS_TOKEN_MINUTE: 90
-  ISSUER: dev
-  KEY: asdqwe123+K3Y
+  secret-key: 3cfa76ef14937c1c0ea519f8fc057a80fcd04a7420f8e8bcd0a7567c272e007b
+  expiration-time: 30000 #3600000
