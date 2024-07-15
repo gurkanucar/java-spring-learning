@@ -1,4 +1,5 @@
-package com.gucardev.springlearning.scopes;
+package org.gucardev.springscopes;
+
 
 import lombok.Data;
 import org.springframework.stereotype.Component;
