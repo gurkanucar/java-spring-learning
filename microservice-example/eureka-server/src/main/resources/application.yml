@@ -5,6 +5,7 @@ spring:
     user:
       name: ${SERVICE_USERNAME:admin}
       password: ${SERVICE_PASS:pass}
+
 server:
   port: 8089
 
@@ -17,3 +18,5 @@ eureka:
   server:
     #    enable-self-preservation: false
     renewal-percent-threshold: 0.85
+  instance:
+    prefer-ip-address: true

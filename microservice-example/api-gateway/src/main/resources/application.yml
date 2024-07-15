@@ -4,31 +4,33 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: auth-service-route
-          uri: lb://auth-service
+        - id: auth-micro-route
+          uri: lb://auth-micro
           predicates:
-            - Path=/auth-service/**
+            - Path=/auth-micro/**
 
-        - id: project-service-route
-          uri: lb://project-service
+        - id: project-micro-route
+          uri: lb://project-micro
           predicates:
-            - Path=/project-service/**
+            - Path=/project-micro/**
           filters:
             - AuthenticationFilter
 
-        - id: task-service-route
-          uri: lb://task-service
+        - id: task-micro-route
+          uri: lb://task-micro
           predicates:
-            - Path=/task-service/**
+            - Path=/task-micro/**
           filters:
             - AuthenticationFilter
 
-        - id: analytics-service-route
-          uri: lb://analytics-service
+        - id: analytics-micro-route
+          uri: lb://analytics-micro
           predicates:
-            - Path=/analytics-service/**
+            - Path=/analytics-micro/**
           filters:
             - AuthenticationFilter
+
+
 
 server:
   port: 8084
@@ -39,7 +41,8 @@ eureka:
   client:
     service-url:
       defaultZone: http://${SERVICE_USERNAME:admin}:${SERVICE_PASS:pass}@localhost:8089/eureka
-
+  instance:
+    prefer-ip-address: true
 
 # Logging
 logging:

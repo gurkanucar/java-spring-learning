@@ -15,7 +15,7 @@ spring:
       ddl-auto: create
 
 server:
-  port: 8083
+  port: 0
   servlet:
     context-path: /auth-micro
 
@@ -23,13 +23,14 @@ eureka:
   client:
     service-url:
       defaultZone: http://${SERVICE_USERNAME:admin}:${SERVICE_PASS:pass}@localhost:8089/eureka
+  instance:
+    prefer-ip-address: true
 
-# Logging
 logging:
   level:
     org.springframework.web: trace
     org.springframework.web.servlet.DispatcherServlet: TRACE
 
 jwt-variables:
-  secret-key: 3cfa76ef14937c1c0ea519f8fc057a80fcd04a7420f8e8bcd0a7567c272e007b
-  expiration-time: 30000 #3600000
+  secret-key: 674c6b706f2fdc13c2b98a6b7f32be947ba4c2a5acf23776295cc1a077a3674e
+  expiration-time: 3600000 #3600000

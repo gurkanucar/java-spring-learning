@@ -1,6 +1,7 @@
 package org.gucardev.apigateway.filter;
 
 
+import lombok.extern.slf4j.Slf4j;
 import org.gucardev.apigateway.dto.AuthResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
@@ -15,6 +16,7 @@ import reactor.core.publisher.Mono;
 import java.util.Base64;
 
 @Component
+@Slf4j
 public class AuthenticationFilter extends AbstractGatewayFilterFactory<Object> {
 
     @Value("${service-credentials.username}")
@@ -31,6 +33,7 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Object> {
 
     @Override
     public GatewayFilter apply(Object config) {
+        log.info("filter configured");
         return (exchange, chain) -> {
             String authHeader = exchange.getRequest().getHeaders().getFirst("Authorization");
 
@@ -48,8 +51,8 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Object> {
                                 uriBuilder ->
                                         uriBuilder
                                                 .scheme("lb")
-                                                .host("auth-service")
-                                                .path("/auth-service/auth/validate")
+                                                .host("auth-micro")
+                                                .path("/auth-micro/auth/validate")
                                                 .queryParam("token", token)
                                                 .build())
                         .retrieve()
