@@ -23,6 +23,12 @@
         <option value="$PROJECT_DIR$/strategy-pattern-with-enums/pom.xml" />
         <option value="$PROJECT_DIR$/utilities/pom.xml" />
         <option value="$PROJECT_DIR$/strategy-pattern/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-example/auth-micro/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-example/api-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-example/eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-example/project-micro/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-example/task-micro/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-example/analytics-micro/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

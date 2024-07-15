@@ -7,34 +7,47 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="file-uploading-with-io" />
-        <module name="redis-storage-example" />
         <module name="java-learning" />
-        <module name="entity-auditing" />
-        <module name="dto-field-masker" />
         <module name="pure-websocket" />
+        <module name="analytics-micro" />
         <module name="mixed" />
-        <module name="entity-encryption" />
         <module name="redis-caching-example" />
         <module name="utilities" />
+        <module name="eureka-server" />
+        <module name="task-micro" />
+        <module name="file-uploading-with-io" />
+        <module name="redis-storage-example" />
+        <module name="project-micro" />
+        <module name="entity-auditing" />
+        <module name="dto-field-masker" />
+        <module name="api-gateway" />
+        <module name="auth-micro" />
+        <module name="entity-encryption" />
         <module name="strategy-pattern" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="learning-java" target="17" />
+      <module name="strategy-pattern-with-enums" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="analytics-micro" options="-parameters" />
+      <module name="api-gateway" options="-parameters" />
+      <module name="auth-micro" options="-parameters" />
       <module name="dto-field-masker" options="-parameters" />
       <module name="entity-auditing" options="-parameters" />
       <module name="entity-encryption" options="-parameters" />
+      <module name="eureka-server" options="-parameters" />
       <module name="file-uploading-with-io" options="-parameters" />
       <module name="mixed" options="-parameters" />
+      <module name="project-micro" options="-parameters" />
       <module name="pure-websocket" options="-parameters" />
       <module name="redis-caching-example" options="-parameters" />
       <module name="redis-storage-example" options="-parameters" />
       <module name="strategy-pattern" options="-parameters" />
+      <module name="task-micro" options="-parameters" />
       <module name="utilities" options="-parameters" />
     </option>
   </component>

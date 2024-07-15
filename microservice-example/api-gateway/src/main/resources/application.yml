@@ -1,0 +1,52 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: auth-service-route
+          uri: lb://auth-service
+          predicates:
+            - Path=/auth-service/**
+
+        - id: project-service-route
+          uri: lb://project-service
+          predicates:
+            - Path=/project-service/**
+          filters:
+            - AuthenticationFilter
+
+        - id: task-service-route
+          uri: lb://task-service
+          predicates:
+            - Path=/task-service/**
+          filters:
+            - AuthenticationFilter
+
+        - id: analytics-service-route
+          uri: lb://analytics-service
+          predicates:
+            - Path=/analytics-service/**
+          filters:
+            - AuthenticationFilter
+
+server:
+  port: 8084
+  servlet:
+    context-path: /api-gateway
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${SERVICE_USERNAME:admin}:${SERVICE_PASS:pass}@localhost:8089/eureka
+
+
+# Logging
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.springframework.web.servlet.DispatcherServlet: TRACE
+
+service-credentials:
+  username: ${SERVICE_USERNAME:admin}
+  pass: ${SERVICE_PASS:pass}

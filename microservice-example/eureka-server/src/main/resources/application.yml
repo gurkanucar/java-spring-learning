@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: eureka-server
+  security:
+    user:
+      name: ${SERVICE_USERNAME:admin}
+      password: ${SERVICE_PASS:pass}
+server:
+  port: 8089
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defaultZone: http://${SERVICE_USERNAME:admin}:${SERVICE_PASS:pass}@localhost:8089/eureka
+  server:
+    #    enable-self-preservation: false
+    renewal-percent-threshold: 0.85

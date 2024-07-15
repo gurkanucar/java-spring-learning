@@ -9,5 +9,6 @@
   <url>http://maven.apache.org</url>
   <modules>
     <module>java-learning</module>
+      <module>microservice-example</module>
   </modules>
 </project>

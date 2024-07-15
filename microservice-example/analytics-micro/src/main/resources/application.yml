@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: analytics-micro
+  security:
+    user:
+      name: ${SERVICE_USERNAME:admin}
+      password: ${SERVICE_PASS:pass}
+
+server:
+  port: 0
+  servlet:
+    context-path: /analytics-micro
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${SERVICE_USERNAME:admin}:${SERVICE_PASS:pass}@localhost:8089/eureka
+
+
+# Logging
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.springframework.web.servlet.DispatcherServlet: TRACE
+

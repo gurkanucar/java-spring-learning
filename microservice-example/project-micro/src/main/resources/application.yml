@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: project-micro
+  security:
+    user:
+      name: ${SERVICE_USERNAME:admin}
+      password: ${SERVICE_PASS:pass}
+  main:
+    allow-bean-definition-overriding: true
+
+server:
+  port: 0
+  servlet:
+    context-path: /project-micro
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${SERVICE_USERNAME:admin}:${SERVICE_PASS:pass}@localhost:8089/eureka
+
+
+# Logging
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.springframework.web.servlet.DispatcherServlet: TRACE
+
