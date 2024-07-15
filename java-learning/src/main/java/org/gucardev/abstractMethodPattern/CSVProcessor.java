@@ -2,26 +2,28 @@ package org.gucardev.abstractMethodPattern;
 
 import java.io.InputStream;
 
-public class CSVProcessor extends BaseProcessor {
+public class CSVProcessor extends BaseProcessor<Void> {
     public CSVProcessor(String path) {
         super(path);
     }
 
     @Override
-    public <T> T read(InputStream is) {
+    public Void read(InputStream is) throws Exception {
         System.out.println("CSVProcessor reading...");
+        // Implement CSV reading logic
         return null;
     }
 
     @Override
-    public <T> T process(T payload) {
+    public Void process(Void payload) throws Exception {
         System.out.println("CSVProcessor processing...");
+        // Implement CSV processing logic
         return null;
     }
 
     @Override
-    public <T> T write(T payload) {
+    public void write(Void payload) throws Exception {
         System.out.println("CSVProcessor writing...");
-        return null;
+        // Implement CSV writing logic
     }
 }

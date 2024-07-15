@@ -3,52 +3,43 @@ package org.gucardev.abstractMethodPattern;
 import java.io.InputStream;
 import java.util.Objects;
 
-public abstract class BaseProcessor {
-  public String path;
-  protected InputStream is;
-
-  private BaseProcessor() {}
+public abstract class BaseProcessor<T> {
+  protected String path;
 
   public BaseProcessor(String path) {
     this.path = path;
   }
 
-  public abstract <T> T read(InputStream is) throws Exception;
-
-  public abstract <T> T process(T payload) throws Exception;
-
-  public abstract <T> T write(T payload) throws Exception;
+  public abstract T read(InputStream is) throws Exception;
+  public abstract T process(T payload) throws Exception;
+  public abstract void write(T payload) throws Exception;
 
   public void startToProcess() {
-    System.out.println("process started");
-    Object data = null;
+    System.out.println("Processing started");
+    T data = null;
     try {
-      ClassLoader classloader = Thread.currentThread().getContextClassLoader();
-      InputStream is = classloader.getResourceAsStream(path);
-      data = read(is);
-    } catch (Exception e) {
-      System.out.println("something went wrong while reading!");
-      e.printStackTrace();
-    }
-    Object processResult = null;
-    try {
-      if (Objects.isNull(data)) {
-        throw new RuntimeException("read result is null");
+      ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+      try (InputStream is = classLoader.getResourceAsStream(path)) {
+        data = read(is);
       }
+    } catch (Exception e) {
+      System.out.println("Error during reading: " + e.getMessage());
+      return;
+    }
+
+    T processResult = null;
+    try {
       processResult = process(data);
     } catch (Exception e) {
-      System.out.println("something went wrong while processing!");
-      e.printStackTrace();
+      System.out.println("Error during processing: " + e.getMessage());
+      return;
     }
 
     try {
-      if (Objects.isNull(processResult)) {
-        throw new RuntimeException("process result is null");
-      }
       write(processResult);
     } catch (Exception e) {
-      System.out.println("something went wrong while writing!");
-      e.printStackTrace();
+      System.out.println("Error during writing: " + e.getMessage());
     }
   }
 }
+
