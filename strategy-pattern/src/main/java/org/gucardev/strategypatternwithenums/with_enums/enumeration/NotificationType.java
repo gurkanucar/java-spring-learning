@@ -1,6 +1,7 @@
-package org.gucardev.strategypatternwithenums;
+package org.gucardev.strategypatternwithenums.with_enums.enumeration;
 
 import lombok.Getter;
+import org.gucardev.strategypatternwithenums.with_enums.config.SpringContext;
 import org.gucardev.strategypatternwithenums.with_enums.service.EmailNotificationService;
 import org.gucardev.strategypatternwithenums.with_enums.service.NotificationService;
 import org.gucardev.strategypatternwithenums.with_enums.service.SMSNotificationService;

@@ -1,4 +1,4 @@
-package org.gucardev.strategypatternwithenums;
+package org.gucardev.strategypatternwithenums.with_enums.config;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

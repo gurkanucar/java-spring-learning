@@ -2,7 +2,7 @@ package org.gucardev.strategypatternwithenums.with_enums.controller;
 
 
 import lombok.RequiredArgsConstructor;
-import org.gucardev.strategypatternwithenums.NotificationType;
+import org.gucardev.strategypatternwithenums.with_enums.enumeration.NotificationType;
 import org.gucardev.strategypatternwithenums.with_enums.dto.NotificationDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
