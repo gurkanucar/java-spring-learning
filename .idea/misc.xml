@@ -14,6 +14,7 @@
         <option value="$PROJECT_DIR$/pure-websocket/pom.xml" />
         <option value="$PROJECT_DIR$/strategy-pattern-with-enums/pom.xml" />
         <option value="$PROJECT_DIR$/file-uploading-with-io/pom.xml" />
+        <option value="$PROJECT_DIR$/entity-encryption/pom.xml" />
       </list>
     </option>
   </component>
