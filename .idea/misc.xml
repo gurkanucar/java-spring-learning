@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
+<<<<<<< HEAD
+=======
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/spring-scopes" />
+  </component>
+>>>>>>> development
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/java/pom.xml" />
         <option value="$PROJECT_DIR$/spring/pom.xml" />
+=======
+        <option value="$PROJECT_DIR$/utilities/pom.xml" />
+        <option value="$PROJECT_DIR$/redis-storage-example/pom.xml" />
+        <option value="$PROJECT_DIR$/redis-caching-example/pom.xml" />
+        <option value="$PROJECT_DIR$/pure-websocket/pom.xml" />
+        <option value="$PROJECT_DIR$/strategy-pattern-with-enums/pom.xml" />
+        <option value="$PROJECT_DIR$/file-uploading-with-io/pom.xml" />
+        <option value="$PROJECT_DIR$/entity-encryption/pom.xml" />
+        <option value="$PROJECT_DIR$/entity-auditing/pom.xml" />
+        <option value="$PROJECT_DIR$/dto-field-masker/pom.xml" />
+        <option value="$PROJECT_DIR$/mixed/pom.xml" />
+>>>>>>> development
       </list>
     </option>
   </component>
