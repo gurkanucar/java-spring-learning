@@ -8,17 +8,26 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/utilities/pom.xml" />
-        <option value="$PROJECT_DIR$/redis-storage-example/pom.xml" />
-        <option value="$PROJECT_DIR$/redis-caching-example/pom.xml" />
-        <option value="$PROJECT_DIR$/pure-websocket/pom.xml" />
-        <option value="$PROJECT_DIR$/strategy-pattern-with-enums/pom.xml" />
-        <option value="$PROJECT_DIR$/file-uploading-with-io/pom.xml" />
-        <option value="$PROJECT_DIR$/entity-encryption/pom.xml" />
-        <option value="$PROJECT_DIR$/entity-auditing/pom.xml" />
+        <option value="$PROJECT_DIR$/java/pom.xml" />
+        <option value="$PROJECT_DIR$/spring/pom.xml" />
+        <option value="$PROJECT_DIR$/../learning-java/pom.xml" />
         <option value="$PROJECT_DIR$/dto-field-masker/pom.xml" />
+        <option value="$PROJECT_DIR$/entity-auditing/pom.xml" />
+        <option value="$PROJECT_DIR$/entity-encryption/pom.xml" />
+        <option value="$PROJECT_DIR$/file-uploading-with-io/pom.xml" />
+        <option value="$PROJECT_DIR$/java-learning/pom.xml" />
         <option value="$PROJECT_DIR$/mixed/pom.xml" />
+        <option value="$PROJECT_DIR$/pure-websocket/pom.xml" />
+        <option value="$PROJECT_DIR$/redis-caching-example/pom.xml" />
+        <option value="$PROJECT_DIR$/redis-storage-example/pom.xml" />
+        <option value="$PROJECT_DIR$/strategy-pattern-with-enums/pom.xml" />
+        <option value="$PROJECT_DIR$/utilities/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/../learning-java/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="corretto-17" project-jdk-type="JavaSDK">
