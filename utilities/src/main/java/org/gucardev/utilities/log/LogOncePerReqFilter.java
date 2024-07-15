@@ -27,6 +27,8 @@ public class LogOncePerReqFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
+        long startTime = System.currentTimeMillis(); // Start time for duration tracking
+
         // Generate and set the trace ID
         String traceId = UUID.randomUUID().toString().substring(0, 13);
         MDC.put(TRACE_ID_LOG_VAR_NAME, traceId);
@@ -36,25 +38,31 @@ public class LogOncePerReqFilter extends OncePerRequestFilter {
         ContentCachingRequestWrapper cachingRequestWrapper = new ContentCachingRequestWrapper(request);
         ContentCachingResponseWrapper cachingResponseWrapper = new ContentCachingResponseWrapper(response);
 
-        // Proceed with the filter chain
-        filterChain.doFilter(cachingRequestWrapper, cachingResponseWrapper);
+        try {
+            // Proceed with the filter chain
+            filterChain.doFilter(cachingRequestWrapper, cachingResponseWrapper);
+        } finally {
+            // Calculate the duration of the request handling
+            long duration = System.currentTimeMillis() - startTime;
 
-        // Log the request and response after the filter chain has processed
-        logContent("Request", cachingRequestWrapper.getContentAsByteArray(), cachingRequestWrapper.getCharacterEncoding());
-        logContent("Response", cachingResponseWrapper.getContentAsByteArray(), cachingResponseWrapper.getCharacterEncoding());
+            // Log the request and response after the filter chain has processed
+            logContent("Request", cachingRequestWrapper.getContentAsByteArray(), cachingRequestWrapper.getCharacterEncoding(), duration);
+            logContent("Response", cachingResponseWrapper.getContentAsByteArray(), cachingResponseWrapper.getCharacterEncoding(), duration);
 
-        // Ensure the response is complete
-        cachingResponseWrapper.copyBodyToResponse();
+            // Ensure the response is complete
+            cachingResponseWrapper.copyBodyToResponse();
 
-        // Clear the MDC
-        MDC.remove(TRACE_ID_LOG_VAR_NAME);
+            // Clear the MDC
+            MDC.remove(TRACE_ID_LOG_VAR_NAME);
+        }
     }
 
-    private void logContent(String type, byte[] content, String characterEncoding) {
+    private void logContent(String type, byte[] content, String characterEncoding, long duration) {
         String logData = getValueAsString(content, characterEncoding)
                 .trim().replaceAll("[\n\r]", "");
         logData = logData.substring(0, Math.min(logData.length(), MAX_LOG_CONTENT_LENGTH));
-        LOGGER.info("{} | {}", type, logData);
+
+        LOGGER.info("{} | Duration: {} ms | {}", type, duration, logData);
     }
 
     private String getValueAsString(byte[] contentAsByteArray, String characterEncoding) {
