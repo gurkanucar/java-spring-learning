@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
         "error",
         "code",
         "message",
+        "path",
         "time",
 })
 public class ExceptionResponse {
@@ -22,12 +23,14 @@ public class ExceptionResponse {
     private HttpStatus status;
     private int code;
     private Object message;
+    private String path;
     private LocalDateTime time;
 
     private ExceptionResponse(Builder builder) {
         this.status = builder.status;
         this.code = builder.code;
         this.message = builder.message;
+        this.path = builder.path;
         this.time = LocalDateTime.now();
     }
 
@@ -39,6 +42,7 @@ public class ExceptionResponse {
         private HttpStatus status;
         private int code;
         private Object message;
+        private String path;
 
         private Builder() {
             this.status = HttpStatus.OK;
@@ -67,8 +71,14 @@ public class ExceptionResponse {
             return this;
         }
 
+        public Builder path(String requestPath) {
+            this.path = requestPath;
+            return this;
+        }
+
         public ResponseEntity<ExceptionResponse> build() {
             return ResponseEntity.status(status).body(new ExceptionResponse(this));
         }
     }
 }
+

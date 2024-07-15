@@ -1,4 +1,4 @@
-package org.gucardev.utilities;
+package org.gucardev.utilities.utils;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonParser;

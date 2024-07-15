@@ -1,4 +1,4 @@
-package org.gucardev.utilities;
+package org.gucardev.utilities.utils;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

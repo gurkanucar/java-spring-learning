@@ -1,5 +1,6 @@
 package org.gucardev.utilities;
 
+import org.gucardev.utilities.utils.JsonUtil;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

@@ -1,5 +1,6 @@
 package org.gucardev.utilities;
 
+import org.gucardev.utilities.utils.CollectionUtil;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;

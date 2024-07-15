@@ -1,4 +1,4 @@
-package org.gucardev.utilities;
+package org.gucardev.utilities.utils;
 
 import java.util.Collection;
 import java.util.Collections;

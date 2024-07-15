@@ -23,23 +23,23 @@ public class GlobalBaseExceptionHandler extends BaseExceptionHandler {
 
     @ExceptionHandler({CustomException.class})
     @Order(Integer.MIN_VALUE)
-    public ResponseEntity<ExceptionResponse> generalException(CustomException exception) {
-        return this.buildErrorResponse(exception.getMessage(), exception.getStatus());
+    public ResponseEntity<ExceptionResponse> generalException(CustomException exception, WebRequest request) {
+        return this.buildErrorResponse(exception.getMessage(), exception.getStatus(), request);
     }
 
     @ExceptionHandler({MethodArgumentNotValidException.class})
     public final ResponseEntity<ExceptionResponse> handleMethodArgumentNotValidEx(
             MethodArgumentNotValidException ex, WebRequest request) {
-        return this.getMapResponseEntity(ex);
+        return this.getMapResponseEntity(ex, request);
     }
 
     @ExceptionHandler({ConstraintViolationException.class})
     public final ResponseEntity<ExceptionResponse> handleConstraintViolationEx(
-            MethodArgumentNotValidException ex) {
-        return this.getMapResponseEntity(ex);
+            MethodArgumentNotValidException ex, WebRequest request) {
+        return this.getMapResponseEntity(ex, request);
     }
 
-    private ResponseEntity<ExceptionResponse> getMapResponseEntity(MethodArgumentNotValidException ex) {
+    private ResponseEntity<ExceptionResponse> getMapResponseEntity(MethodArgumentNotValidException ex, WebRequest request) {
         Map<String, String> errors = new HashMap<>();
         ex.getBindingResult()
                 .getAllErrors()
@@ -55,22 +55,22 @@ public class GlobalBaseExceptionHandler extends BaseExceptionHandler {
                                 errors.put(fieldName, errorMessage);
                             }
                         });
-        return this.buildErrorResponse(errors, HttpStatus.BAD_REQUEST);
+        return this.buildErrorResponse(errors, HttpStatus.BAD_REQUEST, request);
     }
 
     @ExceptionHandler({ClientRequestException.class})
-    public ResponseEntity<ExceptionResponse> generalException(ClientRequestException exception) {
-        return this.buildErrorResponse(exception.getMessage(), exception.getStatus());
+    public ResponseEntity<ExceptionResponse> generalException(ClientRequestException exception, WebRequest request) {
+        return this.buildErrorResponse(exception.getMessage(), exception.getStatus(), request);
     }
 
     @ExceptionHandler({Exception.class})
-    public final ResponseEntity<ExceptionResponse> handleAllException(Exception ex) {
-        return this.buildErrorResponse(ex.getLocalizedMessage(), HttpStatus.BAD_REQUEST);
+    public final ResponseEntity<ExceptionResponse> handleAllException(Exception ex, WebRequest request) {
+        return this.buildErrorResponse(ex.getLocalizedMessage(), HttpStatus.BAD_REQUEST, request);
     }
 
     @ExceptionHandler({HttpMessageNotReadableException.class})
     public final ResponseEntity<ExceptionResponse> handleHttpMessageNotReadableException(
             Exception ex, WebRequest request) {
-        return this.buildErrorResponse("Required request body is missing", HttpStatus.BAD_REQUEST);
+        return this.buildErrorResponse("Required request body is missing", HttpStatus.BAD_REQUEST, request);
     }
 }

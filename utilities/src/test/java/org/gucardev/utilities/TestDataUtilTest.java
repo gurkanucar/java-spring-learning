@@ -2,6 +2,7 @@ package org.gucardev.utilities;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.gucardev.utilities.utils.TestDataUtil;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
