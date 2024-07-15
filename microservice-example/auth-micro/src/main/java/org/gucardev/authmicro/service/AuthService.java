@@ -2,6 +2,7 @@ package org.gucardev.authmicro.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.gucardev.authmicro.dto.AuthResponse;
 import org.gucardev.authmicro.dto.LoginRequest;
 import org.gucardev.authmicro.dto.TokenDto;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 public class AuthService {
 
     private final JwtEncoderService tokenService;
+    private final JwtDecoderService jwtDecoderService;
     private final AuthenticationManager authenticationManager;
 
     public TokenDto login(LoginRequest loginRequest) {
@@ -25,5 +27,12 @@ public class AuthService {
         } catch (Exception e) {
             throw new RuntimeException();
         }
+    }
+
+    public AuthResponse validate(String token) {
+        if (jwtDecoderService.isTokenExpired(token)) {
+            throw new RuntimeException("Token is invalid");
+        }
+        return new AuthResponse(jwtDecoderService.extractUsername(token), token);
     }
 }

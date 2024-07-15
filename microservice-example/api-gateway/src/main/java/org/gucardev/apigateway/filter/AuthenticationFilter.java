@@ -52,7 +52,7 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Object> {
                                         uriBuilder
                                                 .scheme("lb")
                                                 .host("auth-micro")
-                                                .path("/auth-micro/auth/validate")
+                                                .path("auth-micro/auth/validate")
                                                 .queryParam("token", token)
                                                 .build())
                         .retrieve()
@@ -65,8 +65,8 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Object> {
                                                 .getRequest()
                                                 .mutate()
                                                 .header(HttpHeaders.AUTHORIZATION, basicAuthHeader)
-                                                .header("X-Authenticated-User", authObj.username())
-                                                .header("X-Authenticated-Token", authObj.token())
+                                                .header("X-Authenticated-User", authObj.getUsername())
+                                                .header("X-Authenticated-Token", authObj.getToken())
                                                 .build();
                                         return chain.filter(exchange);
                                     } else {
@@ -74,7 +74,10 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Object> {
                                         return exchange.getResponse().setComplete();
                                     }
                                 })
-                        .onErrorResume(throwable -> handleAuthenticationError(exchange));
+                        .onErrorResume(throwable -> {
+                            log.error("Error during authentication", throwable);
+                            return handleAuthenticationError(exchange);
+                        });
             } else {
                 exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
                 return exchange.getResponse().setComplete();

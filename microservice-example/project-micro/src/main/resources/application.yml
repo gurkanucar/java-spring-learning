@@ -17,7 +17,8 @@ eureka:
   client:
     service-url:
       defaultZone: http://${SERVICE_USERNAME:admin}:${SERVICE_PASS:pass}@localhost:8089/eureka
-
+  instance:
+    prefer-ip-address: true
 
 # Logging
 logging:
@@ -25,3 +26,6 @@ logging:
     org.springframework.web: DEBUG
     org.springframework.web.servlet.DispatcherServlet: TRACE
 
+jwt-variables:
+  secret-key: 674c6b706f2fdc13c2b98a6b7f32be947ba4c2a5acf23776295cc1a077a3674e
+  expiration-time: 3600000 #3600000

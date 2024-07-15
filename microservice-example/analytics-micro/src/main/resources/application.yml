@@ -15,7 +15,8 @@ eureka:
   client:
     service-url:
       defaultZone: http://${SERVICE_USERNAME:admin}:${SERVICE_PASS:pass}@localhost:8089/eureka
-
+  instance:
+    prefer-ip-address: true
 
 # Logging
 logging:
