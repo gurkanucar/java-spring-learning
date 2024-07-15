@@ -1,4 +1,4 @@
-package org.gucardev.redisstorageexample.notificationExample;
+package org.gucardev.redisstorageexample.user_notification_store_example;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

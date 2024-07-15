@@ -1,4 +1,4 @@
-package org.gucardev.redisstorageexample.notificationExample;
+package org.gucardev.redisstorageexample.user_notification_store_example;
 
 
 import lombok.RequiredArgsConstructor;
