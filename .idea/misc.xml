@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/redis-storage-example/pom.xml" />
         <option value="$PROJECT_DIR$/redis-caching-example/pom.xml" />
         <option value="$PROJECT_DIR$/pure-websocket/pom.xml" />
+        <option value="$PROJECT_DIR$/strategy-pattern-with-enums/pom.xml" />
       </list>
     </option>
   </component>
