@@ -1,9 +1,9 @@
 package org.gucardev.strategypatternwithenums;
 
 import lombok.Getter;
-import org.gucardev.strategypatternwithenums.service.EmailNotificationService;
-import org.gucardev.strategypatternwithenums.service.NotificationService;
-import org.gucardev.strategypatternwithenums.service.SMSNotificationService;
+import org.gucardev.strategypatternwithenums.with_enums.service.EmailNotificationService;
+import org.gucardev.strategypatternwithenums.with_enums.service.NotificationService;
+import org.gucardev.strategypatternwithenums.with_enums.service.SMSNotificationService;
 
 import java.util.Arrays;
 

@@ -1,9 +1,9 @@
-package org.gucardev.strategypatternwithenums.controller;
+package org.gucardev.strategypatternwithenums.with_enums.controller;
 
 
 import lombok.RequiredArgsConstructor;
 import org.gucardev.strategypatternwithenums.NotificationType;
-import org.gucardev.strategypatternwithenums.dto.NotificationDto;
+import org.gucardev.strategypatternwithenums.with_enums.dto.NotificationDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/notification")
+@RequestMapping("/api/v2/notification")
 @RequiredArgsConstructor
 public class NotificationController {
 

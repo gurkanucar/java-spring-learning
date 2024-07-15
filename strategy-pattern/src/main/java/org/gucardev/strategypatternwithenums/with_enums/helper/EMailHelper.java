@@ -1,4 +1,4 @@
-package org.gucardev.strategypatternwithenums.helper;
+package org.gucardev.strategypatternwithenums.with_enums.helper;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

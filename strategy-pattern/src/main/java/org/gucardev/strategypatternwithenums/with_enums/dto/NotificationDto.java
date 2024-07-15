@@ -1,4 +1,4 @@
-package org.gucardev.strategypatternwithenums.dto;
+package org.gucardev.strategypatternwithenums.with_enums.dto;
 
 import lombok.Data;
 

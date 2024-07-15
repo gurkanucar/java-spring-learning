@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.gucardev</groupId>
-    <artifactId>strategy-pattern-with-enums</artifactId>
+    <artifactId>strategy-pattern</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>strategy-pattern-with-enums</name>
-    <description>strategy-pattern-with-enums</description>
+    <name>strategy-pattern</name>
+    <description>strategy-pattern</description>
     <url/>
     <licenses>
         <license/>
