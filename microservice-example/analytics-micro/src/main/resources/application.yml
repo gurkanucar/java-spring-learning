@@ -9,6 +9,11 @@ spring:
 server:
   port: 0
 
+app:
+  service-token:
+    username: analytics-micro
+    password: ${ANALYTICS_MICRO_PASS:pass}
+
 eureka:
   client:
     service-url:
@@ -22,3 +27,5 @@ logging:
     org.springframework.web: DEBUG
     org.springframework.web.servlet.DispatcherServlet: TRACE
 
+jwt-variables:
+  secret-key: 674c6b706f2fdc13c2b98a6b7f32be947ba4c2a5acf23776295cc1a077a3674e

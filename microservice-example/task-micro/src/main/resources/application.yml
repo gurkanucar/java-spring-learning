@@ -9,6 +9,12 @@ spring:
 server:
   port: 0
 
+
+app:
+  service-token:
+    username: task-micro
+    password: ${TASK_MICRO_PASS:pass}
+
 eureka:
   client:
     service-url:

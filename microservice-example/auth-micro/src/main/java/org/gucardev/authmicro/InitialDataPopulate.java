@@ -10,6 +10,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Component
 @RequiredArgsConstructor
@@ -17,6 +18,7 @@ public class InitialDataPopulate implements CommandLineRunner {
 
     private final RoleService roleService;
     private final UserService userService;
+    private final InitDataConfig initDataConfig;
 
     @Override
     public void run(String... args) {
@@ -24,46 +26,22 @@ public class InitialDataPopulate implements CommandLineRunner {
     }
 
     private void createDummyData() {
-        Role adminRole = new Role();
-        adminRole.setName("ADMIN");
-        adminRole = roleService.createRole(adminRole);
+        initDataConfig.getRoles().forEach(r -> {
+            Role role = new Role();
+            role.setName(r.getName());
+            roleService.createRole(role);
+        });
 
-        Role userRole = new Role();
-        userRole.setName("USER");
-        userRole = roleService.createRole(userRole);
-
-        Role modRole = new Role();
-        modRole.setName("MODERATOR");
-        modRole = roleService.createRole(modRole);
-
-        Role serviceRole = new Role();
-        serviceRole.setName("SERVICE");
-        serviceRole = roleService.createRole(serviceRole);
-
-        User admin = new User();
-        admin.setName("admin");
-        admin.setUsername("admin");
-        admin.setPassword("pass");
-        admin.setEnabled(true);
-        admin.setRoles(Set.of(adminRole, modRole));
-        userService.createUser(admin);
-
-        User user = new User();
-        user.setName("user");
-        user.setUsername("user");
-        user.setPassword("pass");
-        user.setEnabled(true);
-        user.setRoles(Set.of(userRole));
-        userService.createUser(user);
-
-        // Create Service Users
-
-        User projectMicro = new User();
-        projectMicro.setName("project-micro");
-        projectMicro.setUsername("project-micro");
-        projectMicro.setPassword("pass");
-        projectMicro.setEnabled(true);
-        projectMicro.setRoles(Set.of(serviceRole));
-        userService.createUser(projectMicro);
+        initDataConfig.getUsers().forEach(u -> {
+            User user = new User();
+            user.setUsername(u.getUsername());
+            user.setPassword(u.getPassword());
+            user.setEnabled(true);
+            Set<Role> userRoles = u.getRoles().stream()
+                    .map(roleService::findByName)
+                    .collect(Collectors.toSet());
+            user.setRoles(userRoles);
+            userService.createUser(user);
+        });
     }
 }

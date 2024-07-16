@@ -1,4 +1,4 @@
-package org.gucardev.projectmicro.dto;
+package org.gucardev.analyticsmicro.security.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

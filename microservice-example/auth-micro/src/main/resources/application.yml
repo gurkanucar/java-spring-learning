@@ -29,6 +29,35 @@ logging:
     org.springframework.web: trace
     org.springframework.web.servlet.DispatcherServlet: TRACE
 
+app:
+  init-data:
+    roles:
+      - name: ADMIN
+      - name: USER
+      - name: SERVICE
+    users:
+      - username: admin
+        password: pass
+        roles:
+          - ADMIN
+      - username: user
+        password: pass
+        roles:
+          - USER
+      - username: project-micro
+        password: ${PROJECT_MICRO_PASS:pass}
+        roles:
+          - SERVICE
+      - username: task-micro
+        password: ${TASK_MICRO_PASS:pass}
+        roles:
+          - SERVICE
+      - username: analytics-micro
+        password: ${ANALYTICS_MICRO_PASS:pass}
+        roles:
+          - SERVICE
+
+
 jwt-variables:
   secret-key: 674c6b706f2fdc13c2b98a6b7f32be947ba4c2a5acf23776295cc1a077a3674e
-  expiration-time: 3600000 #3600000
+  expiration-time: 3600000

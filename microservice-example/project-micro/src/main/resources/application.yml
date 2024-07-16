@@ -8,6 +8,12 @@ spring:
   main:
     allow-bean-definition-overriding: true
 
+
+app:
+  service-token:
+    username: project-micro
+    password: ${PROJECT_MICRO_PASS:pass}
+
 server:
   port: 0
 

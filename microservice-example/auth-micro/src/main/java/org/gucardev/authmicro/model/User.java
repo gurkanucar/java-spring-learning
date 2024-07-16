@@ -13,22 +13,21 @@ import java.util.Set;
 @Setter
 public class User extends BaseEntity {
 
-  @Column(nullable = false)
-  private String name;
+    private String name;
 
-  @Column(nullable = false)
-  private String username;
+    @Column(nullable = false)
+    private String username;
 
-  @Column(nullable = false)
-  private String password;
+    @Column(nullable = false)
+    private String password;
 
-  private boolean isEnabled;
+    private boolean isEnabled;
 
-  @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
-  @JoinTable(
-          name = "user_role",
-          joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
-          inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
-  private Set<Role> roles;
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @JoinTable(
+            name = "user_role",
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
+    private Set<Role> roles;
 
 }
