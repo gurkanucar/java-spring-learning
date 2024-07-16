@@ -8,12 +8,15 @@ spring:
           uri: lb://auth-micro
           predicates:
             - Path=/auth-micro/**
+          filters:
+            - StripPrefix=1
 
         - id: project-micro-route
           uri: lb://project-micro
           predicates:
             - Path=/project-micro/**
           filters:
+            - StripPrefix=1
             - AuthenticationFilter
 
         - id: task-micro-route
@@ -21,6 +24,7 @@ spring:
           predicates:
             - Path=/task-micro/**
           filters:
+            - StripPrefix=1
             - AuthenticationFilter
 
         - id: analytics-micro-route
@@ -28,14 +32,11 @@ spring:
           predicates:
             - Path=/analytics-micro/**
           filters:
+            - StripPrefix=1
             - AuthenticationFilter
-
-
 
 server:
   port: 8084
-  servlet:
-    context-path: /api-gateway
 
 eureka:
   client:

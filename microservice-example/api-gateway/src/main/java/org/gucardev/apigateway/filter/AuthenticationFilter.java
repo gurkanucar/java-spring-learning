@@ -52,7 +52,7 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Object> {
                                         uriBuilder
                                                 .scheme("lb")
                                                 .host("auth-micro")
-                                                .path("auth-micro/auth/validate")
+                                                .path("/auth/validate")
                                                 .queryParam("token", token)
                                                 .build())
                         .retrieve()
