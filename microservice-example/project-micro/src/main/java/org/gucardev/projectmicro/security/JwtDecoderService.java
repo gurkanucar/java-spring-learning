@@ -1,4 +1,4 @@
-package org.gucardev.projectmicro.service;
+package org.gucardev.projectmicro.security;
 
 
 import io.jsonwebtoken.Claims;

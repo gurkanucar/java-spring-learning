@@ -1,4 +1,4 @@
-package org.gucardev.projectmicro.security;
+package org.gucardev.taskmicro.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.JwtException;
