@@ -37,4 +37,12 @@ public class UserService {
         return repository.save(user);
     }
 
+    public User validateAndReturnService(String username, String password) {
+        var service = getByUsername(username);
+        if (!passwordEncoder.matches(password, service.getPassword())) {
+            throw new RuntimeException("Invalid password");
+        }
+        return service;
+    }
+
 }

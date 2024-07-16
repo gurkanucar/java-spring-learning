@@ -4,7 +4,10 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import org.gucardev.authmicro.model.User;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Service;
 
 import java.security.Key;
@@ -20,12 +23,14 @@ public class JwtEncoderService {
     @Value("${jwt-variables.expiration-time}")
     private long jwtExpiration;
 
-
-    public String generateToken(String username) {
-        return generateToken(new HashMap<>(), username);
+    public String generateToken(Authentication authentication) {
+        Map<String, Object> claims = new HashMap<>();
+        claims.put("isService", false);
+        claims.put("roles", authentication.getAuthorities().stream().map(GrantedAuthority::getAuthority).toArray());
+        return generateToken(claims, authentication.getName());
     }
 
-    public String generateToken(Map<String, Object> extraClaims, String username) {
+    private String generateToken(Map<String, Object> extraClaims, String username) {
         return buildToken(extraClaims, username, jwtExpiration);
     }
 
@@ -47,5 +52,12 @@ public class JwtEncoderService {
     private Key getSignInKey() {
         byte[] keyBytes = Decoders.BASE64.decode(secretKey);
         return Keys.hmacShaKeyFor(keyBytes);
+    }
+
+    public String generateServiceToken(User service) {
+        Map<String, Object> claims = new HashMap<>();
+        claims.put("isService", true);
+        claims.put("roles", service.getRoles().stream().map(GrantedAuthority::getAuthority).toArray());
+        return generateToken(claims, service.getUsername());
     }
 }

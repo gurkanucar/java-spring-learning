@@ -21,6 +21,12 @@ public class AuthController {
         return ResponseEntity.ok().body(authService.login(loginRequest));
     }
 
+
+    @PostMapping("/generate-service-token")
+    public ResponseEntity<TokenDto> generateServiceToken(@Valid @RequestBody LoginRequest loginRequest) {
+        return ResponseEntity.ok().body(authService.generateServiceToken(loginRequest));
+    }
+
     @GetMapping("/validate")
     public ResponseEntity<AuthResponse> validate(@RequestParam String token) {
         return ResponseEntity.ok().body(authService.validate(token));

@@ -36,6 +36,10 @@ public class InitialDataPopulate implements CommandLineRunner {
         modRole.setName("MODERATOR");
         modRole = roleService.createRole(modRole);
 
+        Role serviceRole = new Role();
+        serviceRole.setName("SERVICE");
+        serviceRole = roleService.createRole(serviceRole);
+
         User admin = new User();
         admin.setName("admin");
         admin.setUsername("admin");
@@ -52,19 +56,14 @@ public class InitialDataPopulate implements CommandLineRunner {
         user.setRoles(Set.of(userRole));
         userService.createUser(user);
 
-        User user2 = new User();
-        user2.setName("user2");
-        user2.setUsername("user2");
-        user2.setPassword("pass");
-        user2.setRoles(Set.of(userRole));
-        userService.createUser(user2);
+        // Create Service Users
 
-        User mod = new User();
-        mod.setName("mod");
-        mod.setUsername("mod");
-        mod.setPassword("pass");
-        mod.setEnabled(true);
-        mod.setRoles(Set.of(modRole));
-        userService.createUser(mod);
+        User projectMicro = new User();
+        projectMicro.setName("project-micro");
+        projectMicro.setUsername("project-micro");
+        projectMicro.setPassword("pass");
+        projectMicro.setEnabled(true);
+        projectMicro.setRoles(Set.of(serviceRole));
+        userService.createUser(projectMicro);
     }
 }

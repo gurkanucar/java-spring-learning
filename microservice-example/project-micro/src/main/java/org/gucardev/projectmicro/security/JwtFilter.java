@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.gucardev.projectmicro.service.JwtDecoderService;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
@@ -46,7 +47,9 @@ public class JwtFilter extends OncePerRequestFilter {
             if (jwtDecoderService.isTokenExpired(token) || !jwtDecoderService.isTokenValid(token, username)) {
                 throw new JwtException("Invalid JWT");
             }
-            authenticateUser(token, username, request);
+            List<String> roles = jwtDecoderService.extractRoles(token);
+
+            authenticateUser(username, roles, request);
         } catch (JwtException e) {
             sendError(response, e);
             return;
@@ -55,15 +58,13 @@ public class JwtFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 
-    private void authenticateUser(String token, String username, HttpServletRequest request) {
+    private void authenticateUser(String username, List<String> roles, HttpServletRequest request) {
         UserDetails userDetails = new UserDetails() {
             @Override
             public Collection<? extends GrantedAuthority> getAuthorities() {
-                // TODO: Extract authorities from the JWT
-                return List.of();
+                return roles.stream().map(SimpleGrantedAuthority::new).toList();
             }
 
-            @Override
             public String getPassword() {
                 return "";
             }

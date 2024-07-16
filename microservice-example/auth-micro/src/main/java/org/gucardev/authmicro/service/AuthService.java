@@ -17,13 +17,14 @@ public class AuthService {
     private final JwtEncoderService tokenService;
     private final JwtDecoderService jwtDecoderService;
     private final AuthenticationManager authenticationManager;
+    private final UserService userService;
 
     public TokenDto login(LoginRequest loginRequest) {
         try {
-            authenticationManager.authenticate(
+            var authObj = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
                             loginRequest.getUsername(), loginRequest.getPassword()));
-            return new TokenDto(tokenService.generateToken(loginRequest.getUsername()));
+            return new TokenDto(tokenService.generateToken(authObj));
         } catch (Exception e) {
             throw new RuntimeException();
         }
@@ -34,5 +35,14 @@ public class AuthService {
             throw new RuntimeException("Token is invalid");
         }
         return new AuthResponse(jwtDecoderService.extractUsername(token), token);
+    }
+
+    public TokenDto generateServiceToken(LoginRequest loginRequest) {
+        try {
+            var service = userService.validateAndReturnService(loginRequest.getUsername(), loginRequest.getPassword());
+            return new TokenDto(tokenService.generateServiceToken(service));
+        } catch (Exception e) {
+            throw new RuntimeException();
+        }
     }
 }
