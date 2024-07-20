@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/api/lookupCategories")
+@RequestMapping("/api/lookup-category")
 public class LookupCategoryController {
 
     private final LookupCategoryService lookupCategoryService;

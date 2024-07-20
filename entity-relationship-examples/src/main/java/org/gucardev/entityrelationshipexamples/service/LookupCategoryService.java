@@ -43,17 +43,16 @@ public class LookupCategoryService {
         return lookupCategoryMapper.toDto(lookupCategoryRepository.save(category));
     }
 
-    public LookupCategoryDTO updateCategory(Long id, LookupCategoryDTO updatedCategoryDTO) {
-        Optional<LookupCategory> optionalCategory = lookupCategoryRepository.findById(id);
-
-        if (optionalCategory.isPresent()) {
-            LookupCategory existingCategory = optionalCategory.get();
-            existingCategory.setName(updatedCategoryDTO.getName());
-            // Do not update nested lookupValues here
-            return lookupCategoryMapper.toDto(lookupCategoryRepository.save(existingCategory));
-        } else {
+    public LookupCategoryDTO updateCategory(Long id, LookupCategoryDTO updateRequest) {
+        Optional<LookupCategory> optionalValue = lookupCategoryRepository.findById(id);
+        if (optionalValue.isEmpty()) {
             throw new EntityNotFoundException("LookupCategory not found with id " + id);
         }
+        LookupCategory existing = optionalValue.get();
+        // Update lookupValue fields
+        lookupCategoryMapper.updateLookupValueFromDto(updateRequest, existing);
+
+        return lookupCategoryMapper.toDto(lookupCategoryRepository.save(existing));
     }
 
     @Transactional

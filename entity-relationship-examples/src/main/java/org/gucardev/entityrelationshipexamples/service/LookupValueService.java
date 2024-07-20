@@ -39,22 +39,22 @@ public class LookupValueService {
         return lookupValueMapper.toDto(lookupValueRepository.save(value));
     }
 
-    public LookupValueDTO updateValue(Long id, LookupValueDTO updatedValueDTO) {
+    public LookupValueDTO updateValue(Long id, LookupValueDTO updateRequest) {
         Optional<LookupValue> optionalValue = lookupValueRepository.findById(id);
 
         if (optionalValue.isEmpty()) {
             throw new EntityNotFoundException("LookupValue not found with id " + id);
         }
-        LookupValue existingValue = optionalValue.get();
+        LookupValue existing = optionalValue.get();
         // Update lookupValue fields
-        lookupValueMapper.updateLookupValueFromDto(updatedValueDTO, existingValue);
+        lookupValueMapper.updateLookupValueFromDto(updateRequest, existing);
 
         // Update category if categoryId is provided
-        if (updatedValueDTO.getCategoryId() != null) {
-            existingValue.setCategory(lookupCategoryService.getCategoryById(updatedValueDTO.getCategoryId()));
+        if (updateRequest.getCategoryId() != null) {
+            existing.setCategory(lookupCategoryService.getCategoryById(updateRequest.getCategoryId()));
         }
 
-        return lookupValueMapper.toDto(lookupValueRepository.save(existingValue));
+        return lookupValueMapper.toDto(lookupValueRepository.save(existing));
     }
 
     @Transactional
