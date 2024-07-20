@@ -18,27 +18,32 @@ import java.util.stream.Collectors;
 public class UserService {
 
     private final UserRepository userRepository;
-    //    private final CityService cityService;
     private final LookupValueService lookupValueService;
     private final UserMapper userMapper = UserMapper.INSTANCE;
 
-    public List<UserDTO> getAllUsers() {
+    public List<UserDTO> getAll() {
         return userRepository.findAll().stream()
                 .map(userMapper::userToUserDTO)
                 .collect(Collectors.toList());
     }
 
-    public Optional<UserDTO> getUserById(Long id) {
+    public User getById(Long id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("User with id " + id + " not found"));
+    }
+
+
+    public Optional<UserDTO> getDtoById(Long id) {
         return userRepository.findById(id)
                 .map(userMapper::userToUserDTO);
     }
 
-    public UserDTO createUser(UserDTO userDTO) {
+    public UserDTO create(UserDTO userDTO) {
         User user = userMapper.userDTOToUser(userDTO);
         return userMapper.userToUserDTO(userRepository.save(user));
     }
 
-    public UserDTO updateUser(Long id, UserDTO updatedUserDTO) {
+    public UserDTO update(Long id, UserDTO updatedUserDTO) {
         Optional<User> optionalUser = userRepository.findById(id);
 
         if (optionalUser.isEmpty()) {
@@ -52,13 +57,13 @@ public class UserService {
 
         // set related fields
         if (updatedUserDTO.getOccupationId() != null) {
-            existingUser.setOccupation(lookupValueService.getValueById(updatedUserDTO.getOccupationId()));
+            existingUser.setOccupation(lookupValueService.getById(updatedUserDTO.getOccupationId()));
         } else {
             existingUser.setOccupation(null);
         }
 
         if (updatedUserDTO.getStatusId() != null) {
-            existingUser.setStatus(lookupValueService.getValueById(updatedUserDTO.getStatusId()));
+            existingUser.setStatus(lookupValueService.getById(updatedUserDTO.getStatusId()));
         } else {
             existingUser.setStatus(null);
         }
@@ -68,7 +73,7 @@ public class UserService {
     }
 
     @Transactional
-    public void deleteUser(Long id) {
+    public void delete(Long id) {
         userRepository.deleteById(id);
     }
 

@@ -1,6 +1,5 @@
 package org.gucardev.entityrelationshipexamples.controller;
 
-import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.gucardev.entityrelationshipexamples.dto.LookupCategoryDTO;
 import org.gucardev.entityrelationshipexamples.service.LookupCategoryService;
@@ -8,7 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RequiredArgsConstructor
 @RestController
@@ -19,32 +17,29 @@ public class LookupCategoryController {
 
     @GetMapping
     public List<LookupCategoryDTO> getAllCategories() {
-        return lookupCategoryService.getAllCategories();
+        return lookupCategoryService.getAll();
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<LookupCategoryDTO> getCategoryById(@PathVariable Long id) {
-        Optional<LookupCategoryDTO> categoryDTO = lookupCategoryService.getCategoryDtoById(id);
-        if (categoryDTO.isPresent()) {
-            return ResponseEntity.ok(categoryDTO.get());
-        } else {
-            throw new EntityNotFoundException("LookupCategory not found with id " + id);
-        }
+        return lookupCategoryService.getDtoById(id)
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @PostMapping
     public LookupCategoryDTO createCategory(@RequestBody LookupCategoryDTO categoryDTO) {
-        return lookupCategoryService.createCategory(categoryDTO);
+        return lookupCategoryService.create(categoryDTO);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<LookupCategoryDTO> updateCategory(@PathVariable Long id, @RequestBody LookupCategoryDTO updatedCategoryDTO) {
-        return ResponseEntity.ok(lookupCategoryService.updateCategory(id, updatedCategoryDTO));
+        return ResponseEntity.ok(lookupCategoryService.update(id, updatedCategoryDTO));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteCategory(@PathVariable Long id) {
-        lookupCategoryService.deleteCategory(id);
+        lookupCategoryService.delete(id);
         return ResponseEntity.noContent().build();
     }
 }

@@ -23,28 +23,28 @@ public class LookupValueService {
 
     private final LookupValueMapper lookupValueMapper = LookupValueMapper.INSTANCE;
 
-    public List<LookupValueDTO> getAllValues() {
+    public List<LookupValueDTO> getAll() {
         return lookupValueRepository.findAll().stream()
                 .map(lookupValueMapper::toDto)
                 .collect(Collectors.toList());
     }
 
-    public LookupValue getValueById(Long id) {
+    public LookupValue getById(Long id) {
         return lookupValueRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Value with id " + id + " not found"));
     }
 
-    public Optional<LookupValueDTO> getValueDtoById(Long id) {
+    public Optional<LookupValueDTO> getDtoById(Long id) {
         return lookupValueRepository.findById(id)
                 .map(lookupValueMapper::toDto);
     }
 
-    public LookupValueDTO createValue(LookupValueDTO valueDTO) {
+    public LookupValueDTO create(LookupValueDTO valueDTO) {
         LookupValue value = lookupValueMapper.toEntity(valueDTO);
         return lookupValueMapper.toDto(lookupValueRepository.save(value));
     }
 
-    public LookupValueDTO updateValue(Long id, LookupValueDTO updateRequest) {
+    public LookupValueDTO update(Long id, LookupValueDTO updateRequest) {
         Optional<LookupValue> optionalValue = lookupValueRepository.findById(id);
 
         if (optionalValue.isEmpty()) {
@@ -56,14 +56,14 @@ public class LookupValueService {
 
         // Update category if categoryId is provided
         if (updateRequest.getCategoryId() != null) {
-            existing.setCategory(lookupCategoryService.getCategoryById(updateRequest.getCategoryId()));
+            existing.setCategory(lookupCategoryService.getById(updateRequest.getCategoryId()));
         }
 
         return lookupValueMapper.toDto(lookupValueRepository.save(existing));
     }
 
     @Transactional
-    public void deleteValue(Long id) {
+    public void delete(Long id) {
         lookupValueRepository.deleteById(id);
     }
 

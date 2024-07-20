@@ -1,6 +1,5 @@
 package org.gucardev.entityrelationshipexamples.controller;
 
-import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.gucardev.entityrelationshipexamples.dto.LookupValueDTO;
 import org.gucardev.entityrelationshipexamples.service.LookupValueService;
@@ -8,7 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RequiredArgsConstructor
 @RestController
@@ -19,32 +17,29 @@ public class LookupValueController {
 
     @GetMapping
     public List<LookupValueDTO> getAllValues() {
-        return lookupValueService.getAllValues();
+        return lookupValueService.getAll();
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<LookupValueDTO> getValueById(@PathVariable Long id) {
-        Optional<LookupValueDTO> valueDTO = lookupValueService.getValueDtoById(id);
-        if (valueDTO.isPresent()) {
-            return ResponseEntity.ok(valueDTO.get());
-        } else {
-            throw new EntityNotFoundException("LookupValue not found with id " + id);
-        }
+        return lookupValueService.getDtoById(id)
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @PostMapping
     public LookupValueDTO createValue(@RequestBody LookupValueDTO valueDTO) {
-        return lookupValueService.createValue(valueDTO);
+        return lookupValueService.create(valueDTO);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<LookupValueDTO> updateValue(@PathVariable Long id, @RequestBody LookupValueDTO updatedValueDTO) {
-        return ResponseEntity.ok(lookupValueService.updateValue(id, updatedValueDTO));
+        return ResponseEntity.ok(lookupValueService.update(id, updatedValueDTO));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteValue(@PathVariable Long id) {
-        lookupValueService.deleteValue(id);
+        lookupValueService.delete(id);
         return ResponseEntity.noContent().build();
     }
 
