@@ -58,9 +58,9 @@ public class CountryService {
     }
 
     @Transactional
-    public CountryDTO createCountryWithCities(CountryDTO countryDTO) {
-        Country country = mapper.toEntityWithCities(countryDTO);
-        mapper.linkCities(country);
-        return mapper.toDto(repository.save(country));
+    public CountryDTO createCountryWithCities(CountryDTO dto) {
+        Country entity = mapper.toEntity(dto);
+        mapper.linkCities(entity);
+        return mapper.toDto(repository.save(entity));
     }
 }

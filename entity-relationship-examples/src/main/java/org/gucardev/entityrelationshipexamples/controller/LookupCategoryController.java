@@ -32,6 +32,14 @@ public class LookupCategoryController {
         return lookupCategoryService.create(categoryDTO);
     }
 
+
+    @PostMapping("/with-values")
+    public ResponseEntity<LookupCategoryDTO> createCountryWithCities(@RequestBody LookupCategoryDTO categoryDTO) {
+        LookupCategoryDTO newCategory = lookupCategoryService.createLookupCategoryWithValues(categoryDTO);
+        return ResponseEntity.ok(newCategory);
+    }
+
+
     @PutMapping("/{id}")
     public ResponseEntity<LookupCategoryDTO> updateCategory(@PathVariable Long id, @RequestBody LookupCategoryDTO updatedCategoryDTO) {
         return ResponseEntity.ok(lookupCategoryService.update(id, updatedCategoryDTO));

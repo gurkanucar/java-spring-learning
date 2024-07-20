@@ -9,10 +9,10 @@ import org.mapstruct.factory.Mappers;
 public interface CityMapper {
     CityMapper INSTANCE = Mappers.getMapper(CityMapper.class);
 
-    CityDTO toDto(City lookupValue);
+    CityDTO toDto(City entity);
 
     @Mapping(source = "countryId", target = "country.id")
-    City toEntity(CityDTO lookupValueDTO);
+    City toEntity(CityDTO dto);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     @Mapping(target = "country", ignore = true)

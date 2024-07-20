@@ -9,10 +9,10 @@ import org.mapstruct.factory.Mappers;
 public interface LookupValueMapper {
     LookupValueMapper INSTANCE = Mappers.getMapper(LookupValueMapper.class);
 
-    LookupValueDTO toDto(LookupValue lookupValue);
+    LookupValueDTO toDto(LookupValue entity);
 
     @Mapping(source = "categoryId", target = "category.id")
-    LookupValue toEntity(LookupValueDTO lookupValueDTO);
+    LookupValue toEntity(LookupValueDTO dto);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     @Mapping(target = "category", ignore = true)

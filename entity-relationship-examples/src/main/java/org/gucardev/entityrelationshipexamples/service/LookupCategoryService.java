@@ -58,4 +58,11 @@ public class LookupCategoryService {
     public void delete(Long id) {
         repository.deleteById(id);
     }
+
+    @Transactional
+    public LookupCategoryDTO createLookupCategoryWithValues(LookupCategoryDTO dto) {
+        LookupCategory entity = mapper.toEntity(dto);
+        mapper.linkLookupValues(entity);
+        return mapper.toDto(repository.save(entity));
+    }
 }

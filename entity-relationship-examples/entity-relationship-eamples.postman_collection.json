@@ -35,7 +35,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/lookup-value/by-category/1",
+							"raw": "http://localhost:8080/api/lookup-value/by-category/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -45,7 +45,7 @@
 								"api",
 								"lookup-value",
 								"by-category",
-								"1"
+								"3"
 							]
 						}
 					},
@@ -277,6 +277,36 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "create-lookup-category-with-values",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"category_with_values\",\r\n    \"lookupValues\": [\r\n        {\r\n            \"lookupValue\": \"lookup1\"\r\n        },\r\n        {\r\n            \"lookupValue\": \"lookup2\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/lookup-category/with-values",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"lookup-category",
+								"with-values"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -474,6 +504,36 @@
 							"path": [
 								"api",
 								"country"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-country-with-cities",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"TURKEY\",\r\n    \"cities\": [\r\n        {\r\n            \"name\": \"city1\"\r\n        },\r\n        {\r\n            \"name\": \"city2\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/country/with-cities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"country",
+								"with-cities"
 							]
 						}
 					},

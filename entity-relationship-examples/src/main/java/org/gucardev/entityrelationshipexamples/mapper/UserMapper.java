@@ -11,11 +11,11 @@ public interface UserMapper {
 
     @Mapping(target = "occupation.category", ignore = true)
     @Mapping(target = "status.category", ignore = true)
-    UserDTO toDto(User user);
+    UserDTO toDto(User entity);
 
     @Mapping(source = "occupationId", target = "occupation.id")
     @Mapping(source = "statusId", target = "status.id")
-    User toEntity(UserDTO userDTO);
+    User toEntity(UserDTO dto);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     @Mapping(target = "status", ignore = true)

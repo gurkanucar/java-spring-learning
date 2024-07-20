@@ -12,18 +12,16 @@ import org.mapstruct.factory.Mappers;
 public interface CountryMapper {
     CountryMapper INSTANCE = Mappers.getMapper(CountryMapper.class);
 
-    CountryDTO toDto(Country lookupValue);
+    CountryDTO toDto(Country entity);
 
-    Country toEntity(CountryDTO lookupValueDTO);
+    Country toEntity(CountryDTO dto);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     void updateFromDto(CountryDTO dto, @MappingTarget Country entity);
 
-    Country toEntityWithCities(CountryDTO countryDTO);
-
-    default void linkCities(Country country) {
-        if (country.getCities() != null) {
-            country.getCities().forEach(x -> x.setCountry(country));
+    default void linkCities(Country entity) {
+        if (entity.getCities() != null) {
+            entity.getCities().forEach(x -> x.setCountry(entity));
         }
     }
 }
