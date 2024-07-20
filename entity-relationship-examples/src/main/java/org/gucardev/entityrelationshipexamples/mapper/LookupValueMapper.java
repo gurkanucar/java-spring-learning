@@ -1,8 +1,6 @@
 package org.gucardev.entityrelationshipexamples.mapper;
 
-import org.gucardev.entityrelationshipexamples.dto.LookupCategoryDTO;
 import org.gucardev.entityrelationshipexamples.dto.LookupValueDTO;
-import org.gucardev.entityrelationshipexamples.model.LookupCategory;
 import org.gucardev.entityrelationshipexamples.model.LookupValue;
 import org.mapstruct.*;
 import org.mapstruct.factory.Mappers;

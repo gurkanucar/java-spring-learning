@@ -79,7 +79,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"categoryId\": 1,\r\n    \"lookupValue\": \"NEW_VALUE\",\r\n    \"displayValue\": \"new value\",\r\n    \"translations\": {\r\n        \"TR\": \"yeni değer\",\r\n        \"IT\": \"new value\"\r\n    }\r\n}",
+							"raw": "{\r\n    \"categoryId\": 1,\r\n    \"key\": \"NEW_VALUE\",\r\n    \"displayValue\": \"new value\",\r\n    \"translations\": {\r\n        \"TR\": \"yeni değer\",\r\n        \"IT\": \"new value\"\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -108,7 +108,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"categoryId\": 2,\r\n    \"lookupValue\": \"UPDATED_NEW_VALUE\",\r\n    \"displayValue\": \"updated new value\",\r\n    \"translations\": {\r\n        \"TR\": \"yeni değer\",\r\n        \"IT\": \"new value\"\r\n    }\r\n}",
+							"raw": "{\r\n    \"categoryId\": 2,\r\n    \"key\": \"UPDATED_NEW_VALUE\",\r\n    \"displayValue\": \"updated new value\",\r\n    \"translations\": {\r\n        \"TR\": \"yeni değer\",\r\n        \"IT\": \"new value\"\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -205,7 +205,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"NEW_CATEGORY\",\r\n    \"displayValue\": \"new category\",\r\n    \"translations\": {\r\n        \"TR\": \"yeni kategori\"\r\n    }\r\n}",
+							"raw": "{\r\n    \"key\": \"NEW_CATEGORY\",\r\n    \"displayValue\": \"new category\",\r\n    \"translations\": {\r\n        \"TR\": \"yeni kategori\"\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -234,7 +234,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"UPDATED_NEW_CATEGORY\",\r\n    \"displayValue\": \"updated new category\",\r\n    \"translations\": {\r\n        \"TR\": \"yeni kategori\",\r\n        \"IT\": \"categoria\"\r\n    }\r\n}",
+							"raw": "{\r\n    \"key\": \"UPDATED_NEW_CATEGORY\",\r\n    \"displayValue\": \"updated new category\",\r\n    \"translations\": {\r\n        \"TR\": \"yeni kategori\",\r\n        \"IT\": \"categoria\"\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -285,7 +285,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"category_with_values\",\r\n    \"lookupValues\": [\r\n        {\r\n            \"lookupValue\": \"lookup1\"\r\n        },\r\n        {\r\n            \"lookupValue\": \"lookup2\"\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"key\": \"category_with_values\",\r\n    \"lookupValues\": [\r\n        {\r\n            \"key\": \"lookup1\"\r\n        },\r\n        {\r\n            \"key\": \"lookup2\"\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

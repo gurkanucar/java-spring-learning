@@ -10,5 +10,5 @@ import java.util.List;
 public interface LookupValueRepository extends JpaRepository<LookupValue, Long> {
     List<LookupValue> findByCategoryId(Long categoryId);
 
-    LookupValue findByLookupValue(String engineer);
+    LookupValue findByKey(String engineer);
 }

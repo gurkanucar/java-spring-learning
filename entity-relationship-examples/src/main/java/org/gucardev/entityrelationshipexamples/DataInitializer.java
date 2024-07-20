@@ -49,11 +49,11 @@ public class DataInitializer implements CommandLineRunner {
     }
 
     private void createUsers() {
-        LookupValue engineer = valueRepository.findByLookupValue("Engineer");
-        LookupValue doctor = valueRepository.findByLookupValue("Doctor");
-        LookupValue teacher = valueRepository.findByLookupValue("Teacher");
-        LookupValue artist = valueRepository.findByLookupValue("Artist");
-        LookupValue active = valueRepository.findByLookupValue("Active");
+        LookupValue engineer = valueRepository.findByKey("Engineer");
+        LookupValue doctor = valueRepository.findByKey("Doctor");
+        LookupValue teacher = valueRepository.findByKey("Teacher");
+        LookupValue artist = valueRepository.findByKey("Artist");
+        LookupValue active = valueRepository.findByKey("Active");
 
         createUser("Ali Doe", "johndoe@example.com", engineer, active);
         createUser("Metin Smith", "janesmith@example.com", doctor, active);
@@ -65,7 +65,7 @@ public class DataInitializer implements CommandLineRunner {
 
     private LookupCategory createCategory(String name, String displayValue, String displayValueTr, String displayValueEs) {
         LookupCategory category = new LookupCategory();
-        category.setName(name);
+        category.setKey(name);
         category.setDisplayValue(displayValue);
         category.setTranslations(Map.of("tr", displayValueTr, "es", displayValueEs));
         return categoryRepository.save(category);
@@ -73,7 +73,7 @@ public class DataInitializer implements CommandLineRunner {
 
     private void createLookupValue(LookupCategory category, String value, String valueTr, String valueEs) {
         LookupValue lookupValue = new LookupValue();
-        lookupValue.setLookupValue(value);
+        lookupValue.setKey(value);
         lookupValue.setCategory(category);
         lookupValue.setDisplayValue(value);
         lookupValue.setTranslations(Map.of("tr", valueTr, "es", valueEs));

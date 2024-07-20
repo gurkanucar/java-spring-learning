@@ -15,7 +15,7 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 @JsonInclude(NON_NULL)
 public class LookupValueDTO extends BaseEntityDTO {
     private Long id;
-    private String lookupValue;
+    private String key;
     private LookupCategoryDTO category;
     private Long categoryId;
     private String displayValue;
@@ -25,7 +25,7 @@ public class LookupValueDTO extends BaseEntityDTO {
     @Setter
     public static class LookupCategoryDTO {
         private Long id;
-        private String name;
+        private String key;
         private String displayValue;
         private Map<String, String> translations;
     }
