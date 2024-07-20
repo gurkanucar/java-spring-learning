@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="aws-s3-file-service" />
         <module name="java-learning" />
         <module name="entity-relationship-examples" />
         <module name="pure-websocket" />
@@ -44,6 +45,7 @@
       <module name="analytics-micro" options="-parameters" />
       <module name="api-gateway" options="-parameters" />
       <module name="auth-micro" options="-parameters" />
+      <module name="aws-s3-file-service" options="-parameters" />
       <module name="dto-field-masker" options="-parameters" />
       <module name="entity-auditing" options="-parameters" />
       <module name="entity-encryption" options="-parameters" />
