@@ -15,7 +15,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/lookup-value",
+							"raw": "http://localhost:8080/api/lookup-value?searchTerm=er&sortDirection=desc",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -24,6 +24,16 @@
 							"path": [
 								"api",
 								"lookup-value"
+							],
+							"query": [
+								{
+									"key": "searchTerm",
+									"value": "er"
+								},
+								{
+									"key": "sortDirection",
+									"value": "desc"
+								}
 							]
 						}
 					},

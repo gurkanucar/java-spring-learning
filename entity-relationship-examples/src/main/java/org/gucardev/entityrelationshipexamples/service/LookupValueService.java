@@ -6,6 +6,12 @@ import org.gucardev.entityrelationshipexamples.dto.LookupValueDTO;
 import org.gucardev.entityrelationshipexamples.mapper.LookupValueMapper;
 import org.gucardev.entityrelationshipexamples.model.LookupValue;
 import org.gucardev.entityrelationshipexamples.repository.LookupValueRepository;
+import org.gucardev.entityrelationshipexamples.specification.LookupValueSpecification;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,10 +29,9 @@ public class LookupValueService {
 
     private final LookupValueMapper mapper = LookupValueMapper.INSTANCE;
 
-    public List<LookupValueDTO> getAll() {
-        return repository.findAll().stream()
-                .map(mapper::toDto)
-                .collect(Collectors.toList());
+    public Page<LookupValueDTO> getAll(String searchTerm, Pageable pageable) {
+        Specification<LookupValue> spec = Specification.where(LookupValueSpecification.searchBy(searchTerm));
+        return repository.findAll(spec, pageable).map(mapper::toDto);
     }
 
     public LookupValue getById(Long id) {

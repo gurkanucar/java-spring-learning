@@ -63,19 +63,19 @@ public class DataInitializer implements CommandLineRunner {
         createUser("Şerif Smith", "janesmith@example.com", engineer, active);
     }
 
-    private LookupCategory createCategory(String name, String displayValue, String displayValueTr, String displayValueEs) {
+    private LookupCategory createCategory(String key, String displayValue, String displayValueTr, String displayValueEs) {
         LookupCategory category = new LookupCategory();
-        category.setKey(name);
+        category.setKey(key);
         category.setDisplayValue(displayValue);
         category.setTranslations(Map.of("tr", displayValueTr, "es", displayValueEs));
         return categoryRepository.save(category);
     }
 
-    private void createLookupValue(LookupCategory category, String value, String valueTr, String valueEs) {
+    private void createLookupValue(LookupCategory category, String key, String valueTr, String valueEs) {
         LookupValue lookupValue = new LookupValue();
-        lookupValue.setKey(value);
+        lookupValue.setKey(key);
         lookupValue.setCategory(category);
-        lookupValue.setDisplayValue(value);
+        lookupValue.setDisplayValue(key);
         lookupValue.setTranslations(Map.of("tr", valueTr, "es", valueEs));
         valueRepository.save(lookupValue);
     }
