@@ -19,6 +19,9 @@ public class LookupValueService {
     @Autowired
     private LookupValueRepository lookupValueRepository;
 
+    @Autowired
+    private LookupCategoryService lookupCategoryService;
+
     private final LookupValueMapper lookupValueMapper = LookupValueMapper.INSTANCE;
 
     public List<LookupValueDTO> getAllValues() {
@@ -40,14 +43,19 @@ public class LookupValueService {
     public LookupValueDTO updateValue(Long id, LookupValueDTO updatedValueDTO) {
         Optional<LookupValue> optionalValue = lookupValueRepository.findById(id);
 
-        if (optionalValue.isPresent()) {
-            LookupValue existingValue = optionalValue.get();
-            existingValue.setLookupValue(updatedValueDTO.getLookupValue());
-            // Do not update nested category here
-            return lookupValueMapper.toDto(lookupValueRepository.save(existingValue));
-        } else {
+        if (optionalValue.isEmpty()) {
             throw new EntityNotFoundException("LookupValue not found with id " + id);
         }
+        LookupValue existingValue = optionalValue.get();
+        // Update lookupValue fields
+        lookupValueMapper.updateLookupValueFromDto(updatedValueDTO, existingValue);
+
+        // Update category if categoryId is provided
+        if (updatedValueDTO.getCategoryId() != null) {
+            existingValue.setCategory(lookupCategoryService.getCategoryById(updatedValueDTO.getCategoryId()));
+        }
+
+        return lookupValueMapper.toDto(lookupValueRepository.save(existingValue));
     }
 
     @Transactional

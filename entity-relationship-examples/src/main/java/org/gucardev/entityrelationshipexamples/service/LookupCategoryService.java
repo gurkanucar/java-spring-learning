@@ -26,7 +26,14 @@ public class LookupCategoryService {
                 .map(lookupCategoryMapper::toDto)
                 .collect(Collectors.toList());
     }
-    public Optional<LookupCategoryDTO> getCategoryById(Long id) {
+
+    public LookupCategory getCategoryById(Long id) {
+        return lookupCategoryRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Could not find category with id: " + id));
+    }
+
+
+    public Optional<LookupCategoryDTO> getCategoryDtoById(Long id) {
         return lookupCategoryRepository.findById(id)
                 .map(lookupCategoryMapper::toDto);
     }

@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/lookupValues")
+@RequestMapping("/api/lookup-value")
 public class LookupValueController {
 
     @Autowired

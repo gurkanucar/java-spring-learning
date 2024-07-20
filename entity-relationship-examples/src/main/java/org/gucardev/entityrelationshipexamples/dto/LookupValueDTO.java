@@ -15,6 +15,7 @@ public class LookupValueDTO extends BaseEntityDTO {
     private Long id;
     private String lookupValue;
     private LookupCategoryDTO category;
+    private Long categoryId;
 
     @Getter
     @Setter

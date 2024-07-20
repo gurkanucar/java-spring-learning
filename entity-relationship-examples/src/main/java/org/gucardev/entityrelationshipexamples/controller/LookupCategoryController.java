@@ -24,7 +24,7 @@ public class LookupCategoryController {
 
     @GetMapping("/{id}")
     public ResponseEntity<LookupCategoryDTO> getCategoryById(@PathVariable Long id) {
-        Optional<LookupCategoryDTO> categoryDTO = lookupCategoryService.getCategoryById(id);
+        Optional<LookupCategoryDTO> categoryDTO = lookupCategoryService.getCategoryDtoById(id);
         if (categoryDTO.isPresent()) {
             return ResponseEntity.ok(categoryDTO.get());
         } else {
