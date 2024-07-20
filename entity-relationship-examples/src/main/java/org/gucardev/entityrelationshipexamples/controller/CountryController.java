@@ -13,7 +13,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CountryController {
 
-    private CountryService countryService;
+    private final CountryService countryService;
 
     @GetMapping
     public ResponseEntity<List<CountryDTO>> getAllCountries() {
@@ -43,6 +43,6 @@ public class CountryController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteCountry(@PathVariable Long id) {
         countryService.delete(id);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.noContent().build();
     }
 }
