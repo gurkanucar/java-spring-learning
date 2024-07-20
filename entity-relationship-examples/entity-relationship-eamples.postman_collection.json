@@ -35,7 +35,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/lookup-value/by-category/3",
+							"raw": "http://localhost:8080/api/lookup-value/by-category/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -45,7 +45,7 @@
 								"api",
 								"lookup-value",
 								"by-category",
-								"3"
+								"1"
 							]
 						}
 					},

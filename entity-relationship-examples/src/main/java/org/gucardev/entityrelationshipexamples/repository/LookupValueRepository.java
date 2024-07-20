@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface LookupValueRepository extends JpaRepository<LookupValue, Long> {
     List<LookupValue> findByCategoryId(Long categoryId);
+
+    LookupValue findByLookupValue(String engineer);
 }
