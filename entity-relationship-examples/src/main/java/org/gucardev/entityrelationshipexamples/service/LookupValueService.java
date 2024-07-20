@@ -58,6 +58,8 @@ public class LookupValueService {
     public List<LookupValueDTO> getValuesByCategoryId(Long categoryId) {
         return lookupValueRepository.findByCategoryId(categoryId).stream()
                 .map(lookupValueMapper::toDto)
+                // don't need category in response again
+                .peek(x -> x.setCategory(null))
                 .collect(Collectors.toList());
     }
 }
