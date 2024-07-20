@@ -17,59 +17,59 @@ import java.util.stream.Collectors;
 @Service
 public class LookupValueService {
 
-    private final LookupValueRepository lookupValueRepository;
+    private final LookupValueRepository repository;
 
     private final LookupCategoryService lookupCategoryService;
 
-    private final LookupValueMapper lookupValueMapper = LookupValueMapper.INSTANCE;
+    private final LookupValueMapper mapper = LookupValueMapper.INSTANCE;
 
     public List<LookupValueDTO> getAll() {
-        return lookupValueRepository.findAll().stream()
-                .map(lookupValueMapper::toDto)
+        return repository.findAll().stream()
+                .map(mapper::toDto)
                 .collect(Collectors.toList());
     }
 
     public LookupValue getById(Long id) {
-        return lookupValueRepository.findById(id)
+        return repository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Value with id " + id + " not found"));
     }
 
     public Optional<LookupValueDTO> getDtoById(Long id) {
-        return lookupValueRepository.findById(id)
-                .map(lookupValueMapper::toDto);
+        return repository.findById(id)
+                .map(mapper::toDto);
     }
 
-    public LookupValueDTO create(LookupValueDTO valueDTO) {
-        LookupValue value = lookupValueMapper.toEntity(valueDTO);
-        return lookupValueMapper.toDto(lookupValueRepository.save(value));
+    public LookupValueDTO create(LookupValueDTO dto) {
+        LookupValue entity = mapper.toEntity(dto);
+        return mapper.toDto(repository.save(entity));
     }
 
-    public LookupValueDTO update(Long id, LookupValueDTO updateRequest) {
-        Optional<LookupValue> optionalValue = lookupValueRepository.findById(id);
+    public LookupValueDTO update(Long id, LookupValueDTO dto) {
+        Optional<LookupValue> optionalRecord = repository.findById(id);
 
-        if (optionalValue.isEmpty()) {
+        if (optionalRecord.isEmpty()) {
             throw new EntityNotFoundException("LookupValue not found with id " + id);
         }
-        LookupValue existing = optionalValue.get();
+        LookupValue existing = optionalRecord.get();
         // Update lookupValue fields
-        lookupValueMapper.updateLookupValueFromDto(updateRequest, existing);
+        mapper.updateFromDto(dto, existing);
 
         // Update category if categoryId is provided
-        if (updateRequest.getCategoryId() != null) {
-            existing.setCategory(lookupCategoryService.getById(updateRequest.getCategoryId()));
+        if (dto.getCategoryId() != null) {
+            existing.setCategory(lookupCategoryService.getById(dto.getCategoryId()));
         }
 
-        return lookupValueMapper.toDto(lookupValueRepository.save(existing));
+        return mapper.toDto(repository.save(existing));
     }
 
     @Transactional
     public void delete(Long id) {
-        lookupValueRepository.deleteById(id);
+        repository.deleteById(id);
     }
 
     public List<LookupValueDTO> getValuesByCategoryId(Long categoryId) {
-        return lookupValueRepository.findByCategoryId(categoryId).stream()
-                .map(lookupValueMapper::toDto)
+        return repository.findByCategoryId(categoryId).stream()
+                .map(mapper::toDto)
                 // don't need category in response again
                 .peek(x -> x.setCategory(null))
                 .collect(Collectors.toList());

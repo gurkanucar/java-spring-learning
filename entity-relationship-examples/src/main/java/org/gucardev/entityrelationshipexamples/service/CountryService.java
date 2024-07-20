@@ -17,44 +17,43 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class CountryService {
 
-    private final CountryRepository countryRepository;
+    private final CountryRepository repository;
 
-    private final CountryMapper countryMapper;
+    private final CountryMapper mapper;
 
     public List<CountryDTO> getAll() {
-        return countryRepository.findAll().stream()
-                .map(countryMapper::toDto)
+        return repository.findAll().stream()
+                .map(mapper::toDto)
                 .collect(Collectors.toList());
     }
 
     public Country getById(Long id) {
-        return countryRepository.findById(id)
+        return repository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Country not found"));
     }
 
     public Optional<CountryDTO> getDtoById(Long id) {
-        return countryRepository.findById(id)
-                .map(countryMapper::toDto);
+        return repository.findById(id)
+                .map(mapper::toDto);
     }
 
-    public CountryDTO create(CountryDTO countryDTO) {
-        Country country = countryMapper.toEntity(countryDTO);
-        country = countryRepository.save(country);
-        return countryMapper.toDto(country);
+    public CountryDTO create(CountryDTO dto) {
+        Country entity = mapper.toEntity(dto);
+        return mapper.toDto(repository.save(entity));
     }
 
-    public CountryDTO update(Long id, CountryDTO countryDTO) {
-        Optional<Country> optionalValue = countryRepository.findById(id);
-        if (optionalValue.isEmpty()) {
+    public CountryDTO update(Long id, CountryDTO dto) {
+        Optional<Country> optionalRecord = repository.findById(id);
+        if (optionalRecord.isEmpty()) {
             throw new EntityNotFoundException("Country not found with id " + id);
         }
-        Country existing = optionalValue.get();
-        countryMapper.updateCountryFromDto(countryDTO, existing);
-        return countryMapper.toDto(countryRepository.save(existing));
+        Country existing = optionalRecord.get();
+        mapper.updateFromDto(dto, existing);
+        return mapper.toDto(repository.save(existing));
     }
 
     @Transactional
     public void delete(Long id) {
-        countryRepository.deleteById(id);
+        repository.deleteById(id);
     }
 }

@@ -16,6 +16,6 @@ public interface LookupValueMapper {
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     @Mapping(target = "category", ignore = true)
-    void updateLookupValueFromDto(LookupValueDTO dto, @MappingTarget LookupValue entity);
+    void updateFromDto(LookupValueDTO dto, @MappingTarget LookupValue entity);
 
 }

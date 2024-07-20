@@ -17,45 +17,45 @@ import java.util.stream.Collectors;
 @Service
 public class LookupCategoryService {
 
-    private final LookupCategoryRepository lookupCategoryRepository;
+    private final LookupCategoryRepository repository;
 
-    private final LookupCategoryMapper lookupCategoryMapper = LookupCategoryMapper.INSTANCE;
+    private final LookupCategoryMapper mapper = LookupCategoryMapper.INSTANCE;
 
     public List<LookupCategoryDTO> getAll() {
-        return lookupCategoryRepository.findAll().stream()
-                .map(lookupCategoryMapper::toDto)
+        return repository.findAll().stream()
+                .map(mapper::toDto)
                 .collect(Collectors.toList());
     }
 
     public LookupCategory getById(Long id) {
-        return lookupCategoryRepository.findById(id)
+        return repository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Could not find category with id: " + id));
     }
 
     public Optional<LookupCategoryDTO> getDtoById(Long id) {
-        return lookupCategoryRepository.findById(id)
-                .map(lookupCategoryMapper::toDto);
+        return repository.findById(id)
+                .map(mapper::toDto);
     }
 
-    public LookupCategoryDTO create(LookupCategoryDTO categoryDTO) {
-        LookupCategory category = lookupCategoryMapper.toEntity(categoryDTO);
-        return lookupCategoryMapper.toDto(lookupCategoryRepository.save(category));
+    public LookupCategoryDTO create(LookupCategoryDTO dto) {
+        LookupCategory entity = mapper.toEntity(dto);
+        return mapper.toDto(repository.save(entity));
     }
 
-    public LookupCategoryDTO update(Long id, LookupCategoryDTO updateRequest) {
-        Optional<LookupCategory> optionalValue = lookupCategoryRepository.findById(id);
-        if (optionalValue.isEmpty()) {
+    public LookupCategoryDTO update(Long id, LookupCategoryDTO dto) {
+        Optional<LookupCategory> optionalRecord = repository.findById(id);
+        if (optionalRecord.isEmpty()) {
             throw new EntityNotFoundException("LookupCategory not found with id " + id);
         }
-        LookupCategory existing = optionalValue.get();
+        LookupCategory existing = optionalRecord.get();
         // Update lookupValue fields
-        lookupCategoryMapper.updateLookupValueFromDto(updateRequest, existing);
+        mapper.updateFromDto(dto, existing);
 
-        return lookupCategoryMapper.toDto(lookupCategoryRepository.save(existing));
+        return mapper.toDto(repository.save(existing));
     }
 
     @Transactional
     public void delete(Long id) {
-        lookupCategoryRepository.deleteById(id);
+        repository.deleteById(id);
     }
 }

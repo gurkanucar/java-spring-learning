@@ -17,6 +17,6 @@ public interface CountryMapper {
     Country toEntity(CountryDTO lookupValueDTO);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    void updateCountryFromDto(CountryDTO dto, @MappingTarget Country entity);
+    void updateFromDto(CountryDTO dto, @MappingTarget Country entity);
 
 }
