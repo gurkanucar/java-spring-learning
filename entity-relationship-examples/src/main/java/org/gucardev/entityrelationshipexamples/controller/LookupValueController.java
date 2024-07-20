@@ -24,7 +24,7 @@ public class LookupValueController {
 
     @GetMapping("/{id}")
     public ResponseEntity<LookupValueDTO> getValueById(@PathVariable Long id) {
-        Optional<LookupValueDTO> valueDTO = lookupValueService.getValueById(id);
+        Optional<LookupValueDTO> valueDTO = lookupValueService.getValueDtoById(id);
         if (valueDTO.isPresent()) {
             return ResponseEntity.ok(valueDTO.get());
         } else {

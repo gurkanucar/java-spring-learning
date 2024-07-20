@@ -29,7 +29,12 @@ public class LookupValueService {
                 .collect(Collectors.toList());
     }
 
-    public Optional<LookupValueDTO> getValueById(Long id) {
+    public LookupValue getValueById(Long id) {
+        return lookupValueRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Value with id " + id + " not found"));
+    }
+
+    public Optional<LookupValueDTO> getValueDtoById(Long id) {
         return lookupValueRepository.findById(id)
                 .map(lookupValueMapper::toDto);
     }
@@ -69,4 +74,6 @@ public class LookupValueService {
                 .peek(x -> x.setCategory(null))
                 .collect(Collectors.toList());
     }
+
+
 }
