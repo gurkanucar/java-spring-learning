@@ -56,4 +56,11 @@ public class CountryService {
     public void delete(Long id) {
         repository.deleteById(id);
     }
+
+    @Transactional
+    public CountryDTO createCountryWithCities(CountryDTO countryDTO) {
+        Country country = mapper.toEntityWithCities(countryDTO);
+        mapper.linkCities(country);
+        return mapper.toDto(repository.save(country));
+    }
 }

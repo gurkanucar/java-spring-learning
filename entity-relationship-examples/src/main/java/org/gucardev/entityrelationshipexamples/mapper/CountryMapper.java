@@ -19,4 +19,11 @@ public interface CountryMapper {
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     void updateFromDto(CountryDTO dto, @MappingTarget Country entity);
 
+    Country toEntityWithCities(CountryDTO countryDTO);
+
+    default void linkCities(Country country) {
+        if (country.getCities() != null) {
+            country.getCities().forEach(x -> x.setCountry(country));
+        }
+    }
 }

@@ -34,6 +34,12 @@ public class CountryController {
         return ResponseEntity.ok(newCountry);
     }
 
+    @PostMapping("/with-cities")
+    public ResponseEntity<CountryDTO> createCountryWithCities(@RequestBody CountryDTO countryDTO) {
+        CountryDTO newCountry = countryService.createCountryWithCities(countryDTO);
+        return ResponseEntity.ok(newCountry);
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<CountryDTO> updateCountry(@PathVariable Long id, @RequestBody CountryDTO countryDTO) {
         CountryDTO updatedCountry = countryService.update(id, countryDTO);
