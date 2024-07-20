@@ -1,21 +1,21 @@
 package org.gucardev.entityrelationshipexamples.controller;
 
 import jakarta.persistence.EntityNotFoundException;
+import lombok.RequiredArgsConstructor;
 import org.gucardev.entityrelationshipexamples.dto.LookupCategoryDTO;
 import org.gucardev.entityrelationshipexamples.service.LookupCategoryService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/lookupCategories")
 public class LookupCategoryController {
 
-    @Autowired
-    private LookupCategoryService lookupCategoryService;
+    private final LookupCategoryService lookupCategoryService;
 
     @GetMapping
     public List<LookupCategoryDTO> getAllCategories() {

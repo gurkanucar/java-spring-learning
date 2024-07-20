@@ -108,7 +108,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"categoryId\": 1,\r\n    \"lookupValue\": \"UPDATED_NEW_VALUE\"\r\n}",
+							"raw": "{\r\n    \"categoryId\": 2,\r\n    \"lookupValue\": \"UPDATED_NEW_VALUE\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

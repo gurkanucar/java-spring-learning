@@ -1,11 +1,11 @@
 package org.gucardev.entityrelationshipexamples.service;
 
 import jakarta.persistence.EntityNotFoundException;
+import lombok.RequiredArgsConstructor;
 import org.gucardev.entityrelationshipexamples.dto.LookupValueDTO;
 import org.gucardev.entityrelationshipexamples.mapper.LookupValueMapper;
 import org.gucardev.entityrelationshipexamples.model.LookupValue;
 import org.gucardev.entityrelationshipexamples.repository.LookupValueRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,14 +13,13 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@RequiredArgsConstructor
 @Service
 public class LookupValueService {
 
-    @Autowired
-    private LookupValueRepository lookupValueRepository;
+    private final LookupValueRepository lookupValueRepository;
 
-    @Autowired
-    private LookupCategoryService lookupCategoryService;
+    private final LookupCategoryService lookupCategoryService;
 
     private final LookupValueMapper lookupValueMapper = LookupValueMapper.INSTANCE;
 

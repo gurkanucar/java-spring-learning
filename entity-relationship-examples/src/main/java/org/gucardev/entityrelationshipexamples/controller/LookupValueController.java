@@ -1,21 +1,21 @@
 package org.gucardev.entityrelationshipexamples.controller;
 
 import jakarta.persistence.EntityNotFoundException;
+import lombok.RequiredArgsConstructor;
 import org.gucardev.entityrelationshipexamples.dto.LookupValueDTO;
 import org.gucardev.entityrelationshipexamples.service.LookupValueService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/lookup-value")
 public class LookupValueController {
 
-    @Autowired
-    private LookupValueService lookupValueService;
+    private final LookupValueService lookupValueService;
 
     @GetMapping
     public List<LookupValueDTO> getAllValues() {
