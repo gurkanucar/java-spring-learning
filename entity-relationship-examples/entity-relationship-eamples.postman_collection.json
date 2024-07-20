@@ -35,7 +35,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/lookup-value/category/1",
+							"raw": "http://localhost:8080/api/lookup-value/by-category/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -44,7 +44,7 @@
 							"path": [
 								"api",
 								"lookup-value",
-								"category",
+								"by-category",
 								"1"
 							]
 						}
@@ -550,6 +550,28 @@
 							"path": [
 								"api",
 								"city"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-by-country-id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/city/by-country/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"city",
+								"by-country",
+								"1"
 							]
 						}
 					},

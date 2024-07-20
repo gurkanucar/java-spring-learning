@@ -43,7 +43,7 @@ public class LookupValueController {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping("/category/{categoryId}")
+    @GetMapping("/by-category/{categoryId}")
     public List<LookupValueDTO> getValuesByCategoryId(@PathVariable Long categoryId) {
         return lookupValueService.getValuesByCategoryId(categoryId);
     }
