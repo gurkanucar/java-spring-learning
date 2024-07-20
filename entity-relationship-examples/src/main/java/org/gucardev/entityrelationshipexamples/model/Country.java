@@ -17,6 +17,6 @@ public class Country extends BaseEntity {
 
     private String name;
 
-    @OneToMany(mappedBy = "country")
+    @OneToMany(mappedBy = "country", fetch = FetchType.LAZY)
     private List<City> cities;
 }
