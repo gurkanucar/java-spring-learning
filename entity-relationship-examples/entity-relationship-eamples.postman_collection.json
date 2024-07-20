@@ -79,7 +79,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"categoryId\": 1,\r\n    \"lookupValue\": \"NEW_VALUE\"\r\n}",
+							"raw": "{\r\n    \"categoryId\": 1,\r\n    \"lookupValue\": \"NEW_VALUE\",\r\n    \"displayValue\": \"new value\",\r\n    \"translations\": {\r\n        \"TR\": \"yeni değer\",\r\n        \"IT\": \"new value\"\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -108,7 +108,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"categoryId\": 2,\r\n    \"lookupValue\": \"UPDATED_NEW_VALUE\"\r\n}",
+							"raw": "{\r\n    \"categoryId\": 2,\r\n    \"lookupValue\": \"UPDATED_NEW_VALUE\",\r\n    \"displayValue\": \"updated new value\",\r\n    \"translations\": {\r\n        \"TR\": \"yeni değer\",\r\n        \"IT\": \"new value\"\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -205,7 +205,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"NEW_CATEGORY\"\r\n}",
+							"raw": "{\r\n    \"name\": \"NEW_CATEGORY\",\r\n    \"displayValue\": \"new category\",\r\n    \"translations\": {\r\n        \"TR\": \"yeni kategori\"\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -234,7 +234,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"UPDATED_NEW_CATEGORY\"\r\n}",
+							"raw": "{\r\n    \"name\": \"UPDATED_NEW_CATEGORY\",\r\n    \"displayValue\": \"updated new category\",\r\n    \"translations\": {\r\n        \"TR\": \"yeni kategori\",\r\n        \"IT\": \"categoria\"\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -242,7 +242,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/lookup-category/3",
+							"raw": "http://localhost:8080/api/lookup-category/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -251,7 +251,7 @@
 							"path": [
 								"api",
 								"lookup-category",
-								"3"
+								"1"
 							]
 						}
 					},

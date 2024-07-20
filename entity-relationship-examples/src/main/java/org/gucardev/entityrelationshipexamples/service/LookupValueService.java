@@ -59,6 +59,10 @@ public class LookupValueService {
             existing.setCategory(lookupCategoryService.getById(dto.getCategoryId()));
         }
 
+        //update translations
+        //ignore translations in mapper updateFromDto method before set them
+        mapper.updateTranslationsMap(dto, existing);
+
         return mapper.toDto(repository.save(existing));
     }
 

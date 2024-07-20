@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.Map;
 
 import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 
@@ -17,11 +18,15 @@ public class LookupCategoryDTO extends BaseEntityDTO {
     private Long id;
     private String name;
     private List<LookupValueDTO> lookupValues;
+    private String displayValue;
+    private Map<String, String> translations;
 
     @Getter
     @Setter
     public static class LookupValueDTO {
         private String lookupValue;
         private Long id;
+        private String displayValue;
+        private Map<String, String> translations;
     }
 }

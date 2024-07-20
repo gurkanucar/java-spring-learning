@@ -24,6 +24,7 @@ public class LookupCategoryService {
     public List<LookupCategoryDTO> getAll() {
         return repository.findAll().stream()
                 .map(mapper::toDto)
+                .peek(x -> x.setLookupValues(null))
                 .collect(Collectors.toList());
     }
 
@@ -48,8 +49,13 @@ public class LookupCategoryService {
             throw new EntityNotFoundException("LookupCategory not found with id " + id);
         }
         LookupCategory existing = optionalRecord.get();
+
         // Update lookupValue fields
         mapper.updateFromDto(dto, existing);
+
+        //update translations
+        //ignore translations in mapper updateFromDto method before set them
+        mapper.updateTranslationsMap(dto, existing);
 
         return mapper.toDto(repository.save(existing));
     }

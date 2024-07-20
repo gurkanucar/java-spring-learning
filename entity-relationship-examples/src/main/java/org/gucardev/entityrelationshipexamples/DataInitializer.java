@@ -23,33 +23,30 @@ public class DataInitializer implements CommandLineRunner {
     }
 
     private void createInitialCategoriesAndValues() {
+        LookupCategory occupationCategory = getLookupCategory("Occupation", "Developer", "Tester");
+        lookupCategoryRepository.save(occupationCategory);
+
+        LookupCategory statusCategory = getLookupCategory("Status", "Active", "Inactive");
+        lookupCategoryRepository.save(statusCategory);
+
+    }
+
+    private static LookupCategory getLookupCategory(String Occupation, String Developer, String Tester) {
         LookupCategory occupationCategory = new LookupCategory();
-        occupationCategory.setName("Occupation");
+        occupationCategory.setName(Occupation);
+        occupationCategory.setDisplayValue(Occupation);
 
         LookupValue developer = new LookupValue();
-        developer.setLookupValue("Developer");
+        developer.setLookupValue(Developer);
+        developer.setDisplayValue(Developer);
         developer.setCategory(occupationCategory);
 
         LookupValue tester = new LookupValue();
-        tester.setLookupValue("Tester");
+        tester.setLookupValue(Tester);
+        tester.setDisplayValue(Tester);
         tester.setCategory(occupationCategory);
 
         occupationCategory.setLookupValues(Arrays.asList(developer, tester));
-        lookupCategoryRepository.save(occupationCategory);
-
-        LookupCategory statusCategory = new LookupCategory();
-        statusCategory.setName("Status");
-
-        LookupValue active = new LookupValue();
-        active.setLookupValue("Active");
-        active.setCategory(statusCategory);
-
-        LookupValue inactive = new LookupValue();
-        inactive.setLookupValue("Inactive");
-        inactive.setCategory(statusCategory);
-
-        statusCategory.setLookupValues(Arrays.asList(active, inactive));
-        lookupCategoryRepository.save(statusCategory);
-
+        return occupationCategory;
     }
 }

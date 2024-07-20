@@ -1,0 +1,1 @@
+# This repository includes mapstruct and entity relationships (1-m / m-n / 1-1) examples.
