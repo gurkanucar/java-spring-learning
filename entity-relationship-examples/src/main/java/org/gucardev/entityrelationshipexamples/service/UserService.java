@@ -6,9 +6,15 @@ import org.gucardev.entityrelationshipexamples.dto.UserDTO;
 import org.gucardev.entityrelationshipexamples.mapper.UserMapper;
 import org.gucardev.entityrelationshipexamples.model.User;
 import org.gucardev.entityrelationshipexamples.repository.UserRepository;
+import org.gucardev.entityrelationshipexamples.specification.UserSpecification;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -20,6 +26,14 @@ public class UserService {
     private final UserRepository repository;
     private final LookupValueService lookupValueService;
     private final UserMapper mapper = UserMapper.INSTANCE;
+
+
+    public Page<UserDTO> getAll(String searchTerm, Sort.Direction direction, String sortField, Pageable pageable, LocalDateTime startDateTime, LocalDateTime endDateTime) {
+        Specification<User> spec = Specification.where(UserSpecification.searchBy(searchTerm, null, startDateTime, endDateTime))
+                .and(UserSpecification.sortByField(sortField, direction));
+        return repository.findAll(spec, pageable).map(mapper::toDto);
+    }
+
 
     public List<UserDTO> getAll() {
         return repository.findAll().stream()

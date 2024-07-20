@@ -329,7 +329,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/user",
+							"raw": "http://localhost:8080/api/user?sortField=name&searchTerm=artist&sortDirection=desc&startDate=2023-01-01&endDate=2025-01-31&page=0&size=20",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -338,6 +338,36 @@
 							"path": [
 								"api",
 								"user"
+							],
+							"query": [
+								{
+									"key": "sortField",
+									"value": "name"
+								},
+								{
+									"key": "searchTerm",
+									"value": "artist"
+								},
+								{
+									"key": "sortDirection",
+									"value": "desc"
+								},
+								{
+									"key": "startDate",
+									"value": "2023-01-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2025-01-31"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
 							]
 						}
 					},
