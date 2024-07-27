@@ -1,7 +1,9 @@
 package org.gucardev.utilities.exception;
 
+import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
+@Getter
 public enum ExceptionMessage {
     DEFAULT_EXCEPTION("messages.error.default_message", HttpStatus.BAD_REQUEST),
     ALREADY_EXISTS_EXCEPTION("messages.error.already_exists_exception", HttpStatus.BAD_REQUEST),
@@ -19,11 +21,4 @@ public enum ExceptionMessage {
         this.status = httpStatus;
     }
 
-    public String getKey() {
-        return this.key;
-    }
-
-    public HttpStatus getStatus() {
-        return this.status;
-    }
 }

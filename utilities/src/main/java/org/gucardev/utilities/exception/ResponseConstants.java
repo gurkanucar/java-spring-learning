@@ -1,5 +1,8 @@
 package org.gucardev.utilities.exception;
 
+import lombok.Getter;
+
+@Getter
 public enum ResponseConstants {
   SUCCESS(0, "Success"),
   FAILURE(-1, "Failure");
@@ -12,11 +15,4 @@ public enum ResponseConstants {
     this.message = message;
   }
 
-  public int getCode() {
-    return this.code;
-  }
-
-  public String getMessage() {
-    return this.message;
-  }
 }
