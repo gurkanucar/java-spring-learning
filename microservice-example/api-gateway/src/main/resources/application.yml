@@ -51,6 +51,3 @@ logging:
     org.springframework.web: DEBUG
     org.springframework.web.servlet.DispatcherServlet: TRACE
 
-service-credentials:
-  username: ${SERVICE_USERNAME:admin}
-  pass: ${SERVICE_PASS:pass}
