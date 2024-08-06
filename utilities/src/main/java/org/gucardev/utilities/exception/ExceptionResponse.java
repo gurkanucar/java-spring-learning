@@ -22,6 +22,7 @@ public class ExceptionResponse {
 
     private HttpStatus status;
     private int code;
+    private String traceId;
     private Object message;
     private String path;
     private LocalDateTime time;
@@ -32,6 +33,7 @@ public class ExceptionResponse {
         this.message = builder.message;
         this.path = builder.path;
         this.time = LocalDateTime.now();
+        this.traceId=builder.traceId;
     }
 
     public static Builder builder() {
@@ -39,6 +41,7 @@ public class ExceptionResponse {
     }
 
     public static class Builder {
+        public String traceId;
         private HttpStatus status;
         private int code;
         private Object message;
@@ -73,6 +76,10 @@ public class ExceptionResponse {
 
         public Builder path(String requestPath) {
             this.path = requestPath;
+            return this;
+        }
+        public Builder traceId(String traceId) {
+            this.traceId = traceId;
             return this;
         }
 

@@ -1,4 +1,4 @@
-package org.gucardev.utilities.log;
+package org.gucardev.utilities.exception;
 
 
 import jakarta.servlet.FilterChain;
