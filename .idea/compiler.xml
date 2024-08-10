@@ -13,8 +13,8 @@
         <module name="analytics-micro" />
         <module name="mixed" />
         <module name="utilities" />
-        <module name="eureka-server" />
         <module name="aws-ses-mail-sending" />
+        <module name="eureka-server" />
         <module name="kafka-example" />
         <module name="file-uploading-with-io" />
         <module name="security-example1" />
@@ -22,8 +22,8 @@
         <module name="security-example2" />
         <module name="elk-and-monitoring" />
         <module name="entity-encryption" />
-        <module name="strategy-pattern" />
         <module name="spring-boot-test" />
+        <module name="strategy-pattern" />
         <module name="aws-s3-file-service" />
         <module name="spring-shell" />
         <module name="redis-caching-example" />
@@ -32,22 +32,15 @@
         <module name="project-micro" />
         <module name="entity-auditing" />
         <module name="bulk_db_operations" />
+        <module name="spring-scopes" />
         <module name="dto-field-masker" />
         <module name="api-gateway" />
         <module name="auth-micro" />
         <module name="spring-security" />
       </profile>
-      <profile name="Gradle Imported" enabled="true">
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.32/17d46b3e205515e1e8efd3ee4d57ce8018914163/lombok-1.18.32.jar" />
-        </processorPath>
-        <module name="spring-scopes.main" />
-      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="learning-java" target="17" />
-      <module name="strategy-pattern-with-enums" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -75,6 +68,7 @@
       <module name="security-example1" options="-parameters" />
       <module name="security-example2" options="-parameters" />
       <module name="spring-boot-test" options="-parameters" />
+      <module name="spring-scopes" options="-parameters" />
       <module name="spring-shell" options="-parameters" />
       <module name="strategy-pattern" options="-parameters" />
       <module name="task-micro" options="-parameters" />
