@@ -25,7 +25,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
-import java.util.regex.Pattern;
 
 @RequiredArgsConstructor
 @Service
@@ -36,13 +35,6 @@ public class FileService {
 
     private final AmazonS3 amazonS3;
     private final WatermarkService watermarkService;
-
-    private String sanitizeFileName(String fileName) {
-        String normalizedFileName = Normalizer.normalize(fileName, Normalizer.Form.NFKD);
-        String fileNameWithUnderscores = normalizedFileName.replaceAll("\\s+", "_");
-        Pattern pattern = Pattern.compile("[^a-zA-Z0-9.\\-_]");
-        return pattern.matcher(fileNameWithUnderscores).replaceAll("");
-    }
 
 
     public String generatePreSignedUrl(String filePath, HttpMethod method) {
@@ -117,5 +109,10 @@ public class FileService {
                 .body(responseBody);
     }
 
+
+    private String sanitizeFileName(String fileName) {
+        String normalizedFileName = Normalizer.normalize(fileName, Normalizer.Form.NFKD);
+        return normalizedFileName.replaceAll("\\s+", "_").replaceAll("[^a-zA-Z0-9.\\-_]", "");
+    }
 
 }
