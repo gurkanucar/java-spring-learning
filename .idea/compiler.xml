@@ -15,6 +15,7 @@
         <module name="utilities" />
         <module name="aws-ses-mail-sending" />
         <module name="eureka-server" />
+        <module name="securityexample4" />
         <module name="kafka-example" />
         <module name="file-uploading-with-io" />
         <module name="security-example1" />
@@ -69,6 +70,7 @@
       <module name="security-example1" options="-parameters" />
       <module name="security-example2" options="-parameters" />
       <module name="security-example3" options="-parameters" />
+      <module name="securityexample4" options="-parameters" />
       <module name="spring-boot-test" options="-parameters" />
       <module name="spring-scopes" options="-parameters" />
       <module name="spring-shell" options="-parameters" />

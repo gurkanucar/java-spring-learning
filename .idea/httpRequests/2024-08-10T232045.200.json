@@ -1,0 +1,13 @@
+{
+  "accessToken": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJBRE1JTiJdLCJ0b2tlblNpZ24iOiJhNGZiN2NmMi04MGY5LTRjN2QtYjQyNy1jNDQ2NjQ4YTM0NWIiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTcyMzMyMTI0NSwiZXhwIjoxNzIzMzI0ODQ1fQ.axFV640fF6cA95wvV2z0_khEFNVXUIqO4OFkY9RGxs8",
+  "user": {
+    "id": "74c127e5-76eb-4ef8-b2fa-ac6ba79a7ad2",
+    "createdDateTime": "2024-08-10T23:20:28.99965",
+    "updatedDateTime": "2024-08-10T23:20:45.602363",
+    "createdBy": "SYSTEM",
+    "updatedBy": "SYSTEM",
+    "username": "admin",
+    "role": "ADMIN",
+    "enabled": false
+  }
+}

@@ -38,6 +38,7 @@
         <option value="$PROJECT_DIR$/spring-security/2-basic-auth-with-hardcoded-role/pom.xml" />
         <option value="$PROJECT_DIR$/spring-scopes/pom.xml" />
         <option value="$PROJECT_DIR$/spring-security/3-basic-auth-dynamic-roles/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-security/4-jwt-authentication/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
