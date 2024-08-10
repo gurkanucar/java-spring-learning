@@ -30,12 +30,23 @@ public class S3Config {
     @Value("${aws.endpoint}")
     private String endpoint;
 
+//    @Bean
+//    public AmazonS3 amazonS3Client() {
+//        final BasicAWSCredentials credentials = new BasicAWSCredentials(accessKey, secretKey);
+//        return AmazonS3ClientBuilder.standard()
+//                .withCredentials(new AWSStaticCredentialsProvider(credentials))
+//                .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(endpoint, region))
+//                .build();
+//    }
+
+
     @Bean
     public AmazonS3 amazonS3Client() {
-        final BasicAWSCredentials credentials = new BasicAWSCredentials(accessKey, secretKey);
-        return AmazonS3ClientBuilder.standard()
-                .withCredentials(new AWSStaticCredentialsProvider(credentials))
-                .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(endpoint, region))
+        BasicAWSCredentials awsCredentials = new BasicAWSCredentials(accessKey, secretKey);
+        return AmazonS3ClientBuilder
+                .standard()
+                .withRegion(region)
+                .withCredentials(new AWSStaticCredentialsProvider(awsCredentials))
                 .build();
     }
 

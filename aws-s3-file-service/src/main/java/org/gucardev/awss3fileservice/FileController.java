@@ -4,10 +4,15 @@ package org.gucardev.awss3fileservice;
 import com.amazonaws.HttpMethod;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/files")
@@ -16,24 +21,47 @@ public class FileController {
 
     private final FileService fileService;
 
-    @GetMapping("/upload/{objectKey}")
-    public ResponseEntity<String> getPresignedUrlForUpload(@PathVariable String objectKey) {
-        try {
-            String url = fileService.generatePreSignedUrl(objectKey, HttpMethod.PUT);
-            return ResponseEntity.ok(url);
-        } catch (Exception e) {
-            return ResponseEntity.internalServerError().body("Failed to generate upload URL: " + e.getMessage());
-        }
+    @GetMapping("/{filename}")
+    public ResponseEntity<String> getUrl(@PathVariable String filename) {
+        return ResponseEntity.ok(fileService.generatePreSignedUrl(filename, HttpMethod.GET));
     }
 
-    @GetMapping("/download/{objectKey}")
-    public ResponseEntity<String> getPresignedUrlForDownload(@PathVariable String objectKey) {
-        try {
-            String url = fileService.generatePreSignedUrl(objectKey, HttpMethod.GET);
-            return ResponseEntity.ok(url);
-        } catch (Exception e) {
-            return ResponseEntity.internalServerError().body("Failed to generate download URL: " + e.getMessage());
-        }
+    @PostMapping("/pre-signed-url")
+    public ResponseEntity<Map<String, Object>> generateUrl(@RequestParam String extension) {
+        var file = UUID.randomUUID() + "." + extension;
+        var response = fileService.generatePreSignedUrl(file, HttpMethod.PUT);
+        return ResponseEntity.ok(Map.of("url", response, "file", file));
+    }
+
+    @PostMapping("/public-pre-signed-url")
+    public ResponseEntity<Map<String, Object>> generatePublicUrl(@RequestParam String extension) {
+        var file = UUID.randomUUID() + "." + extension;
+        var response = fileService.generatePublicPreSignedUrl(file, HttpMethod.PUT);
+        return ResponseEntity.ok(Map.of("url", response, "file", file));
+    }
+
+
+    @PostMapping("/public-pre-signed-urls")
+    public ResponseEntity<Map<String, List<MultiplePreSignedUrlResponse>>> generatePublicUrls(@RequestBody List<MultiplePreSignedUrlRequest> request) {
+        List<MultiplePreSignedUrlResponse> urls = fileService.generateMultiplePublicPreSignedUrls(request);
+        return ResponseEntity.ok(Map.of("urls", urls));
+    }
+
+
+    @PostMapping("/upload")
+    public ResponseEntity<String> uploadFile(@RequestParam("file") MultipartFile file) throws IOException {
+        String fileName = fileService.uploadMultipartFile(file);
+        return ResponseEntity.ok("File name: " + fileName);
+    }
+
+    @GetMapping("/download/{fileName}")
+    public ResponseEntity<byte[]> downloadFile(@PathVariable String fileName) throws IOException {
+        byte[] data = fileService.downloadFile(fileName);
+        String contentType = Files.probeContentType(Paths.get(fileName));
+        return ResponseEntity.ok()
+                .header("Content-Disposition", "attachment; filename=\"" + fileName + "\"")
+                .header("Content-Type", contentType)
+                .body(data);
     }
 
 }
