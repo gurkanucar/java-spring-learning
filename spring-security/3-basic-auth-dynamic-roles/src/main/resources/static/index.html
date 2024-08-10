@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        .background-image {
+            background-image: url('https://images.pexels.com/photos/338936/pexels-photo-338936.jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            z-index: -1;
+            filter: blur(4px);
+        }
+
+        .welcome-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100%;
+            color: white;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .welcome-message {
+            font-size: 2.5em;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="background-image"></div>
+<div class="welcome-container">
+    <div class="welcome-message">
+        Welcome!
+    </div>
+</div>
+</body>
+</html>

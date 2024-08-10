@@ -4,29 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06ac5a23-67a3-4477-b2de-19bb106c9fde" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+    <list default="true" id="06ac5a23-67a3-4477-b2de-19bb106c9fde" name="Changes" comment="editor fixed and gradle project converted to maven project">
+      <change afterPath="$PROJECT_DIR$/spring-security/3-basic-auth-dynamic-roles/src/main/java/org/gucardev/securityexample3/InitialDataPopulate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security/3-basic-auth-dynamic-roles/src/main/java/org/gucardev/securityexample3/controller/PrivateTestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security/3-basic-auth-dynamic-roles/src/main/java/org/gucardev/securityexample3/controller/PublicTestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security/3-basic-auth-dynamic-roles/src/main/java/org/gucardev/securityexample3/controller/RoleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security/3-basic-auth-dynamic-roles/src/main/java/org/gucardev/securityexample3/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security/3-basic-auth-dynamic-roles/src/main/java/org/gucardev/securityexample3/dto/RoleDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security/3-basic-auth-dynamic-roles/src/main/java/org/gucardev/securityexample3/dto/UserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security/3-basic-auth-dynamic-roles/src/main/java/org/gucardev/securityexample3/dto/UserRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security/3-basic-auth-dynamic-roles/src/main/java/org/gucardev/securityexample3/entity/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security/3-basic-auth-dynamic-roles/src/main/java/org/gucardev/securityexample3/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security/3-basic-auth-dynamic-roles/src/main/java/org/gucardev/securityexample3/mapper/RoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security/3-basic-auth-dynamic-roles/src/main/java/org/gucardev/securityexample3/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security/3-basic-auth-dynamic-roles/src/main/java/org/gucardev/securityexample3/repository/RoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security/3-basic-auth-dynamic-roles/src/main/java/org/gucardev/securityexample3/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security/3-basic-auth-dynamic-roles/src/main/java/org/gucardev/securityexample3/security/CustomUserDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security/3-basic-auth-dynamic-roles/src/main/java/org/gucardev/securityexample3/security/PasswordEncoderConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security/3-basic-auth-dynamic-roles/src/main/java/org/gucardev/securityexample3/security/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security/3-basic-auth-dynamic-roles/src/main/java/org/gucardev/securityexample3/security/UserDetailsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security/3-basic-auth-dynamic-roles/src/main/java/org/gucardev/securityexample3/service/RoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security/3-basic-auth-dynamic-roles/src/main/java/org/gucardev/securityexample3/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-security/3-basic-auth-dynamic-roles/src/main/resources/static/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <list id="00015e06-f8db-41b5-8afc-d2cbf1af054f" name="credentials" comment="">
       <change beforePath="$PROJECT_DIR$/aws-ses-mail-sending/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/aws-ses-mail-sending/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-scopes/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-scopes/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-scopes/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-scopes/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-scopes/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-scopes/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-scopes/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-scopes/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-scopes/src/test/java/org/gucardev/springscopes/SpringScopesApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,13 +67,22 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.Application (1).executor": "Run",
+    "Spring Boot.Application (2).executor": "Run",
     "Spring Boot.SpringScopesApplication.executor": "Run",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "corretto-17",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/user/IdeaProjects/spring-learning/spring-scopes/src/main/java/org/gucardev/springscopes",
+    "last_opened_file_path": "C:/Users/user/IdeaProjects/spring-learning/spring-security/3-basic-auth-dynamic-roles/src/main/resources/static",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.configurations.included.in.services": "true",
     "vue.rearranger.settings.migration": "true"
@@ -63,7 +90,13 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\IdeaProjects\spring-learning\spring-security\3-basic-auth-dynamic-roles\src\main\resources\static" />
+      <recent name="C:\Users\user\IdeaProjects\spring-learning\spring-security\3-basic-auth-dynamic-roles\src\main\java\org\gucardev\securityexample3" />
       <recent name="C:\Users\user\IdeaProjects\spring-learning\spring-scopes\src\main\java\org\gucardev\springscopes" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.gucardev.securityexample3" />
+      <recent name="org.gucardev.securityexample3.repository" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -75,7 +108,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Application (1)">
+  <component name="RunManager" selected="Spring Boot.Application (2)">
     <configuration default="true" type="DjangoTestsConfigurationType">
       <module name="entity-relationship-examples" />
       <option name="ENV_FILES" value="" />
@@ -164,6 +197,13 @@
     <configuration name="Application (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="security-example2" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.gucardev.securityexample2.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="security-example3" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.gucardev.securityexample3.Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -441,15 +481,29 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="06ac5a23-67a3-4477-b2de-19bb106c9fde" name="Changes" comment="" />
+      <changelist id="00015e06-f8db-41b5-8afc-d2cbf1af054f" name="credentials" comment="" />
       <created>1723317907353</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723317907353</updated>
-      <workItem from="1723317909468" duration="147000" />
+      <workItem from="1723317909468" duration="1896000" />
     </task>
+    <task id="LOCAL-00001" summary="editor fixed and gradle project converted to maven project">
+      <option name="closed" value="true" />
+      <created>1723318110533</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1723318110533</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="editor fixed and gradle project converted to maven project" />
+    <option name="LAST_COMMIT_MESSAGE" value="editor fixed and gradle project converted to maven project" />
   </component>
 </project>

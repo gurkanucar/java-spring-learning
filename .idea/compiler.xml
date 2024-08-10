@@ -20,6 +20,7 @@
         <module name="security-example1" />
         <module name="optimistic-pessimistic-locking" />
         <module name="security-example2" />
+        <module name="security-example3" />
         <module name="elk-and-monitoring" />
         <module name="entity-encryption" />
         <module name="spring-boot-test" />
@@ -67,6 +68,7 @@
       <module name="redis-storage-example" options="-parameters" />
       <module name="security-example1" options="-parameters" />
       <module name="security-example2" options="-parameters" />
+      <module name="security-example3" options="-parameters" />
       <module name="spring-boot-test" options="-parameters" />
       <module name="spring-scopes" options="-parameters" />
       <module name="spring-shell" options="-parameters" />

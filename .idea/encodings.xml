@@ -30,6 +30,7 @@
     <file url="file://$PROJECT_DIR$/spring-scopes/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-security/1-in-memory-auth/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-security/2-basic-auth-with-hardcoded-role/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-security/3-basic-auth-dynamic-roles/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-security/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-security/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-shell/src/main/java" charset="UTF-8" />
