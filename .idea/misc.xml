@@ -31,6 +31,7 @@
         <option value="$PROJECT_DIR$/entity-relationship-examples/pom.xml" />
         <option value="$PROJECT_DIR$/aws-s3-file-service/pom.xml" />
         <option value="$PROJECT_DIR$/elk-and-monitoring/pom.xml" />
+        <option value="$PROJECT_DIR$/bulk_db_operations/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

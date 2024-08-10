@@ -22,6 +22,7 @@
         <module name="project-micro" />
         <module name="elk-and-monitoring" />
         <module name="entity-auditing" />
+        <module name="bulk_db_operations" />
         <module name="dto-field-masker" />
         <module name="api-gateway" />
         <module name="auth-micro" />
@@ -47,6 +48,7 @@
       <module name="api-gateway" options="-parameters" />
       <module name="auth-micro" options="-parameters" />
       <module name="aws-s3-file-service" options="-parameters" />
+      <module name="bulk_db_operations" options="-parameters" />
       <module name="dto-field-masker" options="-parameters" />
       <module name="elk-and-monitoring" options="-parameters" />
       <module name="entity-auditing" options="-parameters" />

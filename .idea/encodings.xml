@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/aws-s3-file-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bulk_db_operations/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dto-field-masker/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/elk-and-monitoring/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/entity-auditing/src/main/java" charset="UTF-8" />
