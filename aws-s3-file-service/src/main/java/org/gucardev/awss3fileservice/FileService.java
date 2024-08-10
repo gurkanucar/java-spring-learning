@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.*;
 
 @RequiredArgsConstructor
@@ -65,9 +66,9 @@ public class FileService {
         return fileName;
     }
 
-    public byte[] downloadFile(String fileName) throws IOException {
+    public InputStream downloadFile(String fileName) throws IOException {
         S3Object s3Object = amazonS3.getObject(bucketName, fileName);
-        return s3Object.getObjectContent().readAllBytes();
+        return s3Object.getObjectContent();
     }
 
     private File convertMultiPartFileToFile(MultipartFile file) throws IOException {
