@@ -4,49 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06ac5a23-67a3-4477-b2de-19bb106c9fde" name="Changes" comment="new spring security example added">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/config/AsyncConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/config/AuditConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/config/AuditorAwareImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/config/InitialDataPopulate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/constants/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/controller/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/controller/PrivateTestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/controller/PublicTestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/dto/AuthResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/dto/BaseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/dto/LoginRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/dto/LogoutRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/dto/TokenDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/dto/UserDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/mapper/MapperUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/model/BaseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/model/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/security/CustomUserDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/security/CustomUsernamePasswordAuthenticationToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/security/JwtAccessDeniedHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/security/JwtAuthenticationEntryPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/security/JwtFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/security/PasswordEncoderConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/security/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/security/UserDetailsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/service/AuthService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/service/JwtDecoderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/service/JwtEncoderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/service/impl/AuthServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/service/impl/JwtDecoderServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/service/impl/JwtEncoderServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="06ac5a23-67a3-4477-b2de-19bb106c9fde" name="Changes" comment="http requests removed" />
     <list id="00015e06-f8db-41b5-8afc-d2cbf1af054f" name="credentials" comment="">
       <change beforePath="$PROJECT_DIR$/aws-ses-mail-sending/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/aws-ses-mail-sending/src/main/resources/application.properties" afterDir="false" />
     </list>
@@ -85,6 +43,7 @@
   "keyToString": {
     "HTTP Request.generated-requests | #1.executor": "Run",
     "HTTP Request.generated-requests | #2.executor": "Run",
+    "HTTP Request.generated-requests | #3.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -157,6 +116,9 @@
       <method v="2" />
     </configuration>
     <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" requestIdentifier="#2" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="3" requestIdentifier="#3" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
@@ -506,6 +468,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.generated-requests | #3" />
         <item itemvalue="HTTP Request.generated-requests | #1" />
         <item itemvalue="HTTP Request.generated-requests | #2" />
       </list>
@@ -528,7 +491,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723317907353</updated>
-      <workItem from="1723317909468" duration="3794000" />
+      <workItem from="1723317909468" duration="3890000" />
     </task>
     <task id="LOCAL-00001" summary="editor fixed and gradle project converted to maven project">
       <option name="closed" value="true" />
@@ -546,7 +509,23 @@
       <option name="project" value="LOCAL" />
       <updated>1723319836366</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="jwt example added">
+      <option name="closed" value="true" />
+      <created>1723321737004</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1723321737004</updated>
+    </task>
+    <task id="LOCAL-00004" summary="http requests removed">
+      <option name="closed" value="true" />
+      <created>1723321764781</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1723321764781</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -555,6 +534,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="editor fixed and gradle project converted to maven project" />
     <MESSAGE value="new spring security example added" />
-    <option name="LAST_COMMIT_MESSAGE" value="new spring security example added" />
+    <MESSAGE value="jwt example added" />
+    <MESSAGE value="http requests removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="http requests removed" />
   </component>
 </project>
