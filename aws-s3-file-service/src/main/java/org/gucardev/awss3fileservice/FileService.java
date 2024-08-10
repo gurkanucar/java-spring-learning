@@ -5,6 +5,7 @@ import com.amazonaws.HttpMethod;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
+import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
 import com.itextpdf.text.DocumentException;
@@ -15,14 +16,15 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBody;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.Normalizer;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.UUID;
 import java.util.regex.Pattern;
 
 @RequiredArgsConstructor
@@ -76,9 +78,12 @@ public class FileService {
     }
 
     public String uploadMultipartFile(MultipartFile file) throws IOException {
-        File fileObj = convertMultiPartFileToFile(file);
         String fileName = System.currentTimeMillis() + "_" + sanitizeFileName(file.getOriginalFilename());
-        amazonS3.putObject(new PutObjectRequest(bucketName, fileName, fileObj));
+        try (InputStream inputStream = file.getInputStream()) {
+            ObjectMetadata metadata = new ObjectMetadata();
+            metadata.setContentLength(file.getSize());
+            amazonS3.putObject(new PutObjectRequest(bucketName, fileName, inputStream, metadata));
+        }
         return fileName;
     }
 
@@ -113,11 +118,4 @@ public class FileService {
     }
 
 
-    private File convertMultiPartFileToFile(MultipartFile file) throws IOException {
-        File convertedFile = new File(Objects.requireNonNull(file.getOriginalFilename()));
-        try (FileOutputStream fos = new FileOutputStream(convertedFile)) {
-            fos.write(file.getBytes());
-        }
-        return convertedFile;
-    }
 }
