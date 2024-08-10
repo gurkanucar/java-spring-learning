@@ -7,29 +7,30 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="aws-s3-file-service" />
         <module name="java-learning" />
         <module name="entity-relationship-examples" />
         <module name="pure-websocket" />
         <module name="analytics-micro" />
         <module name="mixed" />
-        <module name="redis-caching-example" />
         <module name="utilities" />
         <module name="eureka-server" />
         <module name="aws-ses-mail-sending" />
-        <module name="task-micro" />
         <module name="kafka-example" />
         <module name="file-uploading-with-io" />
+        <module name="optimistic-pessimistic-locking" />
+        <module name="elk-and-monitoring" />
+        <module name="entity-encryption" />
+        <module name="strategy-pattern" />
+        <module name="aws-s3-file-service" />
+        <module name="redis-caching-example" />
+        <module name="task-micro" />
         <module name="redis-storage-example" />
         <module name="project-micro" />
-        <module name="elk-and-monitoring" />
         <module name="entity-auditing" />
         <module name="bulk_db_operations" />
         <module name="dto-field-masker" />
         <module name="api-gateway" />
         <module name="auth-micro" />
-        <module name="entity-encryption" />
-        <module name="strategy-pattern" />
       </profile>
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
@@ -61,6 +62,7 @@
       <module name="file-uploading-with-io" options="-parameters" />
       <module name="kafka-example" options="-parameters" />
       <module name="mixed" options="-parameters" />
+      <module name="optimistic-pessimistic-locking" options="-parameters" />
       <module name="project-micro" options="-parameters" />
       <module name="pure-websocket" options="-parameters" />
       <module name="redis-caching-example" options="-parameters" />
