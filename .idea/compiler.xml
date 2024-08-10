@@ -17,6 +17,7 @@
         <module name="utilities" />
         <module name="eureka-server" />
         <module name="task-micro" />
+        <module name="kafka-example" />
         <module name="file-uploading-with-io" />
         <module name="redis-storage-example" />
         <module name="project-micro" />
@@ -56,6 +57,7 @@
       <module name="entity-relationship-examples" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="file-uploading-with-io" options="-parameters" />
+      <module name="kafka-example" options="-parameters" />
       <module name="mixed" options="-parameters" />
       <module name="project-micro" options="-parameters" />
       <module name="pure-websocket" options="-parameters" />

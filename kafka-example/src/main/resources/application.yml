@@ -1,0 +1,38 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: mail-sending-service-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      auto-offset-reset: earliest
+      enable-auto-commit: false
+      properties:
+        spring:
+          json:
+            value:
+              default:
+                type: java.util.List<org.gucardev.kafkaexample.Employee> # Set default type if needed
+            trusted:
+              packages: '*'
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring:
+          json:
+            add-type-info-headers: false
+    listener:
+      concurrency: 3
+    template:
+      default-topic: employee-mail-notifications
+
+#logging:
+#  level:
+#    org:
+#      apache:
+#        kafka: INFO  # Uncomment and set appropriate logging level as needed
+
+topics:
+  single-employee-topic: employee-mail-notifications
+  multiple-employees-topic: employee-list-mail-notifications
