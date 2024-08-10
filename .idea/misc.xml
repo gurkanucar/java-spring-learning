@@ -36,6 +36,7 @@
         <option value="$PROJECT_DIR$/aws-ses-mail-sending/pom.xml" />
         <option value="$PROJECT_DIR$/optimistic-pessimistic-locking/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-test/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-shell/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
