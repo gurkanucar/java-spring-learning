@@ -21,6 +21,7 @@
         <module name="elk-and-monitoring" />
         <module name="entity-encryption" />
         <module name="strategy-pattern" />
+        <module name="spring-boot-test" />
         <module name="aws-s3-file-service" />
         <module name="redis-caching-example" />
         <module name="task-micro" />
@@ -67,6 +68,7 @@
       <module name="pure-websocket" options="-parameters" />
       <module name="redis-caching-example" options="-parameters" />
       <module name="redis-storage-example" options="-parameters" />
+      <module name="spring-boot-test" options="-parameters" />
       <module name="strategy-pattern" options="-parameters" />
       <module name="task-micro" options="-parameters" />
       <module name="utilities" options="-parameters" />
