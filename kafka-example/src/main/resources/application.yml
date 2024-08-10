@@ -36,3 +36,7 @@ spring:
 topics:
   single-employee-topic: employee-mail-notifications
   multiple-employees-topic: employee-list-mail-notifications
+
+kafka:
+  backoff.interval: 9000
+  backoff.max_failure: 5
