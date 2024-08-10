@@ -16,6 +16,7 @@
         <module name="redis-caching-example" />
         <module name="utilities" />
         <module name="eureka-server" />
+        <module name="aws-ses-mail-sending" />
         <module name="task-micro" />
         <module name="kafka-example" />
         <module name="file-uploading-with-io" />
@@ -49,6 +50,7 @@
       <module name="api-gateway" options="-parameters" />
       <module name="auth-micro" options="-parameters" />
       <module name="aws-s3-file-service" options="-parameters" />
+      <module name="aws-ses-mail-sending" options="-parameters" />
       <module name="bulk_db_operations" options="-parameters" />
       <module name="dto-field-masker" options="-parameters" />
       <module name="elk-and-monitoring" options="-parameters" />
