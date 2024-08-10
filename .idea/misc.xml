@@ -37,6 +37,8 @@
         <option value="$PROJECT_DIR$/optimistic-pessimistic-locking/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-test/pom.xml" />
         <option value="$PROJECT_DIR$/spring-shell/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-security/1-in-memory-auth/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-security/2-basic-auth-with-hardcoded-role/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
