@@ -27,6 +27,16 @@ public class UserService {
     private final LookupValueService lookupValueService;
     private final UserMapper mapper = UserMapper.INSTANCE;
 
+//    @Override
+//    public Page<Dto> getAll(String searchTerm, Pageable pageable) {
+//        Specification<Entity> specification =
+//                Specification.where(new GenericSpecification<Entity>().searchBy(
+//                                List.of("title", "description", "account"), searchTerm))
+//                        .and((root, query, criteriaBuilder) ->
+//                                criteriaBuilder.equal(root.get("user").get("id"), authService.getMyself().getId()));
+//        return repository.findAll(specification, pageable).map(mapper::toDto);
+//    }
+
 
     public Page<UserDTO> getAll(String searchTerm, Sort.Direction direction, String sortField, Pageable pageable, LocalDateTime startDateTime, LocalDateTime endDateTime) {
         Specification<User> spec = Specification.where(UserSpecification.searchBy(searchTerm, null, startDateTime, endDateTime))

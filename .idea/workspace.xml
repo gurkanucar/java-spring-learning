@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06ac5a23-67a3-4477-b2de-19bb106c9fde" name="Changes" comment="http requests removed" />
+    <list default="true" id="06ac5a23-67a3-4477-b2de-19bb106c9fde" name="Changes" comment="git ignore updated">
+      <change afterPath="$PROJECT_DIR$/entity-relationship-examples/src/main/java/org/gucardev/entityrelationshipexamples/specification/GenericSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity-relationship-examples/src/main/java/org/gucardev/entityrelationshipexamples/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/entity-relationship-examples/src/main/java/org/gucardev/entityrelationshipexamples/service/UserService.java" afterDir="false" />
+    </list>
     <list id="00015e06-f8db-41b5-8afc-d2cbf1af054f" name="credentials" comment="">
       <change beforePath="$PROJECT_DIR$/aws-ses-mail-sending/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/aws-ses-mail-sending/src/main/resources/application.properties" afterDir="false" />
     </list>
@@ -23,14 +27,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 2
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2kTqROW0Esfq4qQ8g81qDALsYnE" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -39,34 +43,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "HTTP Request.generated-requests | #1.executor": "Run",
-    "HTTP Request.generated-requests | #2.executor": "Run",
-    "HTTP Request.generated-requests | #3.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.Application (1).executor": "Run",
-    "Spring Boot.Application (2).executor": "Run",
-    "Spring Boot.Application (3).executor": "Debug",
-    "Spring Boot.SpringScopesApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "corretto-17",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/user/IdeaProjects/spring-learning/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.configurations.included.in.services": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;HTTP Request.generated-requests | #1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #2.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #3.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.Application (1).executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.Application (2).executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.Application (3).executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.SpringScopesApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/IdeaProjects/spring-learning/spring-security/4-jwt-authentication/src/main/java/org/gucardev/securityexample4&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\user\IdeaProjects\spring-learning\spring-security\4-jwt-authentication\src\main\java\org\gucardev\securityexample4" />
@@ -76,6 +80,7 @@
       <recent name="C:\Users\user\IdeaProjects\spring-learning\spring-security\4-jwt-authentication\src\main\java\org\gucardev\securityexample4\model" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.gucardev.entityrelationshipexamples.specification" />
       <recent name="org.gucardev.securityexample4.mapper" />
       <recent name="org.gucardev.securityexample3" />
       <recent name="org.gucardev.securityexample3.repository" />
@@ -491,7 +496,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723317907353</updated>
-      <workItem from="1723317909468" duration="3890000" />
+      <workItem from="1723317909468" duration="4065000" />
+      <workItem from="1723384343565" duration="164000" />
     </task>
     <task id="LOCAL-00001" summary="editor fixed and gradle project converted to maven project">
       <option name="closed" value="true" />
@@ -525,7 +531,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723321764781</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="git ignore updated">
+      <option name="closed" value="true" />
+      <created>1723321833935</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1723321833935</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -536,6 +550,7 @@
     <MESSAGE value="new spring security example added" />
     <MESSAGE value="jwt example added" />
     <MESSAGE value="http requests removed" />
-    <option name="LAST_COMMIT_MESSAGE" value="http requests removed" />
+    <MESSAGE value="git ignore updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="git ignore updated" />
   </component>
 </project>
