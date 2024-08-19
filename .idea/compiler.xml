@@ -22,6 +22,7 @@
         <module name="optimistic-pessimistic-locking" />
         <module name="security-example2" />
         <module name="security-example3" />
+        <module name="actuator" />
         <module name="elk-and-monitoring" />
         <module name="entity-encryption" />
         <module name="spring-boot-test" />
@@ -47,6 +48,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="actuator" options="-parameters" />
       <module name="analytics-micro" options="-parameters" />
       <module name="api-gateway" options="-parameters" />
       <module name="auth-micro" options="-parameters" />
