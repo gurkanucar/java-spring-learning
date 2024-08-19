@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06ac5a23-67a3-4477-b2de-19bb106c9fde" name="Changes" comment="git ignore updated">
-      <change afterPath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/actuator/src/main/resources/logback-spring.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="06ac5a23-67a3-4477-b2de-19bb106c9fde" name="Changes" comment="actuator example created">
+      <change afterPath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/ExceptionAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/LogOncePerReqFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actuator/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/actuator/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/ActuatorApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/ActuatorApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/Controller.java" afterDir="false" />
     </list>
     <list id="00015e06-f8db-41b5-8afc-d2cbf1af054f" name="credentials" comment="">
       <change beforePath="$PROJECT_DIR$/aws-ses-mail-sending/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/aws-ses-mail-sending/src/main/resources/application.properties" afterDir="false" />
@@ -84,6 +84,7 @@
       <recent name="C:\Users\user\IdeaProjects\spring-learning\spring-security\4-jwt-authentication\src\main\java\org\gucardev\securityexample4\service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.gucardev.actuator" />
       <recent name="org.gucardev.entityrelationshipexamples.specification" />
       <recent name="org.gucardev.securityexample4.mapper" />
       <recent name="org.gucardev.securityexample3" />
@@ -550,7 +551,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723321833935</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="actuator example created">
+      <option name="closed" value="true" />
+      <created>1724088673299</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1724088673299</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -562,6 +571,7 @@
     <MESSAGE value="jwt example added" />
     <MESSAGE value="http requests removed" />
     <MESSAGE value="git ignore updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="git ignore updated" />
+    <MESSAGE value="actuator example created" />
+    <option name="LAST_COMMIT_MESSAGE" value="actuator example created" />
   </component>
 </project>
