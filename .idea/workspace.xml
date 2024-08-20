@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06ac5a23-67a3-4477-b2de-19bb106c9fde" name="Changes" comment="actuator example created">
-      <change afterPath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/ExceptionAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/LogOncePerReqFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actuator/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/actuator/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/ActuatorApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/ActuatorApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/ExceptionAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/ExceptionAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/LogOncePerReqFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/LogOncePerReqFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actuator/src/main/resources/logback-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/actuator/src/main/resources/logback-spring.xml" afterDir="false" />
     </list>
     <list id="00015e06-f8db-41b5-8afc-d2cbf1af054f" name="credentials" comment="">
       <change beforePath="$PROJECT_DIR$/aws-ses-mail-sending/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/aws-ses-mail-sending/src/main/resources/application.properties" afterDir="false" />
@@ -46,35 +44,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "HTTP Request.generated-requests | #1.executor": "Run",
-    "HTTP Request.generated-requests | #2.executor": "Run",
-    "HTTP Request.generated-requests | #3.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.ActuatorApplication.executor": "Run",
-    "Spring Boot.Application (1).executor": "Run",
-    "Spring Boot.Application (2).executor": "Run",
-    "Spring Boot.Application (3).executor": "Debug",
-    "Spring Boot.SpringScopesApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "corretto-17",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/user/IdeaProjects/spring-learning/actuator/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.configurations.included.in.services": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;HTTP Request.generated-requests | #1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #2.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #3.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ActuatorApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.Application (1).executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.Application (2).executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.Application (3).executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.SpringScopesApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/IdeaProjects/spring-learning/actuator/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\user\IdeaProjects\spring-learning\actuator\src\main\resources" />
