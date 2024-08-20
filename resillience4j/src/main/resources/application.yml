@@ -1,0 +1,12 @@
+resilience4j:
+  ratelimiter:
+    instances:
+      endpoint-1:
+        limit-for-period: 1
+        limit-refresh-period: 10s
+        timeout-duration: 5s
+        register-health-indicator: true
+      auth:
+        limit-for-period: 2
+        limit-refresh-period: 10s
+        timeout-duration: 5s

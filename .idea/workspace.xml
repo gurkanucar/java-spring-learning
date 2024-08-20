@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06ac5a23-67a3-4477-b2de-19bb106c9fde" name="Changes" comment="some logging improvements">
-      <change afterPath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/exception/BaseExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/exception/CustomException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/exception/ExceptionResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/exception/GlobalBaseExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/exception/ResponseConstants.java" afterDir="false" />
+    <list default="true" id="06ac5a23-67a3-4477-b2de-19bb106c9fde" name="Changes" comment="small refactors">
+      <change afterPath="$PROJECT_DIR$/resillience4j/src/main/java/org/gucardev/resillience4j/RateLimiterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actuator/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/actuator/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/LogOncePerReqFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/LogOncePerReqFilter.java" afterDir="false" />
     </list>
     <list id="00015e06-f8db-41b5-8afc-d2cbf1af054f" name="credentials" comment="">
       <change beforePath="$PROJECT_DIR$/aws-ses-mail-sending/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/aws-ses-mail-sending/src/main/resources/application.properties" afterDir="false" />
@@ -64,6 +61,7 @@
     "Spring Boot.Application (1).executor": "Run",
     "Spring Boot.Application (2).executor": "Run",
     "Spring Boot.Application (3).executor": "Debug",
+    "Spring Boot.Resillience4jApplication.executor": "Run",
     "Spring Boot.SpringScopesApplication.executor": "Run",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "corretto-17",
@@ -103,7 +101,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ActuatorApplication">
+  <component name="RunManager" selected="Spring Boot.Resillience4jApplication">
     <configuration default="true" type="DjangoTestsConfigurationType">
       <module name="entity-relationship-examples" />
       <option name="ENV_FILES" value="" />
@@ -359,6 +357,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Resillience4jApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="resillience4j" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.gucardev.resillience4j.Resillience4jApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SpringBootTestApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="spring-boot-test" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.gucardev.springboottest.SpringBootTestApplication" />
@@ -570,7 +575,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724180660409</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="small refactors">
+      <option name="closed" value="true" />
+      <created>1724183102060</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1724183102060</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,6 +597,7 @@
     <MESSAGE value="git ignore updated" />
     <MESSAGE value="actuator example created" />
     <MESSAGE value="some logging improvements" />
-    <option name="LAST_COMMIT_MESSAGE" value="some logging improvements" />
+    <MESSAGE value="small refactors" />
+    <option name="LAST_COMMIT_MESSAGE" value="small refactors" />
   </component>
 </project>

@@ -30,6 +30,7 @@
         <module name="aws-s3-file-service" />
         <module name="spring-shell" />
         <module name="redis-caching-example" />
+        <module name="resillience4j" />
         <module name="task-micro" />
         <module name="redis-storage-example" />
         <module name="project-micro" />
@@ -69,6 +70,7 @@
       <module name="pure-websocket" options="-parameters" />
       <module name="redis-caching-example" options="-parameters" />
       <module name="redis-storage-example" options="-parameters" />
+      <module name="resillience4j" options="-parameters" />
       <module name="security-example1" options="-parameters" />
       <module name="security-example2" options="-parameters" />
       <module name="security-example3" options="-parameters" />
