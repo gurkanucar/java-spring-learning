@@ -57,7 +57,7 @@ public class LogOncePerReqFilter extends OncePerRequestFilter {
 
             String path = request.getRequestURI();
 
-            log.info("{} | Path: {} | Parameters: {} | Body: {}", type, path, params, logData);
+            log.info("{} | Path: {}?{} | Body: {}", type, path, params, logData);
         } else {
             log.info("{} | duration: {} ms | {}", type, duration, logData);
         }
