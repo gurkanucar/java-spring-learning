@@ -10,3 +10,9 @@ resilience4j:
         limit-for-period: 2
         limit-refresh-period: 10s
         timeout-duration: 5s
+
+resilience4j.retry:
+  instances:
+    my-service-retry:
+      max-attempts: 2
+      wait-duration: 2s

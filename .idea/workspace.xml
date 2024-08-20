@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06ac5a23-67a3-4477-b2de-19bb106c9fde" name="Changes" comment="small refactors">
-      <change afterPath="$PROJECT_DIR$/resillience4j/src/main/java/org/gucardev/resillience4j/RateLimiterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="06ac5a23-67a3-4477-b2de-19bb106c9fde" name="Changes" comment="resillience4j example created">
+      <change afterPath="$PROJECT_DIR$/resillience4j/src/main/java/org/gucardev/resillience4j/RetryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resillience4j/src/main/java/org/gucardev/resillience4j/RateLimiterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/resillience4j/src/main/java/org/gucardev/resillience4j/RateLimiterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resillience4j/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/resillience4j/src/main/resources/application.yml" afterDir="false" />
     </list>
     <list id="00015e06-f8db-41b5-8afc-d2cbf1af054f" name="credentials" comment="">
       <change beforePath="$PROJECT_DIR$/aws-ses-mail-sending/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/aws-ses-mail-sending/src/main/resources/application.properties" afterDir="false" />
@@ -583,7 +581,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724183102060</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="resillience4j example created">
+      <option name="closed" value="true" />
+      <created>1724185911602</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1724185911602</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -598,6 +604,7 @@
     <MESSAGE value="actuator example created" />
     <MESSAGE value="some logging improvements" />
     <MESSAGE value="small refactors" />
-    <option name="LAST_COMMIT_MESSAGE" value="small refactors" />
+    <MESSAGE value="resillience4j example created" />
+    <option name="LAST_COMMIT_MESSAGE" value="resillience4j example created" />
   </component>
 </project>

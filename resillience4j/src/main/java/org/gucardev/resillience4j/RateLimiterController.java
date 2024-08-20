@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
-@RequestMapping
+@RequestMapping("/rate-limiter")
 public class RateLimiterController {
 
     @GetMapping("/hello")
