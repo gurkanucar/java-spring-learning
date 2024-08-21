@@ -5,6 +5,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.MDC;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 import org.springframework.web.util.ContentCachingRequestWrapper;
@@ -17,6 +18,8 @@ import java.io.IOException;
 public class LogOncePerReqFilter extends OncePerRequestFilter {
 
     private static final int MAX_LOG_CONTENT_LENGTH = 2000;
+    private static final String TRACE_ID_HEADER = "X-Trace-Id";
+    private static final String MDC_TRACE_ID_KEY = "traceId";
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
@@ -27,6 +30,7 @@ public class LogOncePerReqFilter extends OncePerRequestFilter {
         ContentCachingResponseWrapper cachingResponseWrapper = new ContentCachingResponseWrapper(response);
 
         try {
+            response.setHeader(TRACE_ID_HEADER, MDC.get(MDC_TRACE_ID_KEY));
             filterChain.doFilter(cachingRequestWrapper, cachingResponseWrapper);
         } finally {
             long duration = System.currentTimeMillis() - startTime;
