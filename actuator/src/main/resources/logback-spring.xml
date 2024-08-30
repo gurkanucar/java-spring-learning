@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-
+    <property resource="application.properties" />
     <!-- Console Appender -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
@@ -22,7 +22,7 @@
             </http>
             <format>
                 <label>
-                    <pattern>app=${name},host=${HOSTNAME}</pattern>
+                    <pattern>app=${spring.application.name},host=${HOSTNAME}</pattern>
                     <readMarkers>true</readMarkers>
                 </label>
                 <message>
