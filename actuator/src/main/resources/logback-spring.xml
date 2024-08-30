@@ -10,16 +10,41 @@
 
     <!-- File Appender -->
     <appender name="FILE" class="ch.qos.logback.core.FileAppender">
-        <!-- Specify the file where logs will be saved -->
         <file>logs/application.log</file>
         <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [traceId: %X{traceId}] [%logger{10} : %line] - %msg%n</pattern>
         </encoder>
     </appender>
 
+        <appender name="LOKI" class="com.github.loki4j.logback.Loki4jAppender">
+            <http>
+                <url>http://localhost:3100/loki/api/v1/push</url>
+            </http>
+            <format>
+                <label>
+                    <pattern>app=${name},host=${HOSTNAME}</pattern>
+                    <readMarkers>true</readMarkers>
+                </label>
+                <message>
+                    <pattern>
+                        {
+                        "timestamp":"%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ}",
+                        "level":"%level",
+                        "traceId":"%X{traceId}",
+                        "logger":"%logger{36}",
+                        "thread":"%thread",
+                        "message": "%message"
+                        }
+                    </pattern>
+                </message>
+            </format>
+        </appender>
+
+
     <root level="info">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>
+        <appender-ref ref="LOKI"/>
     </root>
 
 </configuration>
