@@ -1,14 +1,14 @@
 version: "3"
-networks:
-  loki:
 services:
   loki:
     image: grafana/loki:2.9.0
     ports:
       - "3100:3100"
     command: -config.file=/etc/loki/local-config.yaml
+    volumes:
+      - ./monitoring/loki/local-config.yaml:/etc/loki/local-config.yaml
     networks:
-      - loki
+      - project
   grafana:
     environment:
       - GF_PATHS_PROVISIONING=/etc/grafana/provisioning
@@ -37,4 +37,19 @@ services:
     ports:
       - "3000:3000"
     networks:
-      - loki
+      - project
+    ## Prometheus
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    restart: always
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - project
+
+networks:
+  project:
+    driver: bridge

@@ -1,5 +1,7 @@
 package org.gucardev.actuator;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterThrowing;
@@ -7,15 +9,6 @@ import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
-import java.util.stream.Collectors;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Aspect;
-import org.springframework.stereotype.Component;
-import lombok.extern.slf4j.Slf4j;
 
 @Aspect
 @Component
@@ -29,7 +22,7 @@ public class ExceptionAspect {
     public void handleExceptions(JoinPoint joinPoint, Exception ex) {
         String methodName = joinPoint.getSignature().toShortString();
         String arguments = formatArguments(joinPoint.getArgs());
-        log.error("Method: {}, Arguments: {}, Exception: {}", methodName, arguments, ex.getMessage(), ex);
+        log.error("Method: {}, Arguments: {}, Exception: {}", methodName, arguments.replaceAll("\"", "'"), ex.getMessage(), ex);
     }
 
     private String formatArguments(Object[] args) {
