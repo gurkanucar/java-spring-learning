@@ -25,12 +25,22 @@ public class LogOncePerReqFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
         long startTime = System.currentTimeMillis();
+        response.setHeader(TRACE_ID_HEADER, MDC.get(MDC_TRACE_ID_KEY));
+
+        if (request.getRequestURI().contains("download")) {
+            filterChain.doFilter(request, response);
+            long duration = System.currentTimeMillis() - startTime;
+            log.info("Response::file download | duration: {} ms", duration);
+            return;
+        } else if (request.getRequestURI().contains("actuator")) {
+            filterChain.doFilter(request, response);
+            return;
+        }
 
         ContentCachingRequestWrapper cachingRequestWrapper = new ContentCachingRequestWrapper(request);
         ContentCachingResponseWrapper cachingResponseWrapper = new ContentCachingResponseWrapper(response);
 
         try {
-            response.setHeader(TRACE_ID_HEADER, MDC.get(MDC_TRACE_ID_KEY));
             filterChain.doFilter(cachingRequestWrapper, cachingResponseWrapper);
         } finally {
             long duration = System.currentTimeMillis() - startTime;
@@ -44,7 +54,7 @@ public class LogOncePerReqFilter extends OncePerRequestFilter {
 
     private void logContent(String type, byte[] content, String characterEncoding, long duration, HttpServletRequest request) {
         String logData = getValueAsString(content, characterEncoding)
-                .trim().replaceAll("[\n\r]", "");
+                .trim().replaceAll("[\n\r]", "").replaceAll("\"", "'");
         logData = logData.substring(0, Math.min(logData.length(), MAX_LOG_CONTENT_LENGTH));
 
         if (request != null) {
