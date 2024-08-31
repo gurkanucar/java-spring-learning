@@ -42,6 +42,12 @@ public abstract class GenericRestController<E, D, ID> {
         return ResponseEntity.status(HttpStatus.CREATED).body(createdDto);
     }
 
+    @PostMapping("/list")
+    public ResponseEntity<List<D>> create(@Valid @RequestBody List<D> dtoList) {
+        List<D> createdDto = service.create(dtoList);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdDto);
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<D> update(@PathVariable ID id, @Valid @RequestBody D dto) {
         D updatedDto = service.update(id, dto);
