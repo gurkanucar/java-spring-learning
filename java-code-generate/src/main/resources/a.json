@@ -1,0 +1,52 @@
+{
+  "packageName": "com.example.generated.entity",
+  "classes": [
+    {
+      "name": "Person",
+      "fields": [
+        {
+          "type": "String",
+          "name": "name",
+          "columnName": "person_name",
+          "columnLength": 100
+        },
+        {
+          "type": "String",
+          "name": "email",
+          "columnLength": 200
+        }
+      ],
+      "relationships": [
+        {
+          "type": "OneToMany",
+          "targetClass": "Address",
+          "fieldName": "addresses",
+          "mappedBy": "person"
+        }
+      ]
+    },
+    {
+      "name": "Address",
+      "fields": [
+        {
+          "type": "String",
+          "name": "street",
+          "columnLength": 200
+        },
+        {
+          "type": "String",
+          "name": "city",
+          "columnLength": 100
+        }
+      ],
+      "relationships": [
+        {
+          "type": "ManyToOne",
+          "targetClass": "Person",
+          "fieldName": "person",
+          "joinColumnName": "person_id"
+        }
+      ]
+    }
+  ]
+}
