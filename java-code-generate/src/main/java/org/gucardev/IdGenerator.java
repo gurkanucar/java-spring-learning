@@ -12,6 +12,7 @@ public class IdGenerator {
     public static FieldSpec generateIdField(boolean useUUID) {
         ClassName idAnnotation = ClassName.get("jakarta.persistence", "Id");
         ClassName generatedValueAnnotation = ClassName.get("jakarta.persistence", "GeneratedValue");
+        ClassName generationType = ClassName.get("jakarta.persistence", "GenerationType");
 
         if (useUUID) {
             return FieldSpec.builder(UUID.class, "id", Modifier.PRIVATE)
@@ -28,7 +29,7 @@ public class IdGenerator {
             return FieldSpec.builder(Long.class, "id", Modifier.PRIVATE)
                     .addAnnotation(idAnnotation)
                     .addAnnotation(AnnotationSpec.builder(generatedValueAnnotation)
-                            .addMember("strategy", "$T.IDENTITY", ClassName.get("jakarta.persistence.GenerationType", "IDENTITY"))
+                            .addMember("strategy", "$T.IDENTITY", generationType)
                             .build())
                     .build();
         }
