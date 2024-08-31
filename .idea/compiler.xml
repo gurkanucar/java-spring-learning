@@ -29,6 +29,7 @@
         <module name="strategy-pattern" />
         <module name="aws-s3-file-service" />
         <module name="spring-shell" />
+        <module name="generic-example" />
         <module name="redis-caching-example" />
         <module name="resillience4j" />
         <module name="task-micro" />
@@ -64,6 +65,7 @@
       <module name="entity-relationship-examples" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="file-uploading-with-io" options="-parameters" />
+      <module name="generic-example" options="-parameters" />
       <module name="kafka-example" options="-parameters" />
       <module name="mixed" options="-parameters" />
       <module name="optimistic-pessimistic-locking" options="-parameters" />

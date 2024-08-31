@@ -41,6 +41,7 @@
         <option value="$PROJECT_DIR$/spring-security/4-jwt-authentication/pom.xml" />
         <option value="$PROJECT_DIR$/actuator/pom.xml" />
         <option value="$PROJECT_DIR$/resillience4j/pom.xml" />
+        <option value="$PROJECT_DIR$/generic-example/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
