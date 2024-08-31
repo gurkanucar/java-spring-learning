@@ -3,7 +3,8 @@ package org.gucardev.genericexample.controller;
 import org.gucardev.genericexample.dto.CardDto;
 import org.gucardev.genericexample.entity.Card;
 import org.gucardev.genericexample.service.CardService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,9 +14,11 @@ import java.util.List;
 @RequestMapping("/api/card")
 public class CardRestController extends GenericRestController<Card, CardDto, Long> {
 
-    @Autowired
-    public CardRestController(CardService service) {
-        super(service);
+    private final CardService cardService;
+
+    public CardRestController(CardService cardService) {
+        super(cardService);
+        this.cardService = cardService;
     }
 
     @Override
@@ -23,4 +26,9 @@ public class CardRestController extends GenericRestController<Card, CardDto, Lon
         return List.of("name");
     }
 
+    @GetMapping("/account/{accountId}")
+    public List<CardDto> getCardsByAccountId(@PathVariable("accountId") Long accountId) {
+        return cardService.findAllByAccountId(accountId);
+    }
 }
+

@@ -4,43 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06ac5a23-67a3-4477-b2de-19bb106c9fde" name="Changes" comment="classes generated from json">
-      <change afterPath="$PROJECT_DIR$/generic-example/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/config/JacksonConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/config/OpenApiConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/controller/AccountRestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/controller/CardRestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/controller/CustomerRestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/controller/GenericRestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/dto/AccountDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/dto/BaseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/dto/CardDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/dto/CustomerDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/entity/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/entity/BaseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/entity/Card.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/entity/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/mapper/AccountMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/mapper/CardMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/mapper/CustomerMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/mapper/GenericMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/repository/AccountRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/repository/CardRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/repository/CustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/repository/GenericRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/AccountService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/CardService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/CustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/GenericService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/impl/AccountServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/impl/CardServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/impl/CustomerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/impl/GenericServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/spesification/GenericSpecification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="06ac5a23-67a3-4477-b2de-19bb106c9fde" name="Changes" comment="create list method added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/controller/AccountRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/controller/AccountRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/controller/CardRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/controller/CardRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/controller/GenericRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/controller/GenericRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/dto/AccountDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/dto/AccountDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/dto/BaseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/dto/BaseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/dto/CardDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/dto/CardDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/entity/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/mapper/AccountMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/mapper/AccountMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/mapper/CardMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/mapper/CardMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/mapper/CustomerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/mapper/CustomerMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/repository/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/repository/AccountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/repository/CardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/repository/CardRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/CardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/CardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/GenericService.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/GenericService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/impl/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/impl/AccountServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/impl/CardServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/impl/CardServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/impl/GenericServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/impl/GenericServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic-example/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-code-generate/src/main/java/org/gucardev/Main.java" beforeDir="false" />
     </list>
     <list id="00015e06-f8db-41b5-8afc-d2cbf1af054f" name="credentials" comment="">
@@ -643,7 +627,7 @@
       <workItem from="1723384343565" duration="164000" />
       <workItem from="1724262634536" duration="3537000" />
       <workItem from="1724302532804" duration="599000" />
-      <workItem from="1725020980491" duration="26289000" />
+      <workItem from="1725020980491" duration="31161000" />
     </task>
     <task id="LOCAL-00001" summary="editor fixed and gradle project converted to maven project">
       <option name="closed" value="true" />
@@ -797,7 +781,23 @@
       <option name="project" value="LOCAL" />
       <updated>1725116761003</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="generic example created">
+      <option name="closed" value="true" />
+      <created>1725131229981</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1725131229981</updated>
+    </task>
+    <task id="LOCAL-00021" summary="create list method added">
+      <option name="closed" value="true" />
+      <created>1725133152068</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1725133152068</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -823,6 +823,8 @@
     <MESSAGE value="Java code generator example added" />
     <MESSAGE value="bugfix" />
     <MESSAGE value="classes generated from json" />
-    <option name="LAST_COMMIT_MESSAGE" value="classes generated from json" />
+    <MESSAGE value="generic example created" />
+    <MESSAGE value="create list method added" />
+    <option name="LAST_COMMIT_MESSAGE" value="create list method added" />
   </component>
 </project>

@@ -4,6 +4,7 @@ import jakarta.validation.Valid;
 import org.gucardev.genericexample.service.GenericService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,9 +24,12 @@ public abstract class GenericRestController<E, D, ID> {
     @GetMapping
     public ResponseEntity<Page<D>> getAll(
             @RequestParam(required = false) String searchTerm,
-            Pageable pageable) {
+            Pageable pageable,
+            @RequestParam(required = false) String sortField,
+            @RequestParam(required = false) String sortDir) {
         List<String> searchableFields = getSearchableFields();
-        Page<D> results = service.getAll(searchTerm, pageable, searchableFields);
+        Sort.Direction sortDirection = Sort.Direction.fromOptionalString(sortDir).orElse(Sort.Direction.ASC);
+        Page<D> results = service.getAll(searchTerm, pageable, searchableFields, sortField, sortDirection);
         return ResponseEntity.ok(results);
     }
 

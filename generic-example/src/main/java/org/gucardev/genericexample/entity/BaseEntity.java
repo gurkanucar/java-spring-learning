@@ -25,9 +25,6 @@ public abstract class BaseEntity {
     @Column(nullable = false)
     private LocalDateTime updateDate;
 
-    private String createdBy;
-    private String updatedBy;
-
     @PrePersist
     public void prePersist() {
         createDate = LocalDateTime.now();

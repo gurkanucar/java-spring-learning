@@ -12,7 +12,5 @@ public abstract class BaseDto {
     private Long id;
     private LocalDateTime createDate;
     private LocalDateTime updateDate;
-    private String createdBy;
-    private String updatedBy;
 
 }

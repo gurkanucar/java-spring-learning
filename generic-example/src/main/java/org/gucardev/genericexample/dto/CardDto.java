@@ -2,19 +2,19 @@ package org.gucardev.genericexample.dto;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.gucardev.genericexample.entity.Account;
 
 @Getter
 @Setter
 public class CardDto extends BaseDto {
 
     private String name;
-    private Account account;
+    private Long accountId;
+    private AccountDto account;
 
     @Getter
     @Setter
     public static class AccountDto extends BaseDto {
-
+        private Long id;
         private String name;
     }
 

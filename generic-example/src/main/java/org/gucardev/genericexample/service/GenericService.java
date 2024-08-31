@@ -2,12 +2,13 @@ package org.gucardev.genericexample.service;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface GenericService<E, D, ID> {
-    Page<D> getAll(String searchTerm, Pageable pageable, List<String> searchableFields);
+    Page<D> getAll(String searchTerm, Pageable pageable, List<String> searchableFields, String sortField, Sort.Direction sortDirection);
     E getById(ID id);
     Optional<E> getByIdOptional(ID id);
     D getDtoById(ID id);

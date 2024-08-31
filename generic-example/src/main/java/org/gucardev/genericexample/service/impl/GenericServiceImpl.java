@@ -6,6 +6,7 @@ import org.gucardev.genericexample.repository.GenericRepository;
 import org.gucardev.genericexample.spesification.GenericSpecification;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,11 +23,12 @@ public abstract class GenericServiceImpl<E, D, ID> {
         this.mapper = mapper;
     }
 
-    public Page<D> getAll(String searchTerm, Pageable pageable, List<String> searchableFields) {
-        return repository.findAll(Specification.where(
-                        new GenericSpecification<E>().searchBy(
-                                searchableFields,
-                                searchTerm)), pageable)
+    public Page<D> getAll(String searchTerm, Pageable pageable, List<String> searchableFields,
+                          String sortField, Sort.Direction sortDirection) {
+        Specification<E> searchSpec = new GenericSpecification<E>().searchBy(searchableFields, searchTerm);
+        Specification<E> sortSpec = new GenericSpecification<E>().sortByField(sortField, sortDirection);
+        Specification<E> combinedSpec = Specification.where(searchSpec).and(sortSpec);
+        return repository.findAll(combinedSpec, pageable)
                 .map(mapper::toDto);
     }
 
