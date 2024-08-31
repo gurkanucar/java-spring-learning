@@ -11,5 +11,6 @@
     <module>java-learning</module>
       <module>microservice-example</module>
       <module>spring-security</module>
+      <module>java-code-generate</module>
   </modules>
 </project>

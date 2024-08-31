@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06ac5a23-67a3-4477-b2de-19bb106c9fde" name="Changes" comment="resillience4j example created">
-      <change afterPath="$PROJECT_DIR$/resillience4j/src/main/java/org/gucardev/resillience4j/RetryController.java" afterDir="false" />
+    <list default="true" id="06ac5a23-67a3-4477-b2de-19bb106c9fde" name="Changes" comment="LogOncePerReqFilter updated">
+      <change afterPath="$PROJECT_DIR$/java-code-generate/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-code-generate/src/main/java/org/gucardev/FieldDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-code-generate/src/main/java/org/gucardev/IdGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resillience4j/src/main/java/org/gucardev/resillience4j/RateLimiterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/resillience4j/src/main/java/org/gucardev/resillience4j/RateLimiterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resillience4j/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/resillience4j/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <list id="00015e06-f8db-41b5-8afc-d2cbf1af054f" name="credentials" comment="">
       <change beforePath="$PROJECT_DIR$/aws-ses-mail-sending/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/aws-ses-mail-sending/src/main/resources/application.properties" afterDir="false" />
@@ -46,9 +49,16 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
+    "Docker.actuator.prometheus: Compose Deployment.executor": "Run",
+    "Docker.actuator: Compose Deployment.executor": "Run",
     "HTTP Request.generated-requests | #1.executor": "Run",
     "HTTP Request.generated-requests | #2.executor": "Run",
     "HTTP Request.generated-requests | #3.executor": "Run",
+    "Maven.learning-java [clean,deploy].executor": "Run",
+    "Maven.learning-java [clean,install].executor": "Run",
+    "Maven.learning-java [clean,package].executor": "Run",
+    "Maven.utilities [install].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -64,7 +74,7 @@
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "corretto-17",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/user/IdeaProjects/spring-learning/actuator/src/main/java/org/gucardev/actuator/exception",
+    "last_opened_file_path": "C:/Users/user/IdeaProjects/spring-learning/actuator/monitoring/grafana",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -76,11 +86,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\IdeaProjects\spring-learning\actuator\monitoring\grafana" />
+      <recent name="C:\Users\user\IdeaProjects\spring-learning\actuator\prometheus" />
       <recent name="C:\Users\user\IdeaProjects\spring-learning\actuator\src\main\java\org\gucardev\actuator\exception" />
       <recent name="C:\Users\user\IdeaProjects\spring-learning\actuator\src\main\resources" />
       <recent name="C:\Users\user\IdeaProjects\spring-learning\spring-security\4-jwt-authentication\src\main\java\org\gucardev\securityexample4" />
-      <recent name="C:\Users\user\IdeaProjects\spring-learning\spring-security\4-jwt-authentication\src\main\java\org\gucardev\securityexample4\security" />
-      <recent name="C:\Users\user\IdeaProjects\spring-learning\spring-security\4-jwt-authentication\src\main\java\org\gucardev\securityexample4\dto" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\IdeaProjects\spring-learning\actuator\monitoring" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.gucardev.actuator.exception" />
@@ -89,6 +102,13 @@
       <recent name="org.gucardev.securityexample4.mapper" />
       <recent name="org.gucardev.securityexample3" />
     </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean package" />
+      <command value="mvn clean deploy" />
+      <command value="mvn clean install" />
+    </option>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -99,7 +119,20 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Resillience4jApplication">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.gucardev.Main" />
+      <module name="java-code-generate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.gucardev.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType">
       <module name="entity-relationship-examples" />
       <option name="ENV_FILES" value="" />
@@ -122,9 +155,6 @@
       <method v="2" />
     </configuration>
     <configuration name="generated-requests | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" requestIdentifier="#1" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" requestIdentifier="#2" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="generated-requests | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="3" requestIdentifier="#3" runType="Run single request">
@@ -417,6 +447,31 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <method v="2" />
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
+    <configuration name="actuator: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="actuator/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="actuator.prometheus: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="prometheus" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="actuator/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="docs" factoryName="Docutils task">
       <module name="entity-relationship-examples" />
       <option name="ENV_FILES" value="" />
@@ -491,9 +546,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Docker.actuator: Compose Deployment" />
+        <item itemvalue="Docker.actuator.prometheus: Compose Deployment" />
         <item itemvalue="HTTP Request.generated-requests | #3" />
         <item itemvalue="HTTP Request.generated-requests | #1" />
-        <item itemvalue="HTTP Request.generated-requests | #2" />
       </list>
     </recent_temporary>
   </component>
@@ -516,6 +573,9 @@
       <updated>1723317907353</updated>
       <workItem from="1723317909468" duration="4065000" />
       <workItem from="1723384343565" duration="164000" />
+      <workItem from="1724262634536" duration="3537000" />
+      <workItem from="1724302532804" duration="599000" />
+      <workItem from="1725020980491" duration="15302000" />
     </task>
     <task id="LOCAL-00001" summary="editor fixed and gradle project converted to maven project">
       <option name="closed" value="true" />
@@ -589,7 +649,63 @@
       <option name="project" value="LOCAL" />
       <updated>1724185911602</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="retry example created">
+      <option name="closed" value="true" />
+      <created>1724186541571</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1724186541571</updated>
+    </task>
+    <task id="LOCAL-00011" summary="traceid added to response header">
+      <option name="closed" value="true" />
+      <created>1724264429267</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1724264429267</updated>
+    </task>
+    <task id="LOCAL-00012" summary="exception handler improved">
+      <option name="closed" value="true" />
+      <created>1724265101982</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1724265101982</updated>
+    </task>
+    <task id="LOCAL-00013" summary="grafana loki added">
+      <option name="closed" value="true" />
+      <created>1725022457746</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1725022457746</updated>
+    </task>
+    <task id="LOCAL-00014" summary="small fixes">
+      <option name="closed" value="true" />
+      <created>1725022958472</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1725022958472</updated>
+    </task>
+    <task id="LOCAL-00015" summary="dashboard updated">
+      <option name="closed" value="true" />
+      <created>1725110179684</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1725110179684</updated>
+    </task>
+    <task id="LOCAL-00016" summary="LogOncePerReqFilter updated">
+      <option name="closed" value="true" />
+      <created>1725111207465</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1725111207465</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -605,6 +721,13 @@
     <MESSAGE value="some logging improvements" />
     <MESSAGE value="small refactors" />
     <MESSAGE value="resillience4j example created" />
-    <option name="LAST_COMMIT_MESSAGE" value="resillience4j example created" />
+    <MESSAGE value="retry example created" />
+    <MESSAGE value="traceid added to response header" />
+    <MESSAGE value="exception handler improved" />
+    <MESSAGE value="grafana loki added" />
+    <MESSAGE value="small fixes" />
+    <MESSAGE value="dashboard updated" />
+    <MESSAGE value="LogOncePerReqFilter updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="LogOncePerReqFilter updated" />
   </component>
 </project>

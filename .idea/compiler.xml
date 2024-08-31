@@ -41,6 +41,7 @@
         <module name="api-gateway" />
         <module name="auth-micro" />
         <module name="spring-security" />
+        <module name="java-code-generate" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
