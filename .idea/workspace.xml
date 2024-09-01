@@ -4,27 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06ac5a23-67a3-4477-b2de-19bb106c9fde" name="Changes" comment="create list method added">
+    <list default="true" id="06ac5a23-67a3-4477-b2de-19bb106c9fde" name="Changes" comment="data generator experimental class added">
+      <change afterPath="$PROJECT_DIR$/spring-profiles/src/main/java/org/gucardev/springprofiles/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-profiles/src/main/java/org/gucardev/springprofiles/MyClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-profiles/src/main/java/org/gucardev/springprofiles/MyCustomService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-profiles/src/main/java/org/gucardev/springprofiles/MyDevService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-profiles/src/main/java/org/gucardev/springprofiles/MyService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-profiles/src/main/java/org/gucardev/springprofiles/MyTestService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-profiles/src/main/java/org/gucardev/springprofiles/RunOnProfile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-profiles/src/main/resources/application-dev.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-profiles/src/main/resources/application-test.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/controller/AccountRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/controller/AccountRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/controller/CardRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/controller/CardRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/controller/GenericRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/controller/GenericRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/dto/AccountDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/dto/AccountDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/dto/BaseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/dto/BaseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/dto/CardDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/dto/CardDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/entity/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/mapper/AccountMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/mapper/AccountMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/mapper/CardMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/mapper/CardMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/mapper/CustomerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/mapper/CustomerMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/repository/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/repository/AccountRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/repository/CardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/repository/CardRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/AccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/CardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/CardService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/GenericService.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/GenericService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/impl/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/impl/AccountServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/impl/CardServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/impl/CardServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/impl/GenericServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/java/org/gucardev/genericexample/service/impl/GenericServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generic-example/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/generic-example/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-code-generate/src/main/java/org/gucardev/Main.java" beforeDir="false" />
     </list>
     <list id="00015e06-f8db-41b5-8afc-d2cbf1af054f" name="credentials" comment="">
@@ -69,6 +62,7 @@
     "Application.Main.executor": "Run",
     "Docker.actuator.prometheus: Compose Deployment.executor": "Run",
     "Docker.actuator: Compose Deployment.executor": "Run",
+    "Docker.generic-example: Compose Deployment.executor": "Run",
     "HTTP Request.generated-requests | #1.executor": "Run",
     "HTTP Request.generated-requests | #2.executor": "Run",
     "HTTP Request.generated-requests | #3.executor": "Run",
@@ -88,11 +82,12 @@
     "Spring Boot.Application (3).executor": "Debug",
     "Spring Boot.GenericExampleApplication.executor": "Run",
     "Spring Boot.Resillience4jApplication.executor": "Run",
+    "Spring Boot.SpringProfilesApplication.executor": "Run",
     "Spring Boot.SpringScopesApplication.executor": "Run",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "corretto-17",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/user/IdeaProjects/spring-learning/generic-example/src/main/java/org/gucardev/genericexample",
+    "last_opened_file_path": "C:/Users/user/IdeaProjects/spring-learning/spring-profiles/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -107,11 +102,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\IdeaProjects\spring-learning\spring-profiles\src\main\resources" />
       <recent name="C:\Users\user\IdeaProjects\spring-learning\generic-example\src\main\java\org\gucardev\genericexample" />
       <recent name="C:\Users\user\IdeaProjects\spring-learning\generic-example" />
       <recent name="C:\Users\user\IdeaProjects\spring-learning\java-code-generate\src\main\resources" />
       <recent name="C:\Users\user\IdeaProjects\spring-learning\actuator\monitoring\grafana" />
-      <recent name="C:\Users\user\IdeaProjects\spring-learning\actuator\prometheus" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\user\IdeaProjects\spring-learning\java-code-generate\src\main\resources" />
@@ -121,11 +116,11 @@
       <recent name="C:\Users\user\IdeaProjects\spring-learning\java-code-generate" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.gucardev.springprofiles" />
       <recent name="org.gucardev.genericexample.config" />
       <recent name="org.gucardev.genericexample.controller" />
       <recent name="org.gucardev.genericexample.repository" />
       <recent name="org.gucardev.genericexample.mapper" />
-      <recent name="org.gucardev.genericexample.service.impl" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -144,7 +139,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.GenericExampleApplication">
+  <component name="RunManager" selected="Spring Boot.SpringProfilesApplication">
     <configuration name="DynamicClassGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.gucardev.DynamicClassGenerator" />
       <module name="java-code-generate" />
@@ -451,6 +446,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SpringProfilesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="spring-profiles" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.gucardev.springprofiles.SpringProfilesApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SpringScopesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="spring-scopes" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.gucardev.springscopes.SpringScopesApplication" />
@@ -500,7 +502,9 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml" />
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
     <configuration name="actuator: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
@@ -511,15 +515,10 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="actuator.prometheus: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="generic-example: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
-          <option name="services">
-            <list>
-              <option value="prometheus" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="actuator/docker-compose.yml" />
+          <option name="sourceFilePath" value="generic-example/docker-compose.yml" />
         </settings>
       </deployment>
       <method v="2" />
@@ -598,11 +597,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.generic-example: Compose Deployment" />
         <item itemvalue="Application.ExampleGenerator" />
         <item itemvalue="Application.DynamicClassGenerator" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Docker.actuator: Compose Deployment" />
-        <item itemvalue="Docker.actuator.prometheus: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -627,7 +626,8 @@
       <workItem from="1723384343565" duration="164000" />
       <workItem from="1724262634536" duration="3537000" />
       <workItem from="1724302532804" duration="599000" />
-      <workItem from="1725020980491" duration="31161000" />
+      <workItem from="1725020980491" duration="35876000" />
+      <workItem from="1725185263478" duration="2106000" />
     </task>
     <task id="LOCAL-00001" summary="editor fixed and gradle project converted to maven project">
       <option name="closed" value="true" />
@@ -797,7 +797,31 @@
       <option name="project" value="LOCAL" />
       <updated>1725133152068</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="some customizations added">
+      <option name="closed" value="true" />
+      <created>1725136258019</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1725136258019</updated>
+    </task>
+    <task id="LOCAL-00023" summary="postman collection created">
+      <option name="closed" value="true" />
+      <created>1725136269570</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1725136269570</updated>
+    </task>
+    <task id="LOCAL-00024" summary="data generator experimental class added">
+      <option name="closed" value="true" />
+      <created>1725144168035</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1725144168035</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -825,6 +849,9 @@
     <MESSAGE value="classes generated from json" />
     <MESSAGE value="generic example created" />
     <MESSAGE value="create list method added" />
-    <option name="LAST_COMMIT_MESSAGE" value="create list method added" />
+    <MESSAGE value="some customizations added" />
+    <MESSAGE value="postman collection created" />
+    <MESSAGE value="data generator experimental class added" />
+    <option name="LAST_COMMIT_MESSAGE" value="data generator experimental class added" />
   </component>
 </project>
