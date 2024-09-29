@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.context.request.WebRequest;
 
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @NoArgsConstructor
@@ -24,13 +25,16 @@ public abstract class BaseExceptionHandler {
         if (!queryParams.isEmpty()) {
             path += "?" + queryParams;
         }
-
-        log.error("Controller Error | path: {} | message: {}", path, error);
-        return ExceptionResponse.builder()
-                .error(error)
-                .status(status)
-                .path(path)
-                .traceId(MDC.get(TRACE_ID_LOG_VAR_NAME))
-                .build();
+        Map<String, String> validationErrors = null;
+        if (error instanceof Map) {
+            validationErrors = (Map<String, String>) error;
+            error = "Validation errors occurred.";
+            //log.warn("Validation error on path: {} | validation errors: {}", path, validationErrors);
+        }
+        //else {
+        //log.error("Controller Error | path: {} | message: {}", path, error);
+        //}
+        return ExceptionResponse.buildResponse(status, error, path, MDC.get(TRACE_ID_LOG_VAR_NAME), validationErrors);
     }
 }
+
