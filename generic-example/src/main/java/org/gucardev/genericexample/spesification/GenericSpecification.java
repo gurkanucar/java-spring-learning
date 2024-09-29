@@ -100,14 +100,22 @@ public class GenericSpecification<T> {
 
 
     public Specification<T> sortByField(String sortField, Sort.Direction sortDirection) {
-        if (sortField == null || sortDirection == null) {
-            return null;
+        // Set default sort field and direction if not provided
+        if (StringUtils.isBlank(sortField)) {
+            sortField = "updatedDateTime";
         }
+        if (sortDirection == null) {
+            sortDirection = Sort.Direction.DESC;
+        }
+
+        String finalSortField = sortField;
+        Sort.Direction finalSortDirection = sortDirection;
         return (root, query, criteriaBuilder) -> {
-            Path<Object> sortPath = root.get(sortField);
-            Order sortOrder = sortDirection.isAscending() ? criteriaBuilder.asc(sortPath) : criteriaBuilder.desc(sortPath);
+            Path<Object> sortPath = root.get(finalSortField);
+            Order sortOrder = finalSortDirection.isAscending() ? criteriaBuilder.asc(sortPath) : criteriaBuilder.desc(sortPath);
             query.orderBy(sortOrder);
             return query.getRestriction();
         };
     }
+
 }
