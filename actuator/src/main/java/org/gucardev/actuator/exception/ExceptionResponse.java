@@ -34,7 +34,6 @@ public class ExceptionResponse {
     private final Map<String, String> validationErrors;
     private final boolean hasValidationErrors;
 
-    // Custom logic for time initialization and validation error handling in @Builder.Default
     @Builder.Default
     private final LocalDateTime currentTime = LocalDateTime.now();
 

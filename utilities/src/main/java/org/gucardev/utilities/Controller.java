@@ -7,24 +7,26 @@ import lombok.Setter;
 import org.gucardev.utilities.exception.ExceptionMessage;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.*;
 
 import static org.gucardev.utilities.exception.ExceptionUtil.buildException;
+
 
 @RestController
 @RequestMapping("/api")
 public class Controller {
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @GetMapping("/entity-ex")
     ResponseEntity<?> notFoundUserException() {
+        //new ObjectMapper().writeValueAsString(a)
+        var a= SecurityContextHolder.getContext().getAuthentication();
         throw buildException(ExceptionMessage.NOT_FOUND_EXCEPTION, "<USER_ID>");
     }
 
-
-    @GetMapping("/validation-ex")
+    @PostMapping("/validation-ex")
     ResponseEntity<?> notFoundUserException(@Valid @RequestBody Address address) {
         return ResponseEntity.ok(address);
     }

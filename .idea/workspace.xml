@@ -5,24 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06ac5a23-67a3-4477-b2de-19bb106c9fde" name="Changes" comment="data generator experimental class added">
-      <change afterPath="$PROJECT_DIR$/spring-profiles/src/main/java/org/gucardev/springprofiles/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-profiles/src/main/java/org/gucardev/springprofiles/MyClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-profiles/src/main/java/org/gucardev/springprofiles/MyCustomService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-profiles/src/main/java/org/gucardev/springprofiles/MyDevService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-profiles/src/main/java/org/gucardev/springprofiles/MyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-profiles/src/main/java/org/gucardev/springprofiles/MyTestService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-profiles/src/main/java/org/gucardev/springprofiles/RunOnProfile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-profiles/src/main/resources/application-dev.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-profiles/src/main/resources/application-test.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/config/PasswordEncoderConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/exception/CustomAuthenticationEntryPoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-code-generate/src/main/java/org/gucardev/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/exception/ExceptionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/exception/ExceptionResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/config/MessageConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/config/MessageConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/exception/BaseExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/exception/BaseExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/exception/ClientRequestException.java" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/exception/ClientRequestException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/exception/ExceptionMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/exception/ExceptionMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/exception/ExceptionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/exception/ExceptionResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/exception/ExceptionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/exception/ExceptionUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/exception/GlobalBaseExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/exception/GlobalBaseExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/src/main/resources/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/src/main/resources/messages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/src/main/resources/messages_tr.properties" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/src/main/resources/messages_tr.properties" afterDir="false" />
     </list>
-    <list id="00015e06-f8db-41b5-8afc-d2cbf1af054f" name="credentials" comment="">
-      <change beforePath="$PROJECT_DIR$/aws-ses-mail-sending/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/aws-ses-mail-sending/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list id="00015e06-f8db-41b5-8afc-d2cbf1af054f" name="credentials" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,6 +40,21 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;gurkanucar&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/gurkanucar/java-spring-learning.git&quot;,
+    &quot;accountId&quot;: &quot;10fa2666-eff1-4cfc-8f3a-74f95bd5b495&quot;
+  }
+}</component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -84,10 +101,11 @@
     "Spring Boot.Resillience4jApplication.executor": "Run",
     "Spring Boot.SpringProfilesApplication.executor": "Run",
     "Spring Boot.SpringScopesApplication.executor": "Run",
+    "Spring Boot.UtilitiesApplication.executor": "Debug",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "corretto-17",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/user/IdeaProjects/spring-learning/spring-profiles/src/main/resources",
+    "last_opened_file_path": "C:/Users/user/IdeaProjects/java-spring-learning/utilities/src/main/java/org/gucardev/utilities/config",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -102,11 +120,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\IdeaProjects\java-spring-learning\utilities\src\main\java\org\gucardev\utilities\config" />
       <recent name="C:\Users\user\IdeaProjects\spring-learning\spring-profiles\src\main\resources" />
       <recent name="C:\Users\user\IdeaProjects\spring-learning\generic-example\src\main\java\org\gucardev\genericexample" />
       <recent name="C:\Users\user\IdeaProjects\spring-learning\generic-example" />
       <recent name="C:\Users\user\IdeaProjects\spring-learning\java-code-generate\src\main\resources" />
-      <recent name="C:\Users\user\IdeaProjects\spring-learning\actuator\monitoring\grafana" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\user\IdeaProjects\spring-learning\java-code-generate\src\main\resources" />
@@ -116,11 +134,11 @@
       <recent name="C:\Users\user\IdeaProjects\spring-learning\java-code-generate" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.gucardev.utilities.exception" />
       <recent name="org.gucardev.springprofiles" />
       <recent name="org.gucardev.genericexample.config" />
       <recent name="org.gucardev.genericexample.controller" />
       <recent name="org.gucardev.genericexample.repository" />
-      <recent name="org.gucardev.genericexample.mapper" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -139,7 +157,150 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.SpringProfilesApplication">
+  <component name="RunManager" selected="Spring Boot.UtilitiesApplication">
+    <configuration default="true" type="DjangoTestsConfigurationType">
+      <module name="entity-relationship-examples" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="entity-relationship-examples" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Python.FlaskServer">
+      <module name="entity-relationship-examples" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="entity-relationship-examples" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docs" factoryName="Docutils task">
+      <module name="entity-relationship-examples" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="docutils_input_file" value="" />
+      <option name="docutils_output_file" value="" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="" />
+      <option name="docutils_open_in_browser" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docs" factoryName="Sphinx task">
+      <module name="entity-relationship-examples" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="docutils_input_file" value="" />
+      <option name="docutils_output_file" value="" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="" />
+      <option name="docutils_open_in_browser" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Autodetect">
+      <module name="entity-relationship-examples" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <module name="entity-relationship-examples" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
     <configuration name="DynamicClassGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.gucardev.DynamicClassGenerator" />
       <module name="java-code-generate" />
@@ -179,27 +340,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="DjangoTestsConfigurationType">
-      <module name="entity-relationship-examples" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="entity-relationship-examples" />
       <method v="2">
@@ -212,43 +352,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="entity-relationship-examples" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Python.FlaskServer">
-      <module name="entity-relationship-examples" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <method v="2" />
     </configuration>
     <configuration name="ActuatorApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="actuator" />
@@ -488,19 +591,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <module name="entity-relationship-examples" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
@@ -523,78 +613,6 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration default="true" type="docs" factoryName="Docutils task">
-      <module name="entity-relationship-examples" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="docutils_input_file" value="" />
-      <option name="docutils_output_file" value="" />
-      <option name="docutils_params" value="" />
-      <option name="docutils_task" value="" />
-      <option name="docutils_open_in_browser" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="docs" factoryName="Sphinx task">
-      <module name="entity-relationship-examples" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="docutils_input_file" value="" />
-      <option name="docutils_output_file" value="" />
-      <option name="docutils_params" value="" />
-      <option name="docutils_task" value="" />
-      <option name="docutils_open_in_browser" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Autodetect">
-      <module name="entity-relationship-examples" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <module name="entity-relationship-examples" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Docker.generic-example: Compose Deployment" />
@@ -608,8 +626,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
       </set>
     </attachedChunks>
   </component>
@@ -628,6 +646,8 @@
       <workItem from="1724302532804" duration="599000" />
       <workItem from="1725020980491" duration="35876000" />
       <workItem from="1725185263478" duration="2106000" />
+      <workItem from="1729101205146" duration="968000" />
+      <workItem from="1729543025871" duration="4662000" />
     </task>
     <task id="LOCAL-00001" summary="editor fixed and gradle project converted to maven project">
       <option name="closed" value="true" />
@@ -853,5 +873,16 @@
     <MESSAGE value="postman collection created" />
     <MESSAGE value="data generator experimental class added" />
     <option name="LAST_COMMIT_MESSAGE" value="data generator experimental class added" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/Controller.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

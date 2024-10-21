@@ -2,13 +2,17 @@ package org.gucardev.utilities.exception;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import lombok.Data;
+import lombok.Builder;
+import lombok.Getter;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import java.time.LocalDateTime;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Map;
 
-@Data
+@Getter
+@Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
         "status",
@@ -17,75 +21,33 @@ import java.time.LocalDateTime;
         "message",
         "path",
         "time",
+        "validationErrors",
+        "hasValidationErrors"
 })
 public class ExceptionResponse {
 
-    private HttpStatus status;
-    private int code;
-    private String traceId;
-    private Object message;
-    private String path;
-    private LocalDateTime time;
+    private final HttpStatus status;
+    private final int code;
+    private final String traceId;
+    private final Object message;
+    private final String path;
+    private final Map<String, String> validationErrors;
+    private final boolean hasValidationErrors;
 
-    private ExceptionResponse(Builder builder) {
-        this.status = builder.status;
-        this.code = builder.code;
-        this.message = builder.message;
-        this.path = builder.path;
-        this.time = LocalDateTime.now();
-        this.traceId=builder.traceId;
-    }
+    @Builder.Default
+    private final String time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
 
-    public static Builder builder() {
-        return new Builder();
-    }
-
-    public static class Builder {
-        public String traceId;
-        private HttpStatus status;
-        private int code;
-        private Object message;
-        private String path;
-
-        private Builder() {
-            this.status = HttpStatus.OK;
-            this.code = ResponseConstants.FAILURE.getCode();
-            this.message = ResponseConstants.FAILURE.getMessage();
-        }
-
-        public Builder status(HttpStatus status) {
-            this.status = status;
-            this.code = status.value();
-            return this;
-        }
-
-        public Builder status(int statusCode) {
-            this.status = HttpStatus.resolve(statusCode);
-            if (this.status == null) {
-                throw new IllegalArgumentException("Invalid HTTP status code: " + statusCode);
-            }
-            this.code = statusCode;
-            return this;
-        }
-
-        public Builder error(Object obj) {
-            this.code = ResponseConstants.FAILURE.getCode();
-            this.message = obj;
-            return this;
-        }
-
-        public Builder path(String requestPath) {
-            this.path = requestPath;
-            return this;
-        }
-        public Builder traceId(String traceId) {
-            this.traceId = traceId;
-            return this;
-        }
-
-        public ResponseEntity<ExceptionResponse> build() {
-            return ResponseEntity.status(status).body(new ExceptionResponse(this));
-        }
+    public static ResponseEntity<ExceptionResponse> buildResponse(HttpStatus status, Object message, String path, String traceId, Map<String, String> validationErrors) {
+        ExceptionResponse response = ExceptionResponse.builder()
+                .status(status)
+                .code(status.value())
+                .message(message)
+                .path(path)
+                .traceId(traceId)
+                .validationErrors(validationErrors)
+                .hasValidationErrors(validationErrors != null && !validationErrors.isEmpty())
+                .build();
+        return ResponseEntity.status(status).body(response);
     }
 }
 
