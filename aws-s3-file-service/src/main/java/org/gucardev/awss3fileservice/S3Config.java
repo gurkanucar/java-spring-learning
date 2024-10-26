@@ -1,22 +1,18 @@
 package org.gucardev.awss3fileservice;
 
-import com.amazonaws.auth.AWSStaticCredentialsProvider;
-import com.amazonaws.auth.BasicAWSCredentials;
-import com.amazonaws.client.builder.AwsClientBuilder;
-import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.AmazonS3ClientBuilder;
-import com.amazonaws.services.s3.model.CreateBucketRequest;
-import com.amazonaws.services.s3.model.Region;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.net.URI;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
+import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
+import software.amazon.awssdk.regions.Region;
+import software.amazon.awssdk.services.s3.S3Client;
+import software.amazon.awssdk.services.s3.presigner.S3Presigner;
 
 @Configuration
 public class S3Config {
-
-    private static final Logger logger = LoggerFactory.getLogger(S3Config.class);
 
     @Value("${aws.accessKey}")
     private String accessKey;
@@ -27,27 +23,28 @@ public class S3Config {
     @Value("${aws.region}")
     private String region;
 
-    @Value("${aws.endpoint}")
-    private String endpoint;
-
-//    @Bean
-//    public AmazonS3 amazonS3Client() {
-//        final BasicAWSCredentials credentials = new BasicAWSCredentials(accessKey, secretKey);
-//        return AmazonS3ClientBuilder.standard()
-//                .withCredentials(new AWSStaticCredentialsProvider(credentials))
-//                .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(endpoint, region))
-//                .build();
-//    }
-
+//    @Value("${aws.endpoint}")
+//    private String endpoint;
 
     @Bean
-    public AmazonS3 amazonS3Client() {
-        BasicAWSCredentials awsCredentials = new BasicAWSCredentials(accessKey, secretKey);
-        return AmazonS3ClientBuilder
-                .standard()
-                .withRegion(region)
-                .withCredentials(new AWSStaticCredentialsProvider(awsCredentials))
+    public S3Client s3Client() {
+        Region awsRegion = Region.of(region);
+        AwsBasicCredentials awsCredentials = AwsBasicCredentials.create(accessKey, secretKey);
+        return S3Client.builder()
+                .region(awsRegion)
+                //.endpointOverride(URI.create(endpoint))
+                .credentialsProvider(StaticCredentialsProvider.create(awsCredentials))
                 .build();
     }
 
+    @Bean
+    public S3Presigner s3Presigner() {
+        Region awsRegion = Region.of(region);
+        return S3Presigner.builder()
+                .region(awsRegion)
+                //.endpointOverride(URI.create(endpoint))
+                .credentialsProvider(StaticCredentialsProvider.create(
+                        AwsBasicCredentials.create(accessKey, secretKey)))
+                .build();
+    }
 }
