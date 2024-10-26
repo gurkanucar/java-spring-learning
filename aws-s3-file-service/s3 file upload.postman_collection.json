@@ -7,272 +7,380 @@
 	},
 	"item": [
 		{
-			"name": "public upload-presigned",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/files/public-pre-signed-url?extension=jpg",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"files",
-						"public-pre-signed-url"
-					],
-					"query": [
-						{
-							"key": "extension",
-							"value": "jpg"
+			"name": "presigned-public-upload",
+			"item": [
+				{
+					"name": "public upload-presigned",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/files/pre-signed-url?filename=test.pdf&accessType=PUBLIC",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"files",
+								"pre-signed-url"
+							],
+							"query": [
+								{
+									"key": "filename",
+									"value": "test.pdf"
+								},
+								{
+									"key": "accessType",
+									"value": "PUBLIC"
+								}
+							]
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "multipart upload",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "file",
-							"type": "file",
-							"src": []
-						}
-					]
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8080/files/upload",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"files",
-						"upload"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "private upload-presigned",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/files/pre-signed-url?extension=jpg",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"files",
-						"pre-signed-url"
-					],
-					"query": [
-						{
-							"key": "extension",
-							"value": "jpg"
+				{
+					"name": "upload via presigned",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-AMZ-ACL",
+								"value": "public-read",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "/C:/Users/user/Downloads/test.pdf"
+							}
+						},
+						"url": {
+							"raw": "https://myawsbucket11523.s3.amazonaws.com/1729945144135_test.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20241026T121904Z&X-Amz-SignedHeaders=host%3Bx-amz-acl&X-Amz-Credential=AKIAYMCOFGJVLYNKO7V5%2F20241026%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Expires=3600&X-Amz-Signature=506bbd120131fbd825f39efc6db3299e1b05bf70ab7e83694069806dad6a4794",
+							"protocol": "https",
+							"host": [
+								"myawsbucket11523",
+								"s3",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"1729945144135_test.pdf"
+							],
+							"query": [
+								{
+									"key": "X-Amz-Algorithm",
+									"value": "AWS4-HMAC-SHA256"
+								},
+								{
+									"key": "X-Amz-Date",
+									"value": "20241026T121904Z"
+								},
+								{
+									"key": "X-Amz-SignedHeaders",
+									"value": "host%3Bx-amz-acl"
+								},
+								{
+									"key": "X-Amz-Credential",
+									"value": "AKIAYMCOFGJVLYNKO7V5%2F20241026%2Fus-east-1%2Fs3%2Faws4_request"
+								},
+								{
+									"key": "X-Amz-Expires",
+									"value": "3600"
+								},
+								{
+									"key": "X-Amz-Signature",
+									"value": "506bbd120131fbd825f39efc6db3299e1b05bf70ab7e83694069806dad6a4794"
+								}
+							]
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "upload via presigned",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "file",
-					"file": {
-						"src": "/C:/Users/user/Downloads/UPoD_Java_Backend_Egitim_Programi.pdf"
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "https://buckett.s3.amazonaws.com/fddf7ab8-5686-46b2-b41b-68fb607a6b60.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240810T071047Z&X-Amz-SignedHeaders=host&X-Amz-Expires=10&X-Amz-Credential=AKIAYMCOFGJVMJZNGQNW%2F20240810%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=1b63ef613d39baa3ea526015ae57a7d7de2c48f9eb23368327567cecf50ce4f9",
-					"protocol": "https",
-					"host": [
-						"buckett",
-						"s3",
-						"amazonaws",
-						"com"
-					],
-					"path": [
-						"fddf7ab8-5686-46b2-b41b-68fb607a6b60.jpg"
-					],
-					"query": [
-						{
-							"key": "X-Amz-Algorithm",
-							"value": "AWS4-HMAC-SHA256"
-						},
-						{
-							"key": "X-Amz-Date",
-							"value": "20240810T071047Z"
-						},
-						{
-							"key": "X-Amz-SignedHeaders",
-							"value": "host"
-						},
-						{
-							"key": "X-Amz-Expires",
-							"value": "10"
-						},
-						{
-							"key": "X-Amz-Credential",
-							"value": "AKIAYMCOFGJVMJZNGQNW%2F20240810%2Fus-east-1%2Fs3%2Faws4_request"
-						},
-						{
-							"key": "X-Amz-Signature",
-							"value": "1b63ef613d39baa3ea526015ae57a7d7de2c48f9eb23368327567cecf50ce4f9"
+				{
+					"name": "public read",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://myawsbucket11523.s3.us-east-1.amazonaws.com/1729945144135_test.pdf",
+							"protocol": "https",
+							"host": [
+								"myawsbucket11523",
+								"s3",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"1729945144135_test.pdf"
+							]
 						}
-					]
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "public read",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://buckett.s3.amazonaws.com/51c7bd28-f974-4d93-a91e-09d915cded87.jpg",
-					"protocol": "https",
-					"host": [
-						"buckett",
-						"s3",
-						"amazonaws",
-						"com"
-					],
-					"path": [
-						"51c7bd28-f974-4d93-a91e-09d915cded87.jpg"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get access to read",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/files/fddf7ab8-5686-46b2-b41b-68fb607a6b60.jpg",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"files",
-						"fddf7ab8-5686-46b2-b41b-68fb607a6b60.jpg"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get by name as file",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/files/download/resume.pdf",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"files",
-						"download",
-						"resume.pdf"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "private read",
-			"request": {
-				"auth": {
-					"type": "noauth"
+			"name": "presigned-private-upload",
+			"item": [
+				{
+					"name": "private upload-presigned",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/files/pre-signed-url?filename=test.pdf&accessType=PRIVATE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"files",
+								"pre-signed-url"
+							],
+							"query": [
+								{
+									"key": "filename",
+									"value": "test.pdf"
+								},
+								{
+									"key": "accessType",
+									"value": "PRIVATE"
+								}
+							]
+						}
+					},
+					"response": []
 				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://buckett.s3.amazonaws.com/fddf7ab8-5686-46b2-b41b-68fb607a6b60.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240810T071346Z&X-Amz-SignedHeaders=host&X-Amz-Expires=10&X-Amz-Credential=AKIAYMCOFGJVMJZNGQNW%2F20240810%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=ce61b088a5856576a5c61a65010b3d02a5f6779178e104b338ab798129205d64",
-					"protocol": "https",
-					"host": [
-						"buckett",
-						"s3",
-						"amazonaws",
-						"com"
-					],
-					"path": [
-						"fddf7ab8-5686-46b2-b41b-68fb607a6b60.jpg"
-					],
-					"query": [
-						{
-							"key": "X-Amz-Algorithm",
-							"value": "AWS4-HMAC-SHA256"
+				{
+					"name": "upload via presigned",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "/C:/Users/user/Downloads/test.pdf"
+							}
 						},
-						{
-							"key": "X-Amz-Date",
-							"value": "20240810T071346Z"
-						},
-						{
-							"key": "X-Amz-SignedHeaders",
-							"value": "host"
-						},
-						{
-							"key": "X-Amz-Expires",
-							"value": "10"
-						},
-						{
-							"key": "X-Amz-Credential",
-							"value": "AKIAYMCOFGJVMJZNGQNW%2F20240810%2Fus-east-1%2Fs3%2Faws4_request"
-						},
-						{
-							"key": "X-Amz-Signature",
-							"value": "ce61b088a5856576a5c61a65010b3d02a5f6779178e104b338ab798129205d64"
+						"url": {
+							"raw": "https://myawsbucket11523.s3.amazonaws.com/1729945240770_test.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20241026T122040Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIAYMCOFGJVLYNKO7V5%2F20241026%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Expires=3600&X-Amz-Signature=4f1e39e75371168301efe40a02da264c47dddbb04e8e2cfe769e69921b515d99",
+							"protocol": "https",
+							"host": [
+								"myawsbucket11523",
+								"s3",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"1729945240770_test.pdf"
+							],
+							"query": [
+								{
+									"key": "X-Amz-Algorithm",
+									"value": "AWS4-HMAC-SHA256"
+								},
+								{
+									"key": "X-Amz-Date",
+									"value": "20241026T122040Z"
+								},
+								{
+									"key": "X-Amz-SignedHeaders",
+									"value": "host"
+								},
+								{
+									"key": "X-Amz-Credential",
+									"value": "AKIAYMCOFGJVLYNKO7V5%2F20241026%2Fus-east-1%2Fs3%2Faws4_request"
+								},
+								{
+									"key": "X-Amz-Expires",
+									"value": "3600"
+								},
+								{
+									"key": "X-Amz-Signature",
+									"value": "4f1e39e75371168301efe40a02da264c47dddbb04e8e2cfe769e69921b515d99"
+								}
+							]
 						}
-					]
+					},
+					"response": []
+				},
+				{
+					"name": "public read [will not work]",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://myawsbucket11523.s3.us-east-1.amazonaws.com/1729945240770_test.pdf",
+							"protocol": "https",
+							"host": [
+								"myawsbucket11523",
+								"s3",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"1729945240770_test.pdf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get private read url",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/files/1729945240770_test.pdf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"files",
+								"1729945240770_test.pdf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "private read",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://myawsbucket11523.s3.amazonaws.com/1729945240770_test.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20241026T122212Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIAYMCOFGJVLYNKO7V5%2F20241026%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Expires=3600&X-Amz-Signature=7d7d5fee2c8894b89dcf0fd380c1ff630df0eece74675c55e25a6c77dab2c05b",
+							"protocol": "https",
+							"host": [
+								"myawsbucket11523",
+								"s3",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"1729945240770_test.pdf"
+							],
+							"query": [
+								{
+									"key": "X-Amz-Algorithm",
+									"value": "AWS4-HMAC-SHA256"
+								},
+								{
+									"key": "X-Amz-Date",
+									"value": "20241026T122212Z"
+								},
+								{
+									"key": "X-Amz-SignedHeaders",
+									"value": "host"
+								},
+								{
+									"key": "X-Amz-Credential",
+									"value": "AKIAYMCOFGJVLYNKO7V5%2F20241026%2Fus-east-1%2Fs3%2Faws4_request"
+								},
+								{
+									"key": "X-Amz-Expires",
+									"value": "3600"
+								},
+								{
+									"key": "X-Amz-Signature",
+									"value": "7d7d5fee2c8894b89dcf0fd380c1ff630df0eece74675c55e25a6c77dab2c05b"
+								}
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "get by name as file watermark",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/files/downloadWithWatermark/resume.pdf",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"files",
-						"downloadWithWatermark",
-						"resume.pdf"
-					]
+			"name": "upload over java",
+			"item": [
+				{
+					"name": "multipart upload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/user/Downloads/test.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/files/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"files",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by name over java",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/files/download/1729945414177_test.pdf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"files",
+								"download",
+								"1729945414177_test.pdf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by name over java watermarked",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/files/downloadWithWatermark/1729945414177_test.pdf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"files",
+								"downloadWithWatermark",
+								"1729945414177_test.pdf"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }
