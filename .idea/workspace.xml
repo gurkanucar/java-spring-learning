@@ -5,24 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06ac5a23-67a3-4477-b2de-19bb106c9fde" name="Changes" comment="data generator experimental class added">
-      <change afterPath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/config/PasswordEncoderConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/exception/CustomAuthenticationEntryPoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/exception/ExceptionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/actuator/src/main/java/org/gucardev/actuator/exception/ExceptionResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/config/MessageConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/config/MessageConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/exception/BaseExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/exception/BaseExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/exception/ClientRequestException.java" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/exception/ClientRequestException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/exception/ExceptionMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/exception/ExceptionMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/exception/ExceptionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/exception/ExceptionResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/exception/ExceptionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/exception/ExceptionUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/exception/GlobalBaseExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/src/main/java/org/gucardev/utilities/exception/GlobalBaseExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/src/main/resources/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/src/main/resources/messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/src/main/resources/messages_tr.properties" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/src/main/resources/messages_tr.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aws-s3-file-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aws-s3-file-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aws-s3-file-service/src/main/java/org/gucardev/awss3fileservice/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aws-s3-file-service/src/main/java/org/gucardev/awss3fileservice/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aws-s3-file-service/src/main/java/org/gucardev/awss3fileservice/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aws-s3-file-service/src/main/java/org/gucardev/awss3fileservice/FileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aws-s3-file-service/src/main/java/org/gucardev/awss3fileservice/S3Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/aws-s3-file-service/src/main/java/org/gucardev/awss3fileservice/S3Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aws-s3-file-service/src/main/java/org/gucardev/awss3fileservice/WatermarkService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aws-s3-file-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/aws-s3-file-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <list id="00015e06-f8db-41b5-8afc-d2cbf1af054f" name="credentials" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,12 +37,12 @@
     &quot;assignee&quot;: &quot;gurkanucar&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/gurkanucar/java-spring-learning.git&quot;,
-    &quot;accountId&quot;: &quot;10fa2666-eff1-4cfc-8f3a-74f95bd5b495&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/gurkanucar/java-spring-learning",
+    "accountId": "527480fd-46f0-494b-8869-1697101d3471"
   }
-}</component>
+}]]></component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
   </component>
@@ -97,11 +87,13 @@
     "Spring Boot.Application (1).executor": "Run",
     "Spring Boot.Application (2).executor": "Run",
     "Spring Boot.Application (3).executor": "Debug",
+    "Spring Boot.AwsS3FileServiceApplication.executor": "Run",
     "Spring Boot.GenericExampleApplication.executor": "Run",
     "Spring Boot.Resillience4jApplication.executor": "Run",
     "Spring Boot.SpringProfilesApplication.executor": "Run",
     "Spring Boot.SpringScopesApplication.executor": "Run",
     "Spring Boot.UtilitiesApplication.executor": "Debug",
+    "data.sources.detected.do.not.suggest.again": "true",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "corretto-17",
     "kotlin-language-version-configured": "true",
@@ -111,9 +103,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "run.configurations.included.in.services": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -157,7 +149,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.UtilitiesApplication">
+  <component name="RunManager" selected="Spring Boot.AwsS3FileServiceApplication">
     <configuration default="true" type="DjangoTestsConfigurationType">
       <module name="entity-relationship-examples" />
       <option name="ENV_FILES" value="" />
@@ -626,8 +618,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.20224.300" />
+        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-IU-242.20224.300" />
       </set>
     </attachedChunks>
   </component>
@@ -648,6 +640,7 @@
       <workItem from="1725185263478" duration="2106000" />
       <workItem from="1729101205146" duration="968000" />
       <workItem from="1729543025871" duration="4662000" />
+      <workItem from="1729953270650" duration="2066000" />
     </task>
     <task id="LOCAL-00001" summary="editor fixed and gradle project converted to maven project">
       <option name="closed" value="true" />

@@ -68,14 +68,7 @@ public class FileController {
      */
     @GetMapping("/download/{fileName}")
     public ResponseEntity<StreamingResponseBody> downloadFile(@PathVariable("fileName") String fileName) throws Exception {
-        return fileService.downloadFileResponse(fileName, false);
+        return fileService.downloadFileResponse(fileName);
     }
 
-    /**
-     * Downloads a file with a watermark.
-     */
-    @GetMapping("/downloadWithWatermark/{fileName}")
-    public ResponseEntity<StreamingResponseBody> downloadFileWithWatermark(@PathVariable("fileName") String fileName) throws Exception {
-        return fileService.downloadFileResponse(fileName, true);
-    }
 }

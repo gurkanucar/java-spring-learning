@@ -1,6 +1,5 @@
 package org.gucardev.awss3fileservice;
 
-import java.net.URI;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

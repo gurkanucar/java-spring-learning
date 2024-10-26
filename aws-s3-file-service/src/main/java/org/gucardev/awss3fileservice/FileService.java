@@ -1,6 +1,5 @@
 package org.gucardev.awss3fileservice;
 
-import com.itextpdf.text.DocumentException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
@@ -41,7 +40,6 @@ public class FileService {
 
     private final S3Client s3Client;
     private final S3Presigner s3Presigner;
-    private final WatermarkService watermarkService;
 
     /**
      * Generates a presigned URL for GET or PUT operations with specified access type.
@@ -112,13 +110,6 @@ public class FileService {
     }
 
     /**
-     * Builds a sanitized filename with a timestamp prefix.
-     */
-    public static String buildFilename(String filename) {
-        return String.format("%s_%s", System.currentTimeMillis(), sanitizeFileName(filename));
-    }
-
-    /**
      * Uploads a MultipartFile to S3 with specified access type.
      */
     public String uploadMultipartFile(MultipartFile file, AccessType accessType) throws IOException {
@@ -153,22 +144,13 @@ public class FileService {
         return new S3ObjectInputStreamWrapper(s3ObjectResponse, eTag);
     }
 
-    /**
-     * Downloads a file from S3, adds a watermark, and returns an InputStream.
-     */
-    public S3ObjectInputStreamWrapper downloadFileWithWatermark(String fileName) throws IOException, DocumentException {
-        S3ObjectInputStreamWrapper originalFile = downloadFile(fileName);
-        InputStream watermarkedStream = watermarkService.addWatermarkToPdf(originalFile.inputStream());
-        // ETag is not applicable as the file is modified
-        return new S3ObjectInputStreamWrapper(watermarkedStream, null);
-    }
 
     /**
      * Returns a ResponseEntity with StreamingResponseBody and includes ETag in headers.
      */
-    public ResponseEntity<StreamingResponseBody> downloadFileResponse(String fileName, boolean withWatermark) throws IOException, DocumentException {
+    public ResponseEntity<StreamingResponseBody> downloadFileResponse(String fileName) throws IOException {
         String contentType = Files.probeContentType(Paths.get(fileName));
-        S3ObjectInputStreamWrapper fileWrapper = withWatermark ? downloadFileWithWatermark(fileName) : downloadFile(fileName);
+        S3ObjectInputStreamWrapper fileWrapper = downloadFile(fileName);
 
         StreamingResponseBody responseBody = outputStream -> {
             try (InputStream inputStream = fileWrapper.inputStream()) {
@@ -192,6 +174,14 @@ public class FileService {
         return ResponseEntity.ok()
                 .headers(headers)
                 .body(responseBody);
+    }
+
+
+    /**
+     * Builds a sanitized filename with a timestamp prefix.
+     */
+    public static String buildFilename(String filename) {
+        return String.format("%s_%s", System.currentTimeMillis(), sanitizeFileName(filename));
     }
 
     /**
