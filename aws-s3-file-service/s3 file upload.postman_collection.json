@@ -56,20 +56,20 @@
 						"body": {
 							"mode": "file",
 							"file": {
-								"src": "/C:/Users/user/Downloads/test.pdf"
+								"src": "/Users/gurkanucar/Downloads/test.pdf"
 							}
 						},
 						"url": {
-							"raw": "https://myawsbucket11523.s3.amazonaws.com/1729945144135_test.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20241026T121904Z&X-Amz-SignedHeaders=host%3Bx-amz-acl&X-Amz-Credential=AKIAYMCOFGJVLYNKO7V5%2F20241026%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Expires=3600&X-Amz-Signature=506bbd120131fbd825f39efc6db3299e1b05bf70ab7e83694069806dad6a4794",
+							"raw": "https://myawesomeuniquebucket.s3.amazonaws.com/1729957467694_test.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20241026T154427Z&X-Amz-SignedHeaders=host%3Bx-amz-acl&X-Amz-Credential=AKIAYMCOFGJVFLVO2AMY%2F20241026%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Expires=3600&X-Amz-Signature=084947089e037066627412bba9cacbc279cf0ae03b007b55ea957a5ba423792a",
 							"protocol": "https",
 							"host": [
-								"myawsbucket11523",
+								"myawesomeuniquebucket",
 								"s3",
 								"amazonaws",
 								"com"
 							],
 							"path": [
-								"1729945144135_test.pdf"
+								"1729957467694_test.pdf"
 							],
 							"query": [
 								{
@@ -78,7 +78,7 @@
 								},
 								{
 									"key": "X-Amz-Date",
-									"value": "20241026T121904Z"
+									"value": "20241026T154427Z"
 								},
 								{
 									"key": "X-Amz-SignedHeaders",
@@ -86,7 +86,7 @@
 								},
 								{
 									"key": "X-Amz-Credential",
-									"value": "AKIAYMCOFGJVLYNKO7V5%2F20241026%2Fus-east-1%2Fs3%2Faws4_request"
+									"value": "AKIAYMCOFGJVFLVO2AMY%2F20241026%2Fus-east-1%2Fs3%2Faws4_request"
 								},
 								{
 									"key": "X-Amz-Expires",
@@ -94,7 +94,7 @@
 								},
 								{
 									"key": "X-Amz-Signature",
-									"value": "506bbd120131fbd825f39efc6db3299e1b05bf70ab7e83694069806dad6a4794"
+									"value": "084947089e037066627412bba9cacbc279cf0ae03b007b55ea957a5ba423792a"
 								}
 							]
 						}
@@ -107,17 +107,17 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://myawsbucket11523.s3.us-east-1.amazonaws.com/1729945144135_test.pdf",
+							"raw": "https://myawesomeuniquebucket.s3.us-east-1.amazonaws.com/1729957467694_test.pdf",
 							"protocol": "https",
 							"host": [
-								"myawsbucket11523",
+								"myawesomeuniquebucket",
 								"s3",
 								"us-east-1",
 								"amazonaws",
 								"com"
 							],
 							"path": [
-								"1729945144135_test.pdf"
+								"1729957467694_test.pdf"
 							]
 						}
 					},
@@ -169,20 +169,20 @@
 						"body": {
 							"mode": "file",
 							"file": {
-								"src": "/C:/Users/user/Downloads/test.pdf"
+								"src": "/Users/gurkanucar/Downloads/test.pdf"
 							}
 						},
 						"url": {
-							"raw": "https://myawsbucket11523.s3.amazonaws.com/1729945240770_test.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20241026T122040Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIAYMCOFGJVLYNKO7V5%2F20241026%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Expires=3600&X-Amz-Signature=4f1e39e75371168301efe40a02da264c47dddbb04e8e2cfe769e69921b515d99",
+							"raw": "https://myawesomeuniquebucket.s3.amazonaws.com/1729958037118_test.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20241026T155357Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIAYMCOFGJVFLVO2AMY%2F20241026%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Expires=3600&X-Amz-Signature=b5d50eee26d24667ba9d07095965f7e12be20008488418e3cffc4f58e3590a3f",
 							"protocol": "https",
 							"host": [
-								"myawsbucket11523",
+								"myawesomeuniquebucket",
 								"s3",
 								"amazonaws",
 								"com"
 							],
 							"path": [
-								"1729945240770_test.pdf"
+								"1729958037118_test.pdf"
 							],
 							"query": [
 								{
@@ -191,7 +191,7 @@
 								},
 								{
 									"key": "X-Amz-Date",
-									"value": "20241026T122040Z"
+									"value": "20241026T155357Z"
 								},
 								{
 									"key": "X-Amz-SignedHeaders",
@@ -199,7 +199,7 @@
 								},
 								{
 									"key": "X-Amz-Credential",
-									"value": "AKIAYMCOFGJVLYNKO7V5%2F20241026%2Fus-east-1%2Fs3%2Faws4_request"
+									"value": "AKIAYMCOFGJVFLVO2AMY%2F20241026%2Fus-east-1%2Fs3%2Faws4_request"
 								},
 								{
 									"key": "X-Amz-Expires",
@@ -207,7 +207,7 @@
 								},
 								{
 									"key": "X-Amz-Signature",
-									"value": "4f1e39e75371168301efe40a02da264c47dddbb04e8e2cfe769e69921b515d99"
+									"value": "b5d50eee26d24667ba9d07095965f7e12be20008488418e3cffc4f58e3590a3f"
 								}
 							]
 						}
@@ -220,17 +220,16 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://myawsbucket11523.s3.us-east-1.amazonaws.com/1729945240770_test.pdf",
+							"raw": "https://myawesomeuniquebucket.s3.amazonaws.com/1729958037118_test.pdf",
 							"protocol": "https",
 							"host": [
-								"myawsbucket11523",
+								"myawesomeuniquebucket",
 								"s3",
-								"us-east-1",
 								"amazonaws",
 								"com"
 							],
 							"path": [
-								"1729945240770_test.pdf"
+								"1729958037118_test.pdf"
 							]
 						}
 					},
@@ -242,7 +241,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/files/1729945240770_test.pdf",
+							"raw": "http://localhost:8080/files/1729958037118_test.pdf",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -250,7 +249,7 @@
 							"port": "8080",
 							"path": [
 								"files",
-								"1729945240770_test.pdf"
+								"1729958037118_test.pdf"
 							]
 						}
 					},
@@ -262,16 +261,16 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://myawsbucket11523.s3.amazonaws.com/1729945240770_test.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20241026T122212Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIAYMCOFGJVLYNKO7V5%2F20241026%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Expires=3600&X-Amz-Signature=7d7d5fee2c8894b89dcf0fd380c1ff630df0eece74675c55e25a6c77dab2c05b",
+							"raw": "https://myawesomeuniquebucket.s3.amazonaws.com/1729958037118_test.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20241026T160142Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIAYMCOFGJVFLVO2AMY%2F20241026%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Expires=3600&X-Amz-Signature=3e98837003c218607d07ffdc6e5d1c0b27fa89046254fe656e577d46dfb2ee62",
 							"protocol": "https",
 							"host": [
-								"myawsbucket11523",
+								"myawesomeuniquebucket",
 								"s3",
 								"amazonaws",
 								"com"
 							],
 							"path": [
-								"1729945240770_test.pdf"
+								"1729958037118_test.pdf"
 							],
 							"query": [
 								{
@@ -280,7 +279,7 @@
 								},
 								{
 									"key": "X-Amz-Date",
-									"value": "20241026T122212Z"
+									"value": "20241026T160142Z"
 								},
 								{
 									"key": "X-Amz-SignedHeaders",
@@ -288,7 +287,7 @@
 								},
 								{
 									"key": "X-Amz-Credential",
-									"value": "AKIAYMCOFGJVLYNKO7V5%2F20241026%2Fus-east-1%2Fs3%2Faws4_request"
+									"value": "AKIAYMCOFGJVFLVO2AMY%2F20241026%2Fus-east-1%2Fs3%2Faws4_request"
 								},
 								{
 									"key": "X-Amz-Expires",
@@ -296,7 +295,7 @@
 								},
 								{
 									"key": "X-Amz-Signature",
-									"value": "7d7d5fee2c8894b89dcf0fd380c1ff630df0eece74675c55e25a6c77dab2c05b"
+									"value": "3e98837003c218607d07ffdc6e5d1c0b27fa89046254fe656e577d46dfb2ee62"
 								}
 							]
 						}
@@ -319,7 +318,7 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": "/C:/Users/user/Downloads/test.pdf"
+									"src": "/Users/gurkanucar/Downloads/test.pdf"
 								}
 							]
 						},
@@ -344,7 +343,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/files/download/1729945414177_test.pdf",
+							"raw": "http://localhost:8080/files/download/1729958802565_test.pdf",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -353,28 +352,7 @@
 							"path": [
 								"files",
 								"download",
-								"1729945414177_test.pdf"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "get by name over java watermarked",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/files/downloadWithWatermark/1729945414177_test.pdf",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"files",
-								"downloadWithWatermark",
-								"1729945414177_test.pdf"
+								"1729958802565_test.pdf"
 							]
 						}
 					},
